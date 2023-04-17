@@ -1,0 +1,11 @@
+.flash-message {
+  @apply border-[2px] text-base inline-flex items-center min-h-[40px] px-7 w-auto mx-auto my-4 rounded-[4px];
+
+  &--error {
+    @apply border-[1px] border-primary-red bg-red-50 text-primary-red;
+  }
+
+  &--success {
+    @apply border-[1px] border-primary-green bg-green-50 text-primary-green;
+  }
+}

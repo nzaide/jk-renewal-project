@@ -1,0 +1,11 @@
+.link {
+  @apply font-helvetica text-base text-[#007bff] cursor-pointer;
+
+  &--line {
+    @apply underline underline-offset-4
+  }
+
+  &:hover {
+    @apply text-[#0069d9];
+  }
+}

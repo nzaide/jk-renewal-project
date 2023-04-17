@@ -1,0 +1,102 @@
+
+<div class="modal" id="addressModal">
+  <div class="modal__overlay" @click="closeAllModals()"></div>
+  <div class="modal__content modal__content--lg">
+    <div class="flex justify-end"><i class="modal__close block fa-solid fa-xmark" @click="closeAllModals()"></i></div>
+    <div class="modal__header modal__header--gray">
+      <h4 class="m-0"> 業界を追加</h4>
+    </div>
+    <form class="form" action="#">
+      <div class="flex sp:flex-col">
+        <div class="prefecture sp:block hidden overflow-hidden mb-2">
+          <div class="prefecture__wrapper">
+            <input class="prefecture__check" id="prefecture1" type="checkbox"/>
+            <label class="prefecture__label bg-white" for="prefecture1">IT・通信・インターネット系<img src="/public/img/icon/arrow-gray.svg" alt="arrow"/></label>
+            <ul class="prefecture__list">
+              <li class="prefecture__item"><a class="link" href="#">金融・保険系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">メーカー・製造系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+              <li class="prefecture__item"><a class="link" href="#">〇〇系</a></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="modal__scrollbar h-[321px] mr-4 w-[48%] sp:hidden">
+          <li class="modal__item">金融・保険系</li>
+          <li class="modal__item modal__item--active">IT・通信・インターネット系</li>
+          <li class="modal__item">メーカー・製造系</li>
+          <li class="modal__item">〇〇系</li>
+          <li class="modal__item">〇〇系</li>
+          <li class="modal__item">〇〇系</li>
+          <li class="modal__item">〇〇系</li>
+          <li class="modal__item">〇〇系</li>
+          <li class="modal__item">〇〇系</li>
+          <li class="modal__item">〇〇系</li>
+          <li class="modal__item">〇〇系</li>
+          <li class="modal__item">〇〇系</li>
+          <li class="modal__item">〇〇系 </li>
+        </ul>
+        <div class="modal__blue">
+          <div class="w-full">
+            <div class="form__input-wrapper">
+              <div class="form__check-wrapper w-[27%] sp:w-full">
+                <input class="form__check form__check--secondary" id="check1" type="checkbox" name="checkOptions"/>
+                <label class="form__text-label cursor-pointer" for="check1">全て選択</label>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <div class="form__input-wrapper">
+              <div class="form__check-wrapper w-[27%] sp:w-full">
+                <input class="form__check form__check--secondary" id="check2" type="checkbox" name="checkOptions"/>
+                <label class="form__text-label cursor-pointer" for="check2">ソフトウェア開発</label>
+              </div>
+              <div class="form__check-wrapper w-[27%] sp:w-full">
+                <input class="form__check form__check--secondary" id="check3" type="checkbox" name="checkOptions"/>
+                <label class="form__text-label cursor-pointer" for="check3">ハードウェア開発</label>
+              </div>
+              <div class="form__check-wrapper w-[27%] sp:w-full">
+                <input class="form__check form__check--secondary" id="check4" type="checkbox" name="checkOptions"/>
+                <label class="form__text-label cursor-pointer" for="check4">システムインテグレータ</label>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <div class="form__input-wrapper">
+              <div class="form__check-wrapper w-[27%] sp:w-full">
+                <input class="form__check form__check--secondary" id="check5" type="checkbox" name="checkOptions"/>
+                <label class="form__text-label cursor-pointer" for="check5">通信</label>
+              </div>
+              <div class="form__check-wrapper w-[27%] sp:w-full">
+                <input class="form__check form__check--secondary" id="check6" type="checkbox" name="checkOptions"/>
+                <label class="form__text-label cursor-pointer" for="check6">WEB開発</label>
+              </div>
+              <div class="form__check-wrapper w-[27%] sp:w-full">
+                <input class="form__check form__check--secondary" id="check7" type="checkbox" name="checkOptions"/>
+                <label class="form__text-label cursor-pointer" for="check7">アプリ開発</label>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <div class="form__input-wrapper">
+              <div class="form__check-wrapper w-[27%] sp:w-full">
+                <input class="form__check form__check--secondary" id="check8" type="checkbox" name="checkOptions"/>
+                <label class="form__text-label cursor-pointer" for="check8">その他</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="modal__button-wrapper modal__button-wrapper--confirmation">
+      <button class="button w-full min-w-[237px] min-h-[57px] sp:min-w-full sp:min-h-[40px]" type="button">業界を設定</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+.modal {
+  @apply fixed top-0 left-0 w-full h-full z-[6] items-center justify-center hidden;
+
+  &__overlay {
+    @apply absolute top-0 left-0 w-full h-full bg-black opacity-20;
+  }
+
+  &__content {
+    @apply bg-white rounded-md w-full h-auto max-h-[95%] max-w-[800px] z-[8] p-5 shadow-md border border-gray-400 overflow-auto mx-2;
+
+    &--sm {
+      @apply max-w-[570px];
+    }
+
+    &--xs {
+      @apply max-w-[400px];
+    }
+
+    &--lg {
+      @apply max-w-[980px];
+    }
+  }
+
+  &__button-wrapper {
+    @apply w-full flex items-center justify-between mt-4;
+
+    .button {
+      @apply min-w-[100px] max-w-max;
+    }
+
+    &--confirmation {
+      @apply justify-center;
+
+      .button {
+        @apply min-w-[130px];
+      }
+    }
+  }
+
+  &__confirmation-message {
+    @apply text-base pb-2;
+  }
+
+  .form__wrapper {
+    @apply pb-3;
+  }
+
+  &__header {
+    @apply mb-4;
+
+    &--gray {
+      @apply bg-[#D9D9D9] rounded-[5px] px-[22px] py-[15px] mt-2 mb-5 font-helvetica;
+    }
+  }
+
+  &-open {
+    @apply fixed overflow-y-hidden w-full;
+    scroll-behavior: initial;
+  }
+
+  &__xmark {
+    @apply text-7xl text-primary-red;
+  }
+
+  &__title {
+    @apply text-primary-gray text-2xl; 
+  }
+
+  &__close {
+    @apply cursor-pointer text-right text-primary-gray;
+  }
+
+  &__blue {
+    @apply bg-[#F8F9FA] border-[1px] border border-[#007BFF] rounded-[5px] w-full flex flex-col p-3;
+  }
+
+  &__scrollbar {
+    @apply overflow-hidden overflow-y-scroll w-full;
+
+    &::-webkit-scrollbar {
+      @apply w-[13px];
+    }
+
+    &::-webkit-scrollbar-track {
+      @apply w-[13px] h-full bg-white border-[1px] border-solid border-grey;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-[#BEBEBE] border border-[1px] border-grey border-solid hover:bg-[#B0B6BA];
+    }
+  }
+
+  &__item {
+    @apply p-2 underline underline-offset-2 cursor-pointer hover:bg-primary-blue hover:text-white;
+
+    &--active {
+      @apply font-bold;
+    }
+  }
+}

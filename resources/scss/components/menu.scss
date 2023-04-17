@@ -1,0 +1,72 @@
+.menu {
+  @apply hidden sp:flex items-center absolute h-full pr-5 right-0;
+
+  &__check {
+    @apply hidden;
+
+    &:checked {
+      & + .menu__side {
+        @apply left-0;
+
+        & .menu__side-wrapper {
+          @apply left-[75px];
+          transition: left 0.3s ease;
+        }
+      }
+    }
+  }
+
+  &__side {
+    @apply fixed top-0 left-full w-full z-[2] h-full;
+  }
+
+  &__overlay {
+    @apply bg-black opacity-20 w-full h-full block absolute top-0 left-0 z-[-1];
+  }
+
+  &__side-wrapper {
+    @apply z-[3] h-full bg-[#f7f5ed] left-full fixed top-0;
+    width: calc(100% - 75px);
+    transition: left 0.3s ease;
+  }
+
+  &__header {
+    @apply bg-primary-orange w-full h-[48px] flex-center-layout justify-end pr-5;
+  }
+
+  &__icon-wrapper {
+    @apply inline-flex h-full w-5;
+  }
+
+  &__button-wrapper {
+    @apply bg-white w-full flex-center-layout justify-between mb-3 p-5;
+
+    & .button {
+      @apply w-[48%] h-[40px];
+    }
+  }
+
+  &__wrapper {
+    @apply mb-5;
+  }
+
+  &__item {
+    @apply w-full bg-white border-b border-[#cfcfcf];
+  }
+
+  &__link {
+    @apply w-full px-5 py-4 flex-center-layout justify-between;
+  }
+
+  &__text {
+    @apply font-bold text-[#646464];
+  }
+
+  &__link-icon {
+    @apply w-auto h-[20px] mr-5;
+  }
+
+  &__copyright {
+    @apply text-center text-sm text-[#646464];
+  }
+}

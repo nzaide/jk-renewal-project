@@ -1,0 +1,134 @@
+extends ../../../layout.pug
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label.header__label(for="name") 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option(href="#") Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content  
+  section.section
+    .wrapper.wrapper--admin
+      h2.heading NGワード管理
+      form.form(action="")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label NGワード登録
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="w-[90%] h-[40px] mr-[20px] text-base" placeholder="NGワード登録" value="NGワードを入力してください")
+            button.button.button--primary(class="h-[40px]") 追加
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label フリーワード
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="フリーワード" value="キーワードで検索")
+        .flex.justify-center.mb-16
+          button.button.button--primary(class="w-[206px]") 検索
+      .views.mb-9
+        div(class='text-[#333333]')
+          .font-bold 該当件数 : 全
+            span(class="text-[#007bff]") 0000
+            | 件
+        .flex
+          p.mr-5(class="text-[#646464]") ID順
+          p(class="text-[#007bff]") あいうえお順
+      table.table
+        thead
+          th.table__header.uppercase(class="w-[10%]") Id
+          th.table__header(class="w-[68%]") NGワード
+          th.table__header(class="w-[22%]") アクション
+        tbody
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+          tr.table__row
+            td.table__data 〇〇
+            td.table__data 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            td.table__data(class="px-[30px] py-[8px]")
+              button.button.button--red(class="min-w-max w-[100%]") 削除
+      ol.pagination.mt-12
+        li.pagination__item.pagination__item--disabled(class="w-[83px] mr-1")
+          a.pagination__link(href="#") 前へ
+        li.pagination__item.pagination__item--active.mr-1
+          a.pagination__link(href="#") 1
+        li.pagination__item.mr-1
+          a.pagination__link(href="#") 2
+        li.pagination__item.mr-1
+          a.pagination__link(href="#") 3
+        li.pagination__item.mr-1(class="w-[83px]")
+          a.pagination__link(href="#") 次へ
+      button.button.button--secondary.mx-auto(class="mt-[40px] h-[57px] text-[28px]") クチコミ管理に戻る

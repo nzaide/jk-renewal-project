@@ -1,0 +1,76 @@
+extends ../../full_layout.pug
+
+block content
+  .main-wrapper
+    section.section.pb-3
+      h2.heading.heading--underlined 問い合わせ・良くあるご質問
+
+      .mt-7
+        p.text-sm.text-grey 回答までにお時間を頂戴する場合がありますので、ヘルプに該当の回答がないか問い合わせ前にご確認ください。
+        .section__wrapper.mt-2
+          p.text-grey ※　年末年始、GW、お盆の時期などはご返信が遅れる場合がございます。予めご了承ください。
+            br
+            br
+            | ※　転職会議では、メンバーの皆様からの機能改善、および機能追加のご要望をお待ちしています。皆様から頂いた貴重なご意見は、今後のサービス開発における重要テーマとさせていただきます。
+
+
+      h2.heading.heading--underlined.mt-12 良くあるご質問
+      .mt-7
+        .section__wrapper.mt-2
+          a.link.text-base(href="#") ログインができない/パスワードを忘れてしまった
+          p.text-grey.text-sm.mt-2 ログインできない場合、入力したIDとパスワードが一致していない可能性がございます。
+            br
+            | 再度、IDとパスワードをご確認ください。
+            br
+            | パスワードを忘れてしまった場合は、パスワードの再発行を行ってください。
+            br
+            | パスワード再発行はこちらから
+
+        .section__wrapper.mt-5
+          a.link.text-base(href="#") ログインができない/パスワードを忘れてしまった
+          p.text-grey.text-sm.mt-2 ログインできない場合、入力したIDとパスワードが一致していない可能性がございます。
+            br
+            | 再度、IDとパスワードをご確認ください。
+            br
+            | パスワードを忘れてしまった場合は、パスワードの再発行を行ってください。
+            br
+            | パスワード再発行はこちらから
+
+        .section__wrapper.mt-5
+          a.link.text-base(href="#") ログインができない/パスワードを忘れてしまった
+          p.text-grey.text-sm.mt-2 ログインできない場合、入力したIDとパスワードが一致していない可能性がございます。
+            br
+            | 再度、IDとパスワードをご確認ください。
+            br
+            | パスワードを忘れてしまった場合は、パスワードの再発行を行ってください。
+            br
+            | パスワード再発行はこちらから
+
+      h2.heading.heading--underlined.mt-12 問い合わせフォーム
+      .section__wrapper.mt-7
+        form.form.px-10(class="sp:px-0")
+          .form__wrapper
+            div(class="min-w-[200px]")
+              label.form__label.text-grey お名前
+                span.form__required *
+            .w-full
+              input.form__input(type="text")
+
+          .form__wrapper
+            div(class="min-w-[200px]")
+              label.form__label.text-grey メールアドレス
+                span.form__required *
+            .w-full
+              input.form__input(type="text")
+              p.form__error Sample error message
+
+          .form__wrapper
+            div(class="min-w-[200px]")
+              label.form__label.text-grey 問い合わせ内容
+                span.form__required *
+            .w-full
+              textarea.form__textarea
+
+          .flex.flex-col.items-center.justify-center.pt-3
+            a.link.text-base.mb-5(href="#") 利用規約及び個人情報保護に関する事項
+            button.button 利用規約及び個人情報保護に関する事項に同意して送信する

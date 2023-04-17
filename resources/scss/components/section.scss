@@ -1,0 +1,8 @@
+.section {
+  @apply my-[50px] w-full sp:my-[20px];
+
+  &__wrapper {
+    @apply w-full bg-white px-[20px] py-6 rounded-[5px] break-all;
+    box-shadow: 3px 3px 10px rgba($color: #000, $alpha: 0.1);
+  }
+}

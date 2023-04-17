@@ -1,0 +1,356 @@
+extends full_layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") 新規登録
+    a.header__link(href="#") ログイン
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+
+block content
+  .main-wrapper
+    section.section
+      .pb-5
+        .mb-2
+          h2.heading Heading
+        .mb-2
+          h2.heading.heading--underlined Heading (Underlined)
+        .mb-2
+          h3.heading.heading--sm Heading (small)
+
+      .pb-5
+        h2.heading LINKS
+        .mb-2(class="sp:mt-3")
+          a.link(href="#") Sample link
+        .mb-2
+          a.link.link--md(href="#") Sample link (medium)
+        div
+          a.link.link--lg(href="#") Sample link (large)
+
+      .pb-5
+        h2.heading BUTTONS
+        .flex.items-center(class="sp:flex-col sp:mt-3")
+          button.button.mr-2(class="sp:mb-2") Button
+          button.button.button--red.mr-2(class="sp:mb-2") Button
+          button.button.button--gray.mr-2(class="sp:mb-2") Button
+          button.button.button--orange.mr-2(class="sp:mb-2") Button
+          button.button.button--orange-reversed.mr-2(class="sp:mb-2") Button
+          button.button.button--with-icon 
+            img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+            | Button
+
+      .pb-5
+        h2.heading BUTTONS DISABLED
+        .flex.items-center(class="sp:flex-col sp:mt-3")
+          button.button.mr-2(class="sp:mb-2" disabled) Button
+          button.button.button--red.mr-2(class="sp:mb-2" disabled) Button
+          button.button.button--gray.mr-2(class="sp:mb-2" disabled) Button
+          button.button.button--orange.mr-2(class="sp:mb-2" disabled) Button
+          button.button.button--orange-reversed.mr-2(class="sp:mb-2" disabled) Button
+          button.button.button--with-icon(disabled)
+            img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+            | Button
+
+      .pb-5
+        h2.heading BUTTON LINKS
+        .flex.items-center(class="sp:flex-col sp:mt-3")
+          a.button.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--red.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--gray.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--orange.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--orange-reversed.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--with-icon
+            img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+            | Button
+
+      .pb-5
+        h2.heading BUTTON LINKS DISABLED
+        .flex.items-center(class="sp:flex-col sp:mt-3")
+          a.button.button--disabled.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--red.button--disabled.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--gray.button--disabled.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--orange.button--disabled.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--orange-reversed.button--disabled.mr-2(href="#" class="sp:mb-2") Button
+          a.button.button--with-icon.button--disabled
+            img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+            | Button
+
+      .pb-5
+        h2.heading MODAL
+        button.button.mr-2(class="sp:mb-2" type="button" @click="openModal('sampleModal')") Sample Modal
+
+      .pb-5
+        h2.heading FORM
+        div(class="sp:mt-3")
+          .text-center
+            p.flash-message.flash-message--error Error Message
+          .w-full.flash-message.flash-message--error
+            p Error message
+          .mb-5
+            p Auto hide flash message
+            div(v-show="isElementVisible")
+              .w-full.flash-message.flash-message--success
+                p Success message
+          form.form(action="#")
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label Input
+              .w-full
+                input.form__input(type="text")
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label Input with Error
+                  span.form__required *
+              .w-full
+                input.form__input(type="text")
+                p.form__error Error message
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label Select
+              .w-full
+                select.form__select
+                  option(value="option1") Option 1 
+                  option(value="option2") Option 2
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label Checkbox
+              .w-full
+                .form__input-wrapper
+                  .form__check-wrapper
+                    input.form__check#check1(type="checkbox" name="checkOptions")
+                    label.form__text-label.cursor-pointer(for="check1") Option 1
+                  .form__check-wrapper
+                    input.form__check#check2(type="checkbox" name="checkOptions")
+                    label.form__text-label.cursor-pointer(for="check2") Option 2
+                  .form__check-wrapper
+                    input.form__check#check3(type="checkbox" name="checkOptions")
+                    label.form__text-label.cursor-pointer(for="check3") Option 3
+                  .form__check-wrapper
+                    input.form__check#check4(type="checkbox" name="checkOptions")
+                    label.form__text-label.cursor-pointer(for="check4") Option 4
+
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label Checkbox Gray
+              .w-full
+                .form__input-wrapper
+                  .form__check-wrapper
+                    input.form__check.form__check--secondary#gray1(type="checkbox" name="checkOptions")
+                    label.form__text-label.cursor-pointer(for="gray1") Option 1
+                  .form__check-wrapper
+                    input.form__check.form__check--secondary#gray2(type="checkbox" name="checkOptions")
+                    label.form__text-label.cursor-pointer(for="gray2") Option 2
+                  .form__check-wrapper
+                    input.form__check.form__check--secondary#gray3(type="checkbox" name="checkOptions")
+                    label.form__text-label.cursor-pointer(for="gray3") Option 3
+                  .form__check-wrapper
+                    input.form__check.form__check--secondary#gray4(type="checkbox" name="checkOptions")
+                    label.form__text-label.cursor-pointer(for="gray4") Option 4
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label Radio
+              .w-full
+                .form__input-wrapper
+                  .form__radio-wrapper
+                    input.form__radio#radio1(type="radio", name="radioOptions")
+                    label.form__text-label.cursor-pointer(for="radio1") Radio 1
+                  .form__radio-wrapper
+                    input.form__radio#radio2(type="radio", name="radioOptions")
+                    label.form__text-label.cursor-pointer(for="radio2") Radio 2
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label Textarea
+              .w-full
+                textarea.form__textarea
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label Toggle
+              .w-full
+                .form__toggle-wrapper
+                  input.form__toggle#toggle(type="checkbox" name="toggle" checked)
+                  label.form__toggle-label(for="toggle") ON
+
+
+      .pb-5
+        h2.heading Progress Bar
+        .mb-2(class="sp:mt-3")
+          .progress
+            p.progress__text プロフィール登録  1 / 4 完了
+            .flex.justify-end(class="mb-[25px]")
+              .progress__bar-wrapper
+                .progress__bar.progress__bar--25
+
+        .mb-2
+          .progress
+            p.progress__text プロフィール登録  2 / 4 完了
+            .flex.justify-end(class="mb-[25px]")
+              .progress__bar-wrapper
+                .progress__bar.progress__bar--50
+
+        .mb-2
+          .progress
+            p.progress__text プロフィール登録  3 / 4 完了
+            .flex.justify-end(class="mb-[25px]")
+              .progress__bar-wrapper
+                .progress__bar.progress__bar--75
+
+        .mb-2
+          .progress
+            p.progress__text プロフィール登録  4 / 4 完了
+            .flex.justify-end(class="mb-[25px]")
+              .progress__bar-wrapper
+                .progress__bar.progress__bar--100
+
+      .pb-5
+        h2.heading Cards
+        .mt-3
+          .search-result
+            .search-result__wrapper
+              div
+                p.search-result__count 検索結果：全
+                  span.search-result__count.search-result__count--orange 0000
+                  | 社
+              div
+                .search-result__sort-wrapper
+                  .search-result__option
+                    input.hidden#sort1(type="radio", name="sortOption")
+                    label.search-result__sort-label(for="sort1") 日付順
+                  .search-result__option
+                    input.hidden#sort2(type="radio", name="sortOption" checked)
+                    label.search-result__sort-label(for="sort2") 閲覧数順
+
+          .search-result-divider
+
+          // Simple Card
+          .card.mb-4
+            .card__body
+              ul.card_list
+                li.card__item
+                  .card__title-container
+                    a.card__title(href="#") 中長期戦略[インドネシア・マレーシア事業］【名古屋】
+                    .card__corporation-details
+                      p.card__corporation-text トヨタ自動車株式会社
+                      .flex-center-layout.mr-4
+                        img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                        p.card__corporation-text 愛知県
+                      .flex-center-layout
+                        img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                        p.card__corporation-text 自動車・運輸・輸送機
+                  .card__details
+                    p.card__text 【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...
+
+          // With Header and Show More Link
+          .card.mb-4
+            .card__header
+              h2.card__heading 話題の企業一覧
+              button.button.button--with-icon 
+                img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+                | 編集する
+            .card__body
+              - let n = 0
+              ul.card_list
+                while n < 2
+                  - n++
+                  li.card__item
+                    .card__title-container
+                      a.card__title(href="#") 中長期戦略[インドネシア・マレーシア事業］【名古屋】
+                      .card__corporation-details
+                        p.card__corporation-text トヨタ自動車株式会社
+                        .flex-center-layout.mr-4
+                          img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                          p.card__corporation-text 愛知県
+                        .flex-center-layout
+                          img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                          p.card__corporation-text 自動車・運輸・輸送機
+                    .card__details
+                      p.card__text 【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...
+              .card__show-more
+                a.link.link(href="#") もっと見る
+                img.card__icon.card__icon--sm(src="/public/img/icon/arrow-blue.svg", alt="arrow")
+
+        .pagination 
+          // For PC
+          ol.pagination__list
+            li.pagination__item.pagination__item--disabled
+              a.pagination__link(href="#") 
+                img.pagination__icon.pagination__icon--prev(src="/public/img/icon/arrow-white.svg", alt="arrow")
+                | 前へ
+            li.pagination__item.pagination__item--active
+              a.pagination__link(href="#") 1
+            li.pagination__item
+              a.pagination__link(href="#") 2
+            li.pagination__item
+              a.pagination__link(href="#") 3
+            li.pagination__item
+              a.pagination__link(href="#") 次へ
+                img.pagination__icon(src="/public/img/icon/arrow-gray.svg", alt="arrow")
+          
+          // For SP
+          button.pagination__button もっと見る
+            img(src="/public/img/icon/arrow.svg", alt="arrow")
+
+block modals
+  include modal/sample.pug
+
+block footer
+  include footer.pug
+
+block script
+  script.
+    new Vue({
+      el: '#app',
+      data () {
+        return {
+          isElementVisible: true
+        };
+      },
+      methods: {
+      },
+      created() {
+        setTimeout(() => this.isElementVisible = false, 3000).fadeOut('fast');
+      },
+      mounted() {
+      }
+    })

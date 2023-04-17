@@ -1,0 +1,14 @@
+
+<div class="modal" id="sampleModal">
+  <div class="modal__overlay" @click="closeModal('confirmSubmitModal')"></div>
+  <div class="modal__content modal__content--xs">
+    <div class="modal__header text-center"><i class="mb-8 fa-regular fa-circle-xmark modal__xmark"></i>
+      <p class="modal__title">Are you sure?</p>
+    </div>
+    <p class="modal__confirmation-message text-center text-grey" v-html="confirmSubmitMessage">Do you really want to delete these records? This process cannot be undone.</p>
+    <div class="modal__button-wrapper modal__button-wrapper--confirmation">
+      <button class="button button--gray mr-3 w-full" type="button" @click="closeModal('confirmSubmitModal')">Cancel</button>
+      <button class="button button--red w-full" type="button" @click="confirmSubmit">Delete</button>
+    </div>
+  </div>
+</div>

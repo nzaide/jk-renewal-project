@@ -1,0 +1,240 @@
+extends ../../layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .main-wrapper
+    section.section(class="sp:mb-8")
+      .flex.justify-between
+        h2.heading.heading--underlined 会員プロフィール
+      .section__wrapper.mt-10
+        form.form
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 性別
+            .w-full
+              .form__input-wrapper
+                .form__radio-wrapper(class="sp:mb-3")
+                  input.form__radio#radio1(type="radio", name="gender" checked)
+                  label.form__text-label.cursor-pointer(for="radio1") 男性
+                .form__radio-wrapper
+                  input.form__radio#radio2(type="radio", name="gender")
+                  label.form__text-label.cursor-pointer(for="radio2") 女性
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 生年月日
+            .w-full
+              .form__input-wrapper
+                .flex.items-center(class="mr-[25px] mb-3 sp:mr-0 sp:w-full")
+                  select.form__select.mr-3(name="year")
+                    option 未選択 
+                    option(value="2019") 2019
+                    option(value="2020") 2020
+                    option(value="2021") 2021
+                    option(value="2022") 2022
+                    option(value="1995" selected) 1995
+                  label.form__label(for="年") 年 
+                .flex.items-center(class="mr-[25px] mb-3 sp:mr-0 sp:w-full")
+                  select.form__select.mr-3(name="month")
+                    option 未選択 
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4" selected) 4
+                    option(value="5") 5
+                    option(value="6") 6
+                    option(value="7") 7
+                    option(value="8") 8
+                    option(value="9") 9
+                    option(value="10") 10
+                    option(value="11") 11
+                    option(value="12") 12
+                  label.form__label(for="月") 月 
+                .flex.items-center(class="mr-[25px] mb-3 sp:mr-0 sp:w-full")
+                  select.form__select.mr-3(name="day")
+                    option 未選択 
+                    option(value="1" selected) 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4") 4
+                    option(value="5") 5
+                    option(value="6") 6
+                    option(value="7") 7
+                    option(value="8") 8
+                    option(value="9") 9
+                    option(value="10") 10
+                  label.form__label(for="日") 日 
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray お住まいの都道府県
+            .w-full
+              .form__input-wrapper
+                .flex.items-center(class="mr-[25px] mb-3 sp:mr-0 sp:w-full")
+                  select.form__select(name="residence")
+                    option 未選択 
+                    option(value="北海道") 北海道
+                    option(value="青森県") 青森県
+                    option(value="岩手県") 岩手県
+                    option(value="宮城県") 宮城県
+                    option(value="秋田県") 秋田県
+                    option(value="山形県") 山形県
+                    option(value="福島県") 福島県
+                    option(value="茨城県") 茨城県
+                    option(value="栃木県") 栃木県
+                    option(value="群馬県") 群馬県
+                    option(value="埼玉県") 埼玉県
+                    option(value="千葉県") 千葉県
+                    option(value="東京都" selected) 東京都
+                    option(value="神奈川県") 神奈川県
+                    option(value="新潟県") 新潟県
+                    option(value="富山県") 富山県
+                    option(value="石川県") 石川県
+                    option(value="福井県") 福井県
+                    option(value="山梨県") 山梨県
+                    option(value="長野県") 長野県
+                    option(value="岐阜県") 岐阜県
+                    option(value="静岡県") 静岡県
+                    option(value="愛知県") 愛知県
+                    option(value="三重県") 三重県
+                    option(value="滋賀県") 滋賀県
+                    option(value="京都府") 京都府
+                    option(value="大阪府") 大阪府
+                    option(value="兵庫県") 兵庫県
+                    option(value="和歌山県") 和歌山県
+                    option(value="鳥取県") 鳥取県
+                    option(value="島根県") 島根県
+                    option(value="岡山県") 岡山県
+                    option(value="広島県") 広島県
+                    option(value="山口県") 山口県
+                    option(value="徳島県") 徳島県
+                    option(value="香川県") 香川県
+                    option(value="愛媛県") 愛媛県
+                    option(value="高知県") 高知県
+                    option(value="福岡県") 福岡県
+                    option(value="佐賀県") 佐賀県
+                    option(value="長崎県") 長崎県
+                    option(value="熊本県") 熊本県
+                    option(value="大分県") 大分県
+                    option(value="宮崎県") 宮崎県
+                    option(value="鹿児島県") 鹿児島県
+                    option(value="沖縄県") 沖縄県
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 現在の年収
+            .w-full
+              .form__input-wrapper
+                .flex.items-center(class="mr-[25px] mb-3 sp:mr-0 sp:w-full")
+                  select.form__select(name="annualSalary")
+                    option 未選択 
+                    option(value="200万円未満") 200万円未満
+                    option(value="250万円") 250万円
+                    option(value="300万円") 300万円
+                    option(value="350万円") 350万円
+                    option(value="400万円") 400万円
+                    option(value="450万円") 450万円
+                    option(value="500万円") 500万円
+                    option(value="550万円") 550万円
+                    option(value="600万円") 600万円
+                    option(value="650万円") 650万円
+                    option(value="700万円") 700万円
+                    option(value="750万円") 750万円
+                    option(value="800万円") 800万円
+                    option(value="850万円") 850万円
+                    option(value="900万円") 900万円
+                    option(value="950万円") 950万円
+                    option(value="1,000万円以上") 1,000万円以上
+          .flex.justify-center(class="sp:flex-col")
+            button.button.button--gray.mr-14(class="sp:mb-2 sp:mr-0") キャンセル
+            button.button(class="sp:mb-2")  変更する
+
+    aside.sidebar
+      .sidebar__card.mb-5
+        p.sidebar__card-header 個人設定
+        ul.sidebar__list
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 会員プロフィール
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 詳細情報
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 転職条件
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span サイト通知設定
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+
+      ul.sidebar__list.sidebar__list--rounded
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span トップページ
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span フォロー企業
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span フォロー求人
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span クチコミ管理
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span 退会
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+
+block footer
+  include ../../footer.pug

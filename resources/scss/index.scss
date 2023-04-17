@@ -1,0 +1,57 @@
+.top__jobs-item-box {
+    height: 480px;
+}
+.top__jobs-benefits-item {
+    display: -webkit-box;
+    width: 100%;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    height: 140px;
+    word-break: break-word;
+}
+
+// adjust languages width
+.top__lang-item {
+    width: calc(11.1111111111% - 9px);
+}
+@media screen and (max-width: 767px) {
+    .top__lang-item {
+        width: calc(33.3333333333% - 10px);
+    }
+}
+
+/* view all languages in SP view */
+@media screen and (max-width: 767px) {
+    .top__lang-item:not(:nth-last-child(n+4)) {
+        display: block !important;
+    }
+}
+
+// enable slider in PC view for candidate voice
+.top__voice-list {
+    width: 100%;
+    margin-top: 25px;
+    position: relative;
+    z-index: initial;
+}
+
+@media screen and (max-width: 767px) {
+    .top__voice-list {
+        margin-top: 84px;
+        padding-top: 0;
+    }
+}
+
+.top__voice-list .flickity-page-dots {
+    display: block;
+    pointer-events: initial;
+}
+
+@media screen and (max-width: 767px) {
+    .top__voice-list .flickity-page-dots {
+        bottom: -20px;
+    }
+}

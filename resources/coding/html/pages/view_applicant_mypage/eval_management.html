@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">マイページ</a><a class="header__link" href="#">ログアウト</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper content-wrapper--with-sidebar">
+        <div class="main-wrapper">
+          <section class="section">
+            <h2 class="heading heading--underlined">クチコミ管理</h2>
+            <div class="flex justify-center my-5">
+              <button class="button sp:mb-2">新しくクチコミを投稿する</button>
+            </div>
+            <div class="mt-3">
+              <div class="search-result">
+                <div class="search-result__wrapper">
+                  <div>
+                    <p class="search-result__count"><span class="search-result__count search-result__count--orange">0000</span>件</p>
+                  </div>
+                  <div>
+                    <div class="search-result__sort-wrapper">
+                      <div class="search-result__option">
+                        <input class="hidden" id="sort1" type="radio" name="sortOption">
+                        <label class="search-result__sort-label" for="sort1">日付順</label>
+                      </div>
+                      <div class="search-result__option">
+                        <input class="hidden" id="sort2" type="radio" name="sortOption" checked>
+                        <label class="search-result__sort-label" for="sort2">閲覧数順</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item border-t-4 border-orange-700">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details sp:flex-col items-start">
+                        <div class="flex">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">神奈川県</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                          </div>
+                        </div>
+                        <div class="ml-auto sp:ml-0 mt-2">
+                          <div class="flex-center-layout">
+                            <p class="card__corporation-text">更新日：2022年△月△日 </p>
+                            <p class="card__corporation-text">掲載日：2022年〇月〇日</p>
+                          </div>
+                          <p class="card__corporation-text text-right mt-2 sp:text-left">閲覧数: 20</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details flex-center-layout items-start sp:flex-col">
+                      <div class="w-[66px] sp:w-full sp:flex sp:mb-3">
+                        <div class="flex-center-layout mr-4 flex-col sp:mt-4"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                          <p class="card__text mt-1">評価</p>
+                        </div>
+                        <div class="flex-center-layout mr-4 flex-col mt-4 sp:mt-4 sp:order-[-1]"><img class="card__emoticon card__emoticon--big" src="/public/img/icon/man.svg" alt="emoticon">
+                          <p class="card__text mt-1">20代 <br>男性</p>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="card__text font-bold">口コミ ID <span class="card__text-divider mx-2"></span>あるあるネタ</p>
+                        <div class="card__details"> 
+                          <p class="card__text">【良かった点】</p>
+                          <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…</p>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【良かった点】</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button-container flex justify-end sp:mt-3">
+                      <button class="button button--yellow-count mr-3" @click="e =&gt; e.target.classList.toggle('active')">ウケる<span class="button__count">1</span></button>
+                      <button class="button button--blue-count" @click="e =&gt; e.target.classList.toggle('active')">わかる<span class="button__count">1</span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="pagination"> 
+              <!-- For PC-->
+              <ol class="pagination__list">
+                <li class="pagination__item pagination__item--disabled"><a class="pagination__link" href="#"> <img class="pagination__icon pagination__icon--prev" src="/public/img/icon/arrow-white.svg" alt="arrow">前へ</a></li>
+                <li class="pagination__item pagination__item--active"><a class="pagination__link" href="#">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">次へ<img class="pagination__icon" src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <!-- For SP-->
+                <button class="pagination__button">もっと見る<img src="/public/img/icon/arrow.svg" alt="arrow"></button>
+              </ol>
+            </div>
+          </section>
+          <aside class="sidebar">
+            <div class="sidebar__card mb-5">
+              <p class="sidebar__card-header">個人設定</p>
+              <ul class="sidebar__list">
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>会員プロフィール</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>詳細情報</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>転職条件</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>サイト通知設定</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+              </ul>
+            </div>
+            <ul class="sidebar__list sidebar__list--rounded">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>トップページ</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー企業</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>クチコミ求人</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>退会</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <ul class="footer__links">
+            <li class="footer__item"><a class="footer__link" href="#">運営会社</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">利用規約</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">個人情報の取り扱い</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">転ジョーク会議のコンセプト</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">クチコミ投稿への取り組み</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">投稿のガイドライン</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">お問い合わせ </a></li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data () {
+          return {
+          };
+        },
+        methods: {
+        },
+        created() {
+        },
+        mounted() {
+        }
+      })
+    </script>
+  </body>
+</html>

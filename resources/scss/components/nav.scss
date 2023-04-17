@@ -1,0 +1,21 @@
+.nav {
+  &__list {
+    @apply flex items-center;
+  }
+
+  &__item {
+    @apply flex items-center mr-6 last:mr-0;
+  }
+
+  &__link {
+    @apply flex flex-col cursor-pointer;
+  }
+
+  &__icon {
+    @apply w-auto h-6 mb-1.5;
+  }
+
+  &__text {
+    @apply text-[11px] font-bold text-primary-gray;
+  }
+}

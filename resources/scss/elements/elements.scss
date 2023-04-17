@@ -1,0 +1,110 @@
+* {
+  @apply m-0 p-0 box-border leading-[1.5em];
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+html,
+body {
+  @apply h-full text-base font-noto sp:text-sm;
+}
+
+main {
+  @apply flex flex-col items-stretch h-full;
+}
+
+
+
+header,
+footer {
+  @apply shrink-0;
+}
+
+main {
+  @apply h-full flex flex-col items-stretch;
+}
+
+header,
+footer {
+  @apply shrink-0;
+}
+
+section,
+.section {
+  @apply grow;
+}
+
+main {
+  @apply h-full flex flex-col items-stretch;
+}
+
+header,
+footer {
+  @apply shrink-0;
+}
+
+section,
+.section {
+  @apply grow;
+}
+
+main {
+  @apply h-full flex flex-col items-stretch;
+}
+
+header,
+footer {
+  @apply shrink-0;
+}
+
+section,
+.section {
+  @apply grow;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+.main-wrapper {
+  @apply max-w-[1140px] mx-auto px-[20px];
+}
+
+.content-wrapper {
+  @apply bg-[#f7f5ed] grow;
+
+  &--with-sidebar {
+    .main-wrapper {
+      @apply flex align-top justify-between sp:flex-col;
+    }
+  }
+}

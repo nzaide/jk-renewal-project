@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">新規登録</a><a class="header__link" href="#">ログイン</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper">
+        <div class="main-wrapper">
+          <section class="section">
+            <div class="pb-5">
+              <div class="mb-2">
+                <h2 class="heading">Heading</h2>
+              </div>
+              <div class="mb-2">
+                <h2 class="heading heading--underlined">Heading (Underlined)</h2>
+              </div>
+              <div class="mb-2">
+                <h3 class="heading heading--sm">Heading (small)</h3>
+              </div>
+            </div>
+            <div class="pb-5">
+              <h2 class="heading">LINKS</h2>
+              <div class="mb-2 sp:mt-3"><a class="link" href="#">Sample link</a></div>
+              <div class="mb-2"><a class="link link--md" href="#">Sample link (medium)</a></div>
+              <div><a class="link link--lg" href="#">Sample link (large)</a></div>
+            </div>
+            <div class="pb-5">
+              <h2 class="heading">BUTTONS</h2>
+              <div class="flex items-center sp:flex-col sp:mt-3">
+                <button class="button mr-2 sp:mb-2">Button</button>
+                <button class="button button--red mr-2 sp:mb-2">Button</button>
+                <button class="button button--gray mr-2 sp:mb-2">Button</button>
+                <button class="button button--orange mr-2 sp:mb-2">Button</button>
+                <button class="button button--orange-reversed mr-2 sp:mb-2">Button</button>
+                <button class="button button--with-icon"> <img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">Button</button>
+              </div>
+            </div>
+            <div class="pb-5">
+              <h2 class="heading">BUTTONS DISABLED</h2>
+              <div class="flex items-center sp:flex-col sp:mt-3">
+                <button class="button mr-2 sp:mb-2" disabled>Button</button>
+                <button class="button button--red mr-2 sp:mb-2" disabled>Button</button>
+                <button class="button button--gray mr-2 sp:mb-2" disabled>Button</button>
+                <button class="button button--orange mr-2 sp:mb-2" disabled>Button</button>
+                <button class="button button--orange-reversed mr-2 sp:mb-2" disabled>Button</button>
+                <button class="button button--with-icon" disabled><img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">Button</button>
+              </div>
+            </div>
+            <div class="pb-5">
+              <h2 class="heading">BUTTON LINKS</h2>
+              <div class="flex items-center sp:flex-col sp:mt-3"><a class="button mr-2 sp:mb-2" href="#">Button</a><a class="button button--red mr-2 sp:mb-2" href="#">Button</a><a class="button button--gray mr-2 sp:mb-2" href="#">Button</a><a class="button button--orange mr-2 sp:mb-2" href="#">Button</a><a class="button button--orange-reversed mr-2 sp:mb-2" href="#">Button</a><a class="button button--with-icon"><img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">Button</a></div>
+            </div>
+            <div class="pb-5">
+              <h2 class="heading">BUTTON LINKS DISABLED</h2>
+              <div class="flex items-center sp:flex-col sp:mt-3"><a class="button button--disabled mr-2 sp:mb-2" href="#">Button</a><a class="button button--red button--disabled mr-2 sp:mb-2" href="#">Button</a><a class="button button--gray button--disabled mr-2 sp:mb-2" href="#">Button</a><a class="button button--orange button--disabled mr-2 sp:mb-2" href="#">Button</a><a class="button button--orange-reversed button--disabled mr-2 sp:mb-2" href="#">Button</a><a class="button button--with-icon button--disabled"><img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">Button</a></div>
+            </div>
+            <div class="pb-5">
+              <h2 class="heading">MODAL</h2>
+              <button class="button mr-2 sp:mb-2" type="button" @click="openModal('sampleModal')">Sample Modal</button>
+            </div>
+            <div class="pb-5">
+              <h2 class="heading">FORM</h2>
+              <div class="sp:mt-3">
+                <div class="text-center">
+                  <p class="flash-message flash-message--error">Error Message</p>
+                </div>
+                <div class="w-full flash-message flash-message--error">
+                  <p>Error message</p>
+                </div>
+                <div class="mb-5">
+                  <p>Auto hide flash message</p>
+                  <div v-show="isElementVisible">
+                    <div class="w-full flash-message flash-message--success">
+                      <p>Success message</p>
+                    </div>
+                  </div>
+                </div>
+                <form class="form" action="#">
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">Input</label>
+                    </div>
+                    <div class="w-full">
+                      <input class="form__input" type="text">
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">Input with Error<span class="form__required">*</span></label>
+                    </div>
+                    <div class="w-full">
+                      <input class="form__input" type="text">
+                      <p class="form__error">Error message</p>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">Select</label>
+                    </div>
+                    <div class="w-full">
+                      <select class="form__select">
+                        <option value="option1">Option 1 </option>
+                        <option value="option2">Option 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">Checkbox</label>
+                    </div>
+                    <div class="w-full">
+                      <div class="form__input-wrapper">
+                        <div class="form__check-wrapper">
+                          <input class="form__check" id="check1" type="checkbox" name="checkOptions">
+                          <label class="form__text-label cursor-pointer" for="check1">Option 1</label>
+                        </div>
+                        <div class="form__check-wrapper">
+                          <input class="form__check" id="check2" type="checkbox" name="checkOptions">
+                          <label class="form__text-label cursor-pointer" for="check2">Option 2</label>
+                        </div>
+                        <div class="form__check-wrapper">
+                          <input class="form__check" id="check3" type="checkbox" name="checkOptions">
+                          <label class="form__text-label cursor-pointer" for="check3">Option 3</label>
+                        </div>
+                        <div class="form__check-wrapper">
+                          <input class="form__check" id="check4" type="checkbox" name="checkOptions">
+                          <label class="form__text-label cursor-pointer" for="check4">Option 4</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">Checkbox Gray</label>
+                    </div>
+                    <div class="w-full">
+                      <div class="form__input-wrapper">
+                        <div class="form__check-wrapper">
+                          <input class="form__check form__check--secondary" id="gray1" type="checkbox" name="checkOptions">
+                          <label class="form__text-label cursor-pointer" for="gray1">Option 1</label>
+                        </div>
+                        <div class="form__check-wrapper">
+                          <input class="form__check form__check--secondary" id="gray2" type="checkbox" name="checkOptions">
+                          <label class="form__text-label cursor-pointer" for="gray2">Option 2</label>
+                        </div>
+                        <div class="form__check-wrapper">
+                          <input class="form__check form__check--secondary" id="gray3" type="checkbox" name="checkOptions">
+                          <label class="form__text-label cursor-pointer" for="gray3">Option 3</label>
+                        </div>
+                        <div class="form__check-wrapper">
+                          <input class="form__check form__check--secondary" id="gray4" type="checkbox" name="checkOptions">
+                          <label class="form__text-label cursor-pointer" for="gray4">Option 4</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">Radio</label>
+                    </div>
+                    <div class="w-full">
+                      <div class="form__input-wrapper">
+                        <div class="form__radio-wrapper">
+                          <input class="form__radio" id="radio1" type="radio" name="radioOptions">
+                          <label class="form__text-label cursor-pointer" for="radio1">Radio 1</label>
+                        </div>
+                        <div class="form__radio-wrapper">
+                          <input class="form__radio" id="radio2" type="radio" name="radioOptions">
+                          <label class="form__text-label cursor-pointer" for="radio2">Radio 2</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">Textarea</label>
+                    </div>
+                    <div class="w-full">
+                      <textarea class="form__textarea"></textarea>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">Toggle</label>
+                    </div>
+                    <div class="w-full">
+                      <div class="form__toggle-wrapper">
+                        <input class="form__toggle" id="toggle" type="checkbox" name="toggle" checked>
+                        <label class="form__toggle-label" for="toggle">ON</label>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="pb-5">
+              <h2 class="heading">Progress Bar</h2>
+              <div class="mb-2 sp:mt-3">
+                <div class="progress">
+                  <p class="progress__text">プロフィール登録  1 / 4 完了</p>
+                  <div class="flex justify-end mb-[25px]">
+                    <div class="progress__bar-wrapper">
+                      <div class="progress__bar progress__bar--25"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-2">
+                <div class="progress">
+                  <p class="progress__text">プロフィール登録  2 / 4 完了</p>
+                  <div class="flex justify-end mb-[25px]">
+                    <div class="progress__bar-wrapper">
+                      <div class="progress__bar progress__bar--50"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-2">
+                <div class="progress">
+                  <p class="progress__text">プロフィール登録  3 / 4 完了</p>
+                  <div class="flex justify-end mb-[25px]">
+                    <div class="progress__bar-wrapper">
+                      <div class="progress__bar progress__bar--75"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-2">
+                <div class="progress">
+                  <p class="progress__text">プロフィール登録  4 / 4 完了</p>
+                  <div class="flex justify-end mb-[25px]">
+                    <div class="progress__bar-wrapper">
+                      <div class="progress__bar progress__bar--100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pb-5">
+              <h2 class="heading">Cards</h2>
+              <div class="mt-3">
+                <div class="search-result">
+                  <div class="search-result__wrapper">
+                    <div>
+                      <p class="search-result__count">検索結果：全<span class="search-result__count search-result__count--orange">0000</span>社</p>
+                    </div>
+                    <div>
+                      <div class="search-result__sort-wrapper">
+                        <div class="search-result__option">
+                          <input class="hidden" id="sort1" type="radio" name="sortOption">
+                          <label class="search-result__sort-label" for="sort1">日付順</label>
+                        </div>
+                        <div class="search-result__option">
+                          <input class="hidden" id="sort2" type="radio" name="sortOption" checked>
+                          <label class="search-result__sort-label" for="sort2">閲覧数順</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="search-result-divider"></div>
+                <!-- Simple Card-->
+                <div class="card mb-4">
+                  <div class="card__body">
+                    <ul class="card_list">
+                      <li class="card__item">
+                        <div class="card__title-container"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a>
+                          <div class="card__corporation-details">
+                            <p class="card__corporation-text">トヨタ自動車株式会社</p>
+                            <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                              <p class="card__corporation-text">愛知県</p>
+                            </div>
+                            <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                              <p class="card__corporation-text">自動車・運輸・輸送機</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- With Header and Show More Link-->
+                <div class="card mb-4">
+                  <div class="card__header">
+                    <h2 class="card__heading">話題の企業一覧</h2>
+                    <button class="button button--with-icon"> <img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">編集する</button>
+                  </div>
+                  <div class="card__body">
+                    <ul class="card_list">
+                      <li class="card__item">
+                        <div class="card__title-container"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a>
+                          <div class="card__corporation-details">
+                            <p class="card__corporation-text">トヨタ自動車株式会社</p>
+                            <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                              <p class="card__corporation-text">愛知県</p>
+                            </div>
+                            <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                              <p class="card__corporation-text">自動車・運輸・輸送機</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...</p>
+                        </div>
+                      </li>
+                      <li class="card__item">
+                        <div class="card__title-container"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a>
+                          <div class="card__corporation-details">
+                            <p class="card__corporation-text">トヨタ自動車株式会社</p>
+                            <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                              <p class="card__corporation-text">愛知県</p>
+                            </div>
+                            <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                              <p class="card__corporation-text">自動車・運輸・輸送機</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card__details">
+                          <p class="card__text">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="card__show-more"><a class="link link" href="#">もっと見る</a><img class="card__icon card__icon--sm" src="/public/img/icon/arrow-blue.svg" alt="arrow"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="pagination"> 
+                <!-- For PC-->
+                <ol class="pagination__list">
+                  <li class="pagination__item pagination__item--disabled"><a class="pagination__link" href="#"> <img class="pagination__icon pagination__icon--prev" src="/public/img/icon/arrow-white.svg" alt="arrow">前へ</a></li>
+                  <li class="pagination__item pagination__item--active"><a class="pagination__link" href="#">1</a></li>
+                  <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+                  <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+                  <li class="pagination__item"><a class="pagination__link" href="#">次へ<img class="pagination__icon" src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                </ol>
+                <!-- For SP-->
+                <button class="pagination__button">もっと見る<img src="/public/img/icon/arrow.svg" alt="arrow"></button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="modal" id="sampleModal">
+          <div class="modal__overlay" @click="closeAllModals()"></div>
+          <div class="modal__content modal__content--xs"><i class="modal__close block fa-solid fa-xmark" @click="closeAllModals()"></i>
+            <div class="modal__header text-center"><i class="mb-8 fa-regular fa-circle-xmark modal__xmark"></i>
+              <p class="modal__title">Are you sure?</p>
+            </div>
+            <p class="modal__confirmation-message text-center text-grey">Do you really want to delete these records? This process cannot be undone.</p>
+            <div class="modal__button-wrapper modal__button-wrapper--confirmation">
+              <button class="button button--gray mr-3 w-full" type="button" @click="closeAllModals()">Cancel</button>
+              <button class="button button--red w-full" type="button">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <ul class="footer__links">
+            <li class="footer__item"><a class="footer__link" href="#">運営会社</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">利用規約</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">個人情報の取り扱い</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">転ジョーク会議のコンセプト</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">クチコミ投稿への取り組み</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">投稿のガイドライン</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">お問い合わせ </a></li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data () {
+          return {
+            isElementVisible: true
+          };
+        },
+        methods: {
+        },
+        created() {
+          setTimeout(() => this.isElementVisible = false, 3000).fadeOut('fast');
+        },
+        mounted() {
+        }
+      })
+    </script>
+  </body>
+</html>

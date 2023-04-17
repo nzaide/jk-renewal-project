@@ -1,0 +1,70 @@
+extends ../../layout.pug
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .main-wrapper
+    section.section
+      .card.card--account
+        h2.heading.heading--underlined.text-center(class="mb-[55px] sp:mb-10") 退会する
+
+        .mx-auto(class="w-2/3 sp:w-full")
+          p.text-base 退会前に、以下について、ご確認いただけます
+            br
+            a.link 利用規約
+            br
+            a.link 個人情報の取り扱い
+          
+          form.form.my-5(action="#")
+            .form__group.text-center
+              label.form__label.font-normal 退会理由(必須選択)
+              select.form__select
+                option(value="option1") 未選択
+                option(value="option2") 転職が決まったため
+                option(value="option3") 転職しないため
+                option(value="option4") 希望に合った求人がない（あるいは少ない）ため
+                option(value="option5") クチコミの投稿が少ないため
+                option(value="option6") その他
+            
+            .form__group.text-center.mb-5(class="py-5")
+              label.form__label.font-normal 退会理由(必須選択)
+              textarea.form__textarea(placeholder="ssss")
+
+            .flex.justify-center
+              button.button.button--red 退会する
+
+          .flex.justify-center
+            a.link.link--md(href="#") トップページへ戻る

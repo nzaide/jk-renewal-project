@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    // Use @vite() for blade files
+    // This is for static html files only
+    link(rel="stylesheet", href="/resources/scss/app.scss")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet")
+    script(src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous")
+    title View_applicant_account
+  body(class="bg-[#F1ECEC]")
+    header.header.header--account
+      .wrapper
+        a(href="#" class="max-w-[348px]").block
+          img(src="/public/img/tenjork-logo.svg" alt="tenjork" class="logo__account")
+    main
+      block content
+
+      // Use @vite() for blade files
+      // This is for static html files only
+      script(src="/node_modules/vue/dist/vue.js")
+      block script

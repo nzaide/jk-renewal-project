@@ -1,0 +1,199 @@
+extends ../../layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .main-wrapper
+    section.section
+      h2.heading.heading--underlined クチコミ管理
+      .flex.justify-center(class="my-5")
+        button.button(class="sp:mb-2") 新しくクチコミを投稿する
+      .mt-3
+        .search-result
+          .search-result__wrapper
+            div
+              p.search-result__count
+                span.search-result__count.search-result__count--orange 0000
+                | 件
+            div
+              .search-result__sort-wrapper
+                .search-result__option
+                  input.hidden#sort1(type="radio", name="sortOption")
+                  label.search-result__sort-label(for="sort1") 日付順
+                .search-result__option
+                  input.hidden#sort2(type="radio", name="sortOption" checked)
+                  label.search-result__sort-label(for="sort2") 閲覧数順
+
+      - let n = 0
+        while n < 10
+          - n++
+            .card.mb-4.mt-4
+              .card__body
+                ul.card_list
+                  li.card__item.border-t-4.border-orange-700
+                    .card__title-container
+                      a.card__title(href="#") 富士通株式会社
+                      .card__corporation-details(class="sp:flex-col items-start")
+                        .flex
+                          .flex-center-layout.mr-4
+                            img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                            p.card__corporation-text 神奈川県
+                          .flex-center-layout
+                            img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                            p.card__corporation-text ソフトウェア／ハード開発
+
+                        .ml-auto(class="sp:ml-0 mt-2")
+                          .flex-center-layout
+                            p.card__corporation-text 更新日：2022年△月△日 
+                            p.card__corporation-text 掲載日：2022年〇月〇日
+                          p.card__corporation-text.text-right.mt-2(class="sp:text-left") 閲覧数: 20
+                    .card__details.flex-center-layout.items-start(class="sp:flex-col")
+                      div(class="w-[66px] sp:w-full sp:flex sp:mb-3")
+                        .flex-center-layout.mr-4.flex-col(class="sp:mt-4")
+                          img.card__emoticon.card__emoticon--big(src="/public/img/icon/bakusyou.svg", alt="emoticon")
+                          p.card__text.mt-1 評価
+                        .flex-center-layout.mr-4.flex-col.mt-4(class="sp:mt-4 sp:order-[-1]")
+                          img.card__emoticon.card__emoticon--big(src="/public/img/icon/man.svg", alt="emoticon")
+                          p.card__text.mt-1 20代 
+                            br
+                            | 男性
+                      .w-full
+                        p.card__text.font-bold 口コミ ID 
+                          span.card__text-divider.mx-2
+                          | あるあるネタ
+                        .card__details 
+                          p.card__text 【良かった点】
+                          p.card__text ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります…
+
+                        .card__details
+                          p.card__text 【良かった点】
+                    .card__button-container.flex.justify-end(class="sp:mt-3")
+                      button.button.button--yellow-count.mr-3(@click="e => e.target.classList.toggle('active')")
+                        | ウケる
+                        span.button__count 1
+                      button.button.button--blue-count(@click="e => e.target.classList.toggle('active')")
+                        | わかる
+                        span.button__count 1
+      .pagination 
+        // For PC
+        ol.pagination__list
+          li.pagination__item.pagination__item--disabled
+            a.pagination__link(href="#") 
+              img.pagination__icon.pagination__icon--prev(src="/public/img/icon/arrow-white.svg", alt="arrow")
+              | 前へ
+          li.pagination__item.pagination__item--active
+            a.pagination__link(href="#") 1
+          li.pagination__item
+            a.pagination__link(href="#") 2
+          li.pagination__item
+            a.pagination__link(href="#") 3
+          li.pagination__item
+            a.pagination__link(href="#") 次へ
+              img.pagination__icon(src="/public/img/icon/arrow-gray.svg", alt="arrow")
+
+          // For SP
+          button.pagination__button もっと見る
+            img(src="/public/img/icon/arrow.svg", alt="arrow")
+    aside.sidebar
+      .sidebar__card.mb-5
+        p.sidebar__card-header 個人設定
+        ul.sidebar__list
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 会員プロフィール
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 詳細情報
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 転職条件
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span サイト通知設定
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+
+      ul.sidebar__list.sidebar__list--rounded
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span トップページ
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span フォロー企業
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span クチコミ求人
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span 退会
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+
+block footer
+  include ../../footer.pug
+
+block script
+  script.
+    new Vue({
+      el: '#app',
+      data () {
+        return {
+        };
+      },
+      methods: {
+      },
+      created() {
+      },
+      mounted() {
+      }
+    })

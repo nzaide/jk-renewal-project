@@ -1,0 +1,195 @@
+extends ../../layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .main-wrapper
+    section.section
+      .card.mb-4.mt-5
+        .card__body
+          ul.card_list
+            li.card__item
+              .card__title-container.card__title-container--no-border
+                a.card__title(href="#") 株式会社○○○○○
+                .card__corporation-details.items-start(class="sp:flex-col")
+                  div(class="w-3/12 sp:w-full")
+                    img(src="/public/img/icon/company-default-img.jpg", alt="company")
+                  .ml-3
+                    .flex-center-layout.mr-4(class="sp:mt-4")
+                      img.card__emoticon(src="/public/img/icon/omoshiroi.svg", alt="emoticon")
+                      p.card__corporation-text オモシロい
+                      img.card__icon(src="/public/img/icon/recruit.svg", alt="recruit")
+                      p.card__corporation-text 求人数
+                        span.card__corporation-text.text-primary-orange.font-bold.ml-2 0件
+                      img.card__icon(src="/public/img/icon/kutikomi.svg", alt="kutikomi")
+                      p.card__corporation-text 口コミ
+                        span.card__corporation-text.text-primary-orange.font-bold.ml-2  000件
+
+                    .flex-center-layou.mt-4
+                      .card__company-details.flex
+                        p.card__corporation-text.text-primary-orange.font-bold 業界 
+                        p.card__corporation-text 飲食
+                      .card__company-details.flex
+                        p.card__corporation-text.text-primary-orange.font-bold 所在地
+                        p.card__corporation-text 東京都〇〇区〇〇〇〇
+
+                      .card__company-details.flex
+                        p.card__corporation-text.text-primary-orange.font-bold URL
+                        p.card__corporation-text https://www.url.com/
+
+                  .flex.justify-center.flex-col.w-32.ml-auto(class="sp:mt-4 sp:w-full")
+                    a.button.button--orange.button--small.mb-2
+                      img.mr-2(src="/public/img/icon/white-pencil.svg", alt="edit")
+                      | 口コミを書く
+
+                    //- Follow 
+                    a.button.button--orange-reversed.button--small 
+                      img.mr-2(src="/public/img/icon/plus-red.svg", alt="add")
+                      | フォロー 
+                    //- Unfollow 
+                    //- a.button.button--orange-reversed.button--small フォローを解除    
+
+      .tab-arrow.mt-10
+        ul.tab-arrow__list 
+          li.tab-arrow__item.tab-arrow__item
+            a(href="#") 企業情報詳細
+          li.tab-arrow__item.tab-arrow__item
+            a(href="#") 評価・クチコミ
+          li.tab-arrow__item.tab-arrow__item--active
+            a(href="#") 求人情報
+
+      .mt-3
+        .search-result
+          .search-result__wrapper
+            div
+              p.search-result__count 該当件数：全
+                span.search-result__count.search-result__count--orange 0000
+                | 件
+
+            .flex
+              .search-result__sort-wrapper
+                .search-result__option
+                  input.hidden#sort1(type="radio", name="sortOption")
+                  label.search-result__sort-label(for="sort1") 日付順
+                .search-result__option
+                  input.hidden#sort2(type="radio", name="sortOption" checked)
+                  label.search-result__sort-label(for="sort2") 閲覧数順
+
+      .search-result-divider
+
+      - let n = 0
+          while n < 5
+            - n++
+              .card.mb-4
+                .card__body
+                  .card_list
+                    .card__item
+                      .card__title-container
+                        h6.card__title 中長期戦略[インドネシア・マレーシア事業］【名古屋】
+                        .card__corporation-details
+                          p.card__corporation-text 〇〇〇〇株式会社
+                          .flex-center-layout.mr-4
+                            img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                            p.card__corporation-text 愛知県
+                          .flex-center-layout
+                            img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                            p.card__corporation-text 金融 | 生命保険・損害保険
+                      .card__details
+                        p.card__text 【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計、事業、販…
+              .card.mb-4
+                .card__body
+                  .card_list
+                    .card__item
+                      .card__title-container
+                        h6.card__title リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】
+                        .card__corporation-details
+                          p.card__corporation-text 〇〇〇〇株式会社
+                          .flex-center-layout.mr-4
+                            img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                            p.card__corporation-text 東京都
+                          .flex-center-layout
+                            img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                            p.card__corporation-text 金属・化学・素材 | 化学・素材
+                      .card__details
+                        p.card__text 【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...
+
+      .pagination
+        // For PC
+        ol.pagination__list
+          li.pagination__item.pagination__item--disabled
+            a.pagination__link(href="#") 
+              img.pagination__icon.pagination__icon--prev(src="/public/img/icon/arrow-white.svg", alt="arrow")
+              | 前へ
+          li.pagination__item.pagination__item--active
+            a.pagination__link(href="#") 1
+          li.pagination__item
+            a.pagination__link(href="#") 2
+          li.pagination__item
+            a.pagination__link(href="#") 3
+          li.pagination__item
+            a.pagination__link(href="#") 次へ
+              img.pagination__icon(src="/public/img/icon/arrow-gray.svg", alt="arrow")
+
+        // For SP
+        button.pagination__button もっと見る
+          img(src="/public/img/icon/arrow.svg", alt="arrow")
+
+    aside.sidebar
+      ul.sidebar__list.sidebar__list--rounded
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span トップページ
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span 求人詳細検索
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+
+block footer
+  include ../../footer.pug

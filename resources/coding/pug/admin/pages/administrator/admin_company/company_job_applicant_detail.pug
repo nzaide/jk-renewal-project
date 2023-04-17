@@ -1,0 +1,170 @@
+extends ../../../layout.pug
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label(for="name").header__label 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content
+  section.section
+    .wrapper.wrapper--admin
+      h2.heading 応募者詳細（求職者ID）
+      h2.heading.font-bold(class="text-[#333333]") 会員プロフィール
+      .content.content--shadow.mb-10.px-5(class="mt-[0] py-[40px]")
+        form.form(action="")
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 性別
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 男性　
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 生年月日
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 1995年4月1日
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray お住まいの都道府県
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 東京都
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 現在の年収
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 400~500万円
+      h2.heading.font-bold(class="text-[#333333]") 詳細情報
+      .content.content--shadow.mb-10.px-5(class="mt-[0] pb-[30px]")
+        div
+          h5.content__heading.content__heading--top 基本情報
+        form.form(action="")
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 名前
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 斎藤　拓斗
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray フリガナ
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") サイトウ　タクト
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 住所
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 東京都杉並区〇〇〇〇〇〇〇〇〇〇〇〇
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray TEL
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") ＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+      .content.content--shadow.mb-10.px-5(class="mt-[0] pb-[15px]")
+        div
+          h5.content__heading.content__heading--top 学歴情報
+        form.form(action="")
+          .form__wrapper(class="mb-[0]")
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 2017年3月
+            .form__text-wrapper.px-3.flex-col.items-start(class="min-h-[50px]")
+              span.font-bold(class="text-[#333333] mb-[10px]") 東京大学 
+                span.font-normal(class="text-[11px]") (大学卒)
+              span(class="text-[#333333]") 専攻・学部：理科I類
+      .content.content--shadow.mb-10.px-5(class="mt-[0] pb-[30px]")
+        div
+          h5.content__heading.content__heading--top 職歴情報
+        form.form(action="")
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 2018年4月~
+            .form__text-wrapper.border-b-2.border-dashed.px-3.flex-col.items-start(class="min-h-[50px] pb-[15px]")
+              span.font-bold(class="text-[#333333] mb-[10px]") Fulfill株式会社
+              .form__company-wrapper 
+                .form__company-item(class="mr-[10px]")
+                  img.w-auto(class="mr-[5px] h-[15px]" src="/public/img/icon/map.svg" alt="map")
+                  span 大阪府
+                .form__company-item 
+                  img.w-auto(class="mr-[5px] h-[15px]" src="/public/img/icon/building.svg" alt="building")
+                  span 業界名が入ります
+              span(class="text-[#333333] mb-[10px]") 職務内容：職務名が入ります
+              span(class="text-[#333333]") 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                br
+                | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 2019年4月~
+            .form__text-wrapper.border-b-2.border-dashed.px-3.flex-col.items-start(class="min-h-[50px] pb-[15px]")
+              span.font-bold(class="text-[#333333] mb-[10px]") Fulfill株式会社
+              .form__company-wrapper 
+                .form__company-item(class="mr-[10px]")
+                  img.w-auto(class="mr-[5px] h-[15px]" src="/public/img/icon/map.svg" alt="map")
+                  span 大阪府
+                .form__company-item 
+                  img.w-auto(class="mr-[5px] h-[15px]" src="/public/img/icon/building.svg" alt="building")
+                  span 業界名が入ります
+              span(class="text-[#333333] mb-[10px]") 職務内容：職務名が入ります
+              span(class="text-[#333333]") 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                br
+                | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+      .content.content--shadow.mb-10.px-5(class="mt-[0] pb-[30px]")
+        div
+          h5.content__heading.content__heading--top 資格・スキル
+        form.form(action="")
+          .form__wrapper(class="mb-[0]")
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray TOEIC
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 650点
+      h2.heading.font-bold(class="text-[#333333]") 転職条件
+      .content.content--shadow.mb-10.px-5(class="mt-[0] py-[40px]")
+        form.form(action="")
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 転職希望度
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 1~3ヶ月以内に転職したい
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 転職希望の業界
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") IT・メディア
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 転職希望の職種
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 人事管理
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 転職希望の勤務地
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 愛知県
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 希望年収
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span(class="text-[#333333]") 500~600万
+          .form__wrapper
+            .flex.items-center(class="min-h-[50px] w-1/3")
+              label.form__content-label.form__content-label--gray 転職で重視すること
+                br
+                | （属性）
+            .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+              span.form__item-wrap(class="mr-[10px]") 稼ぎたい
+              span.form__item-wrap 転勤なし
+    button.button.button--secondary.mx-auto.font-bold(class="w-[280px] h-[57px] text-[28px]") 応募者一覧に戻る

@@ -1,0 +1,132 @@
+extends ../../layout
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label(for="name").header__label 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content
+  section.section
+    .wrapper
+      h2.heading 管理者アカウント一覧
+      .flex.justify-end
+        a.button.button--primary.w-52(href="#")
+          i(class="fa-solid fa-plus mr-3")
+          |  管理アカウント追加
+      table.table(class="mt-[23px]")
+        thead
+          th.table__header.uppercase(class="w-[135px]") Id
+          th.table__header 管理者名
+          th.table__header メールアドレス
+          th.table__header(class="w-[272px]") アクション
+        tbody
+          tr.table__row
+            td.table__data 1
+            td.table__data 山田　太郎
+            td.table__data tarou@test.co.jp
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+          tr.table__row
+            td.table__data 2
+            td.table__data 山田　二郎
+            td.table__data jirou@test.co.jp
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+          tr.table__row
+            td.table__data 3
+            td.table__data 山田　三郎
+            td.table__data saburou@test.co.jp
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+          tr.table__row
+            td.table__data 4
+            td.table__data 山田　四郎
+            td.table__data shirou@test.co.jp
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+          tr.table__row
+            td.table__data *
+            td.table__data ** **
+            td.table__data *****@*****.**.**
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+          tr.table__row
+            td.table__data *
+            td.table__data ** **
+            td.table__data *****@*****.**.**
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+          tr.table__row
+            td.table__data *
+            td.table__data ** **
+            td.table__data *****@*****.**.**
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+          tr.table__row
+            td.table__data *
+            td.table__data ** **
+            td.table__data *****@*****.**.**
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+          tr.table__row
+            td.table__data *
+            td.table__data ** **
+            td.table__data *****@*****.**.**
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+          tr.table__row
+            td.table__data *
+            td.table__data ** **
+            td.table__data *****@*****.**.**
+            td.table__data(class="px-[30px] py-[8px]")
+              .flex.justify-between
+                button.button.button--secondary(class="min-w-max w-[45%]") 編集
+                button.button.button--red(class="min-w-max w-[45%]") 削除
+
+      ol.pagination.mt-12
+        li.pagination__item.pagination__item--disabled(class="w-[83px] mr-1")
+          a.pagination__link(href="#") 前へ
+        li.pagination__item.pagination__item--active.mr-1
+          a.pagination__link(href="#") 1
+        li.pagination__item.mr-1
+          a.pagination__link(href="#") 2
+        li.pagination__item.mr-1
+          a.pagination__link(href="#") 3
+        li.pagination__item.mr-1(class="w-[83px]")
+          a.pagination__link(href="#") 次へ

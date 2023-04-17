@@ -1,0 +1,11 @@
+.link {
+  @apply text-sm font-bold text-link hover:text-[#0470aa];
+
+  &--lg {
+    @apply text-xl;
+  }
+
+  &--md {
+    @apply text-[1.10rem];
+  }
+}

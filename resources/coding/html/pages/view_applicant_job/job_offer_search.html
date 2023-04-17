@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">マイページ</a><a class="header__link" href="#">ログアウト</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper content-wrapper--with-sidebar">
+        <div class="main-wrapper">
+          <section class="section">
+            <h2 class="heading">求人検索・一覧 </h2>
+            <div class="card mb-4 mt-5">
+              <div class="card__header">
+                <h2 class="card__heading">検索</h2>
+              </div>
+              <div class="card__body p-10">
+                <form class="form" action="">
+                  <div class="form__wrapper flex flex-col">
+                    <div class="flex">
+                      <label class="form__label">職種</label>
+                      <button class="button button--with-icon button--small-icon"><img class="mr-2" src="/public/img/icon/plus-gray.svg" alt="add">追加する</button>
+                    </div>
+                    <div class="w-full">
+                      <input class="form__input" type="text" value="営業, 経営企画">
+                    </div>
+                  </div>
+                  <div class="form__wrapper flex flex-col">
+                    <div class="flex">
+                      <label class="form__label">勤務地</label>
+                      <button class="button button--with-icon button--small-icon"><img class="mr-2" src="/public/img/icon/plus-gray.svg" alt="add">追加する</button>
+                    </div>
+                    <div class="w-full">
+                      <input class="form__input" type="text" value="東京都, 神奈川県">
+                    </div>
+                  </div>
+                  <div class="form__wrapper flex flex-col">
+                    <div class="flex">
+                      <label class="form__label">業界</label>
+                      <button class="button button--with-icon button--small-icon"><img class="mr-2" src="/public/img/icon/plus-gray.svg" alt="add">追加する</button>
+                    </div>
+                    <div class="w-full">
+                      <input class="form__input" type="text" value="IT/通信/インターネット系, 金融/保険系 ">
+                    </div>
+                  </div>
+                </form>
+                <div class="w-full">
+                  <button class="button button--search w-full"><img class="mr-2" src="/public/img/icon/search.svg" alt="search">この条件で検索する</button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5">
+              <div class="search-result">
+                <div class="search-result__wrapper">
+                  <div>
+                    <p class="search-result__count">検索結果：全<span class="search-result__count search-result__count--orange">0000</span>社</p>
+                  </div>
+                  <div>
+                    <div class="search-result__sort-wrapper">
+                      <div class="search-result__option">
+                        <input class="hidden" id="sort1" type="radio" name="sortOption">
+                        <label class="search-result__sort-label" for="sort1">日付順</label>
+                      </div>
+                      <div class="search-result__option">
+                        <input class="hidden" id="sort2" type="radio" name="sortOption" checked>
+                        <label class="search-result__sort-label" for="sort2">閲覧数順</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-result-divider"></div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">トヨタ自動車株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">愛知県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">自動車・運輸・輸送機</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計、事業、販…</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">旭化成株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">東京都</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">化学・素材</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">トヨタ自動車株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">愛知県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">自動車・運輸・輸送機</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計、事業、販…</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">旭化成株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">東京都</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">化学・素材</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">トヨタ自動車株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">愛知県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">自動車・運輸・輸送機</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計、事業、販…</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">旭化成株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">東京都</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">化学・素材</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">トヨタ自動車株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">愛知県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">自動車・運輸・輸送機</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計、事業、販…</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">旭化成株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">東京都</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">化学・素材</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">トヨタ自動車株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">愛知県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">自動車・運輸・輸送機</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計、事業、販…</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">旭化成株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">東京都</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">化学・素材</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、...</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="pagination"> 
+              <!-- For PC-->
+              <ol class="pagination__list">
+                <li class="pagination__item pagination__item--disabled"><a class="pagination__link" href="#"> <img class="pagination__icon pagination__icon--prev" src="/public/img/icon/arrow-white.svg" alt="arrow">前へ</a></li>
+                <li class="pagination__item pagination__item--active"><a class="pagination__link" href="#">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">次へ<img class="pagination__icon" src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+              </ol>
+              <!-- For SP-->
+              <button class="pagination__button">もっと見る<img src="/public/img/icon/arrow.svg" alt="arrow"></button>
+            </div>
+          </section>
+          <aside class="sidebar">
+            <ul class="sidebar__list sidebar__list--rounded">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>トップページ</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー企業</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <ul class="footer__links">
+            <li class="footer__item"><a class="footer__link" href="#">運営会社</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">利用規約</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">個人情報の取り扱い</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">転ジョーク会議のコンセプト</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">クチコミ投稿への取り組み</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">投稿のガイドライン</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">お問い合わせ </a></li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

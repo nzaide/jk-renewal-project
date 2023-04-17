@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <link rel="stylesheet" href="/resources/admin_scss/admin.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>View Admin</title>
+  </head>
+  <body class="bg-[#E4E5EC]">
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="flex items-center justify-between">
+            <h1 class="m-0"><a class="header__logo" href="#">転ジョーク会議 管理画面</a></h1>
+            <ul class="header__list">
+              <li class="header__item">
+                <label class="header__label" for="name">山田　太郎 様<i class="fas fa-caret-down ml-2"></i></label>
+                <input class="header__check" id="name" type="checkbox">
+                <div class="header__option-wrapper header__option-wrapper--lg"><a class="header__option" href="#">Logout</a></div>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list"> 
+              <li class="nav__item"><a class="nav__link" href="#">管理者アカウント</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">登録企業管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求人管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求職者管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">クチコミ管理</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="section">
+        <div class="wrapper wrapper--admin">
+          <h2 class="heading">企業管理 - 株式会社〇〇〇〇〇〇 </h2>
+          <div class="flex mb-10">
+            <button class="tabs tabs--white">企業情報</button>
+            <button class="tabs tabs--white tabs--active">評価・クチコミ</button>
+            <button class="tabs tabs--white">求人・応募</button>
+          </div>
+          <div class="content content--shadow mb-10 py-[35px]">
+            <ul class="flex flex-wrap">
+              <li class="evaluation__react-item">
+                <div class="evaluation__react-wrap"><img src="/public/img/icon/omoshiroi.svg" alt="omoshiroi"><span>総合評価</span></div><span class="text-[21px] text-[#646464]">x件</span>
+              </li>
+              <li class="evaluation__react-item">
+                <div class="evaluation__react-wrap"><img src="/public/img/icon/kusu.svg" alt="kusu"><span>あるあるネタ</span></div><span class="text-[21px] text-[#646464]">x件</span>
+              </li>
+              <li class="evaluation__react-item">
+                <div class="evaluation__react-wrap"><img src="/public/img/icon/shirakeru.svg" alt="shirakeru"><span>いい話ネタ</span></div><span class="text-[21px] text-[#646464]">x件</span>
+              </li>
+              <li class="evaluation__react-item">
+                <div class="evaluation__react-wrap"><img src="/public/img/icon/bakusyou.svg" alt="bakusyou"><span>長話ネタ</span></div><span class="text-[21px] text-[#646464]">x件</span>
+              </li>
+              <li class="evaluation__react-item">
+                <div class="evaluation__react-wrap"><img src="/public/img/icon/samui.svg" alt="samui"><span>五七五ネタ</span></div><span class="text-[21px] text-[#646464]">x件</span>
+              </li>
+            </ul>
+          </div>
+          <div class="content content--shadow mb-10 py-[35px]">
+            <div class="flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou"><span class="text-base">評価アイコン</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile"><span>人物アイコン<br>20代男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl text-primary-blue">クチコミID<span class="evaluation__divider">|</span>クチコミを行う評価ネタ（例：あるあるネタ）</p>
+                  <button class="button button--primary">非表示</button>
+                </div>
+                <p>[〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content content--shadow mb-10 py-[35px]">
+            <div class="flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/omoshiroi.svg" alt="omoshiroi"><span class="text-base">評価アイコン</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile"><span>人物アイコン<br>20代男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl text-primary-blue">クチコミID<span class="evaluation__divider">|</span>クチコミを行う評価ネタ（例：あるあるネタ）</p>
+                  <button class="button button--primary">非表示</button>
+                </div>
+                <p>[〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+                <div class="evaluation__comment">
+                  <div class="flex justify-between"> <span class="text-[#0088D0]">社長からの返信</span><span>投稿日：2022年〇月〇日 </span></div>
+                  <p>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content content--shadow mb-10 py-[35px]">
+            <div class="flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/kusu.svg" alt="kusu"><span class="text-base">評価アイコン</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile"><span>人物アイコン<br>20代男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl text-primary-blue">クチコミID<span class="evaluation__divider">|</span>クチコミを行う評価ネタ（例：あるあるネタ）</p>
+                  <button class="button button--secondary">再表示</button>
+                </div>
+                <p>[〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content content--shadow mb-10 py-[35px]">
+            <div class="flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/shirakeru.svg" alt="shirakeru"><span class="text-base">評価アイコン</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile"><span>人物アイコン<br>20代男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl text-primary-blue">クチコミID<span class="evaluation__divider">|</span>クチコミを行う評価ネタ（例：あるあるネタ）</p>
+                  <button class="button button--primary">非表示</button>
+                </div>
+                <p>[〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content content--shadow mb-10 py-[35px]">
+            <div class="flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/samui.svg" alt="samui"><span class="text-base">評価アイコン</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile"><span>人物アイコン<br>20代男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl text-primary-blue">クチコミID<span class="evaluation__divider">|</span>クチコミを行う評価ネタ（例：あるあるネタ）</p>
+                  <button class="button button--secondary">再表示</button>
+                </div>
+                <p>[〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="pagination mt-12">
+            <li class="pagination__item pagination__item--disabled w-[83px]"><a class="pagination__link" href="#">前へ</a></li>
+            <li class="pagination__item pagination__item--active"> <a class="pagination__link" href="#">1</a></li>
+            <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+            <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+            <li class="pagination__item w-[83px]"><a class="pagination__link" href="#">次へ</a></li>
+          </ol>
+          <button class="button button--secondary mx-auto mt-[40px] w-[252px] h-[57px] text-[28px]">企業管理に戻る</button>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

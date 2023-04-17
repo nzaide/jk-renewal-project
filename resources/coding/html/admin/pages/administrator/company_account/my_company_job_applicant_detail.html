@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <link rel="stylesheet" href="/resources/admin_scss/admin.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>View Admin</title>
+  </head>
+  <body class="bg-[#E4E5EC]">
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="flex items-center justify-between">
+            <h1 class="m-0"><a class="header__logo" href="#">転ジョーク会議 管理画面</a></h1>
+            <ul class="header__list">
+              <li class="header__item">
+                <label class="header__label" for="name">山田　太郎 様<i class="fas fa-caret-down ml-2"></i></label>
+                <input class="header__check" id="name" type="checkbox">
+                <div class="header__option-wrapper header__option-wrapper--lg"><a class="header__option" href="#">Logout</a></div>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list"> 
+              <li class="nav__item"><a class="nav__link" href="#">管理者アカウント</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">登録企業管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求人管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求職者管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">クチコミ管理</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="section">
+        <div class="wrapper wrapper--admin">
+          <h2 class="heading">企業管理 - 応募者詳細（求職者ID）</h2>
+          <h2 class="heading font-bold text-[#333333]">会員プロフィール</h2>
+          <div class="content content--shadow mb-10 px-5 mt-[0] py-[40px]">
+            <form class="form" action="">
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">性別</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">男性</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">生年月日</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">1995年4月1日</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">お住まいの都道府県</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">東京都</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">現在の年収</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">400~500万円</span></div>
+              </div>
+            </form>
+          </div>
+          <h2 class="heading font-bold text-[#333333]">詳細情報</h2>
+          <div class="content content--shadow mb-10 px-5 mt-[0] pb-[30px]">
+            <div>
+              <h5 class="content__heading content__heading--top">基本情報</h5>
+            </div>
+            <form class="form" action="">
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">名前</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">斎藤　拓斗</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">フリガナ</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">サイトウ　タクト</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">住所</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">東京都杉並区〇〇〇〇〇〇〇〇〇〇〇〇</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">TEL</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">＊＊＊＊＊＊＊＊＊＊＊＊＊＊</span></div>
+              </div>
+            </form>
+          </div>
+          <div class="content content--shadow mb-10 px-5 mt-[0] pb-[15px]">
+            <div>
+              <h5 class="content__heading content__heading--top">学歴情報</h5>
+            </div>
+            <form class="form" action="">
+              <div class="form__wrapper mb-[0]">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">2017年3月</label>
+                </div>
+                <div class="form__text-wrapper px-3 flex-col items-start min-h-[50px]"><span class="font-bold text-[#333333] mb-[10px]">東京大学 <span class="font-normal text-[11px]">(大学卒)</span></span><span class="text-[#333333]">専攻・学部：理科I類</span></div>
+              </div>
+            </form>
+          </div>
+          <div class="content content--shadow mb-10 px-5 mt-[0] pb-[30px]">
+            <div>
+              <h5 class="content__heading content__heading--top">職歴情報</h5>
+            </div>
+            <form class="form" action="">
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">2018年4月~</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 flex-col items-start min-h-[50px] pb-[15px]"><span class="font-bold text-[#333333] mb-[10px]">Fulfill株式会社</span>
+                  <div class="form__company-wrapper"> 
+                    <div class="form__company-item mr-[10px]"><img class="w-auto mr-[5px] h-[15px]" src="/public/img/icon/map.svg" alt="map"><span>大阪府</span></div>
+                    <div class="form__company-item"> <img class="w-auto mr-[5px] h-[15px]" src="/public/img/icon/building.svg" alt="building"><span>業界名が入ります</span></div>
+                  </div><span class="text-[#333333] mb-[10px]">職務内容：職務名が入ります</span><span class="text-[#333333]">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</span>
+                </div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">2019年4月~</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 flex-col items-start min-h-[50px] pb-[15px]"><span class="font-bold text-[#333333] mb-[10px]">Fulfill株式会社</span>
+                  <div class="form__company-wrapper"> 
+                    <div class="form__company-item mr-[10px]"><img class="w-auto mr-[5px] h-[15px]" src="/public/img/icon/map.svg" alt="map"><span>大阪府</span></div>
+                    <div class="form__company-item"> <img class="w-auto mr-[5px] h-[15px]" src="/public/img/icon/building.svg" alt="building"><span>業界名が入ります</span></div>
+                  </div><span class="text-[#333333] mb-[10px]">職務内容：職務名が入ります</span><span class="text-[#333333]">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="content content--shadow mb-10 px-5 mt-[0] pb-[30px]">
+            <div>
+              <h5 class="content__heading content__heading--top">資格・スキル</h5>
+            </div>
+            <form class="form" action="">
+              <div class="form__wrapper mb-[0]">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">TOEIC</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">650点</span></div>
+              </div>
+            </form>
+          </div>
+          <h2 class="heading font-bold text-[#333333]">転職条件</h2>
+          <div class="content content--shadow mb-10 px-5 mt-[0] py-[40px]">
+            <form class="form" action="">
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">転職希望度</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">1~3ヶ月以内に転職したい</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">転職希望の業界</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">IT・メディア</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">転職希望の職種</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">人事管理</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">転職希望の勤務地</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">愛知県</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">希望年収</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="text-[#333333]">500~600万</span></div>
+              </div>
+              <div class="form__wrapper">
+                <div class="flex items-center min-h-[50px] w-1/3">
+                  <label class="form__content-label form__content-label--gray">転職で重視すること<br>（属性）</label>
+                </div>
+                <div class="form__text-wrapper border-b-2 border-dashed px-3 min-h-[50px] "><span class="form__item-wrap mr-[10px]">稼ぎたい</span><span class="form__item-wrap">転勤なし</span></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <button class="button button--secondary mx-auto font-bold w-[280px] h-[57px] text-[28px]">応募者一覧に戻る</button>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

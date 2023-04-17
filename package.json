@@ -1,0 +1,31 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "compilePug": "pug -w ./resources/coding/pug -o ./resources/coding/html -P"
+    },
+    "dependencies": {
+        "@tailwindcss/forms": "^0.5.2",
+        "autoprefixer": "^10.4.7",
+        "axios": "^0.25",
+        "bootstrap": "^4.5.3",
+        "bootstrap-select": "^1.13.18",
+        "flatpickr": "^4.6.13",
+        "jquery-ui": "^1.13.2",
+        "laravel-vite-plugin": "^0.6.1",
+        "lodash": "^4.17.19",
+        "moment": "^2.29.4",
+        "postcss": "^8.4.14",
+        "pug": "^3.0.2",
+        "pug-cli": "^1.0.0-alpha6",
+        "sass": "^1.53.0",
+        "tailwindcss": "^3.1.6",
+        "tinymce": "^6.2.0",
+        "vite": "^3.1.4",
+        "vite-plugin-vue2": "^2.0.1",
+        "vue": "^2.7.4",
+        "vue-loader": "^17.0.0",
+        "vue-template-compiler": "^2.7.4"
+    }
+}

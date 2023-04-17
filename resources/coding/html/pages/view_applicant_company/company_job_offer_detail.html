@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">マイページ</a><a class="header__link" href="#">ログアウト</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper content-wrapper--with-sidebar">
+        <div class="main-wrapper">
+          <section class="section">
+            <div class="card mb-6 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2"> 000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界 </p>
+                              <p class="card__corporation-text">飲食</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">所在地</p>
+                              <p class="card__corporation-text">東京都〇〇区〇〇〇〇</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:mt-4 sp:w-full"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">口コミを書く</a><a class="button button--orange-reversed button--small" href="#"><img class="mr-2" src="/public/img/icon/plus-red.svg" alt="add">フォロー </a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-6">
+              <div class="card__body py-5 px-7">
+                <div class="flex items-center justify-between">
+                  <p class="heading text-lg mr-3">求人・職種タイトル</p>
+                  <button class="button button--orange-reversed button--small w-32" type="button"><img class="mr-2" src="/public/img/icon/check.svg" alt="check">フォロー中 </button>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">募集要項・職務内容</h2>
+              </div>
+              <div class="card__body py-5 px-7">
+                <p class="corporate-text">
+                  〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br><br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br><br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                </p>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">基本情報</h2>
+              </div>
+              <div class="card__body py-5 px-7">
+                <div class="mb-4">
+                  <p class="card__title">【勤務地】</p>
+                  <div class="flex-baseline-layout">
+                    <div class="mr-3 w-[20%]">
+                      <label>本社</label>
+                    </div>
+                    <div class="w-full">
+                      <p>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                    </div>
+                  </div>
+                  <div class="flex-baseline-layout">
+                    <div class="mr-3 w-[20%]">
+                      <label>支社</label>
+                    </div>
+                    <div class="w-full">
+                      <p>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <p class="card__title">&lt;転勤&gt;</p>
+                  <p>無</p>
+                </div>
+                <div class="mb-4">
+                  <p class="card__title">【労働時間区分】</p>
+                  <p>フレックスタイム制</p>
+                  <div class="flex-baseline-layout">
+                    <div class="mr-3 w-[20%]">
+                      <label>コアタイム</label>
+                    </div>
+                    <div class="w-full">
+                      <p>10:00 〜 16:30</p>
+                    </div>
+                  </div>
+                  <div class="flex-baseline-layout">
+                    <div class="mr-3 w-[20%]">
+                      <label>休憩時間</label>
+                    </div>
+                    <div class="w-full">
+                      <p>60分</p>
+                    </div>
+                  </div>
+                  <div class="flex-baseline-layout">
+                    <div class="mr-3 w-[20%]">
+                      <label>時間外労働有無</label>
+                    </div>
+                    <div class="w-full">
+                      <p>有</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <p class="card__title">【給与】</p>
+                  <p>〇〇〇〜〇〇〇万円</p>
+                  <p>&lt;内訳&gt;</p>
+                  <p>月額（基本給）〇〇〜〇〇万円</p>
+                </div>
+                <div class="mb-4">
+                  <p class="card__title">【賃金形態】</p>
+                  <p>月給制</p>
+                  <p>※職位・ランクによって年俸制</p>
+                </div>
+                <div class="mb-4">
+                  <p class="card__title">【昇級有無】</p>
+                  <p>有</p>
+                </div>
+                <div class="mb-4">
+                  <p class="card__title">【昇級有無】</p>
+                  <p>有</p>
+                </div>
+                <div class="mb-4">
+                  <p class="card__title">【休暇制度】</p>
+                  <p>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">応募要項</h2>
+              </div>
+              <div class="card__body py-5 px-7">
+                <div class="mb-4">
+                  <p class="card__title">【掲載期間】</p>
+                  <p class="mb-4">〇〇〇〇年〇〇月〇〇日 〜 〇〇〇〇年〇〇月〇〇日</p>
+                  <p>
+                    〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p><br><br>
+                  <p>
+                    〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <button class="button mr-2 font-bold sp:mb-2">応募ページへ<img class="ml-2" src="/public/img/icon/arrow-white.svg" alt="arrow"></button>
+            </div>
+          </section>
+          <aside class="sidebar sp:mb-[20px]">
+            <p class="sidebar__card-header sidebar__card-header--transparent">ガイド</p>
+            <ul class="sidebar__list sidebar__list--rounded">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>新着通知</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>口コミを探す</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>求人を探す</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <ul class="footer__links">
+            <li class="footer__item"><a class="footer__link" href="#">運営会社</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">利用規約</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">個人情報の取り扱い</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">転ジョーク会議のコンセプト</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">クチコミ投稿への取り組み</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">投稿のガイドライン</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">お問い合わせ </a></li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

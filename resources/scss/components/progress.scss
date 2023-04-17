@@ -1,0 +1,29 @@
+.progress {
+  &__text {
+    @apply text-[#868D96] font-helvetica text-xl flex justify-end mb-2 sp:text-base;
+  }
+
+  &__bar-wrapper {
+    @apply w-full max-w-[300px] h-[16px] rounded-[4px] bg-[#E9ECEF];
+  }
+
+  &__bar {
+    @apply w-full max-w-[0] h-[16px] rounded-l-[4px] bg-[#007BFF];
+
+    &--25 {
+      @apply max-w-[25%];
+    }
+
+    &--50 {
+      @apply max-w-[50%];
+    }
+
+    &--75 {
+      @apply max-w-[75%];
+    }
+
+    &--100 {
+      @apply max-w-full rounded-[4px];
+    }
+  }
+}

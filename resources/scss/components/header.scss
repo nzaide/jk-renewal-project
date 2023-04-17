@@ -1,0 +1,140 @@
+.header {
+  @apply w-full h-[72px] bg-white sp:h-[48px];
+
+  &--account {
+    @apply h-[151px] flex items-center;
+  }
+
+  &__wrapper {
+    @apply h-full flex items-center justify-between max-w-[1140px] mx-auto px-5 relative;
+  }
+
+  &__logo {
+    @apply my-0 ml-0 mr-[50px] p-0 h-6 w-auto sp:w-full sp:mr-0;
+
+    img {
+      @apply h-full w-auto sp:mx-auto;
+    }
+  }
+
+  &__menu-wrapper {
+    @apply flex items-center sp:w-full;
+  }
+
+  &__link {
+    @apply inline-flex items-center cursor-pointer text-xs text-primary-blue font-bold leading-[12px];
+
+    &:not(:last-child) {
+      &:after {
+        content: "";
+        @apply inline-block w-px h-3 bg-[#cfcfcf] mx-1.5;
+      }
+    }
+  }
+
+  &__login-link {
+    @apply hidden sp:flex items-center text-[12px] text-[#333] absolute left-0 h-full pl-5;
+  }
+
+  &__label {
+    @apply cursor-pointer bg-transparent rounded-[5px] border-[1px] border-white border-solid text-base px-[16px] pt-[9px] pb-[11px] text-white;
+  }
+
+  &__item {
+    @apply relative;
+  }
+
+  &__check {
+    @apply hidden;
+
+    &:checked {
+      & + .header__option-wrapper {
+        @apply block;
+      }
+    }
+  }
+
+  &__option-wrapper {
+    @apply hidden bg-white absolute top-[125%] py-[10px] rounded-md shadow-md left-[50%] w-[55px] translate-x-[-50%];
+
+    &--lg {
+      @apply w-[130px];
+    }
+  }
+
+  &__option {
+    @apply block text-black text-base px-2.5 hover:text-[#0A78A1] py-1 cursor-pointer;
+
+    &--active {
+      @apply text-white;
+    }
+  }
+
+  &__label {
+    @apply cursor-pointer bg-transparent rounded-[5px] border-[1px] border-white border-solid text-base px-[16px] pt-[9px] pb-[11px] text-white;
+  }
+
+  &__item {
+    @apply relative;
+  }
+
+  &__check {
+    @apply hidden;
+
+    &:checked {
+      & + .header__option-wrapper {
+        @apply block;
+      }
+    }
+  }
+
+  &__option-wrapper {
+    @apply hidden bg-white absolute top-[125%] py-[10px] rounded-md shadow-md left-[50%] w-[55px] translate-x-[-50%];
+
+    &--lg {
+      @apply w-[130px];
+    }
+  }
+
+  &__option {
+    @apply block text-black text-base px-2.5 hover:text-[#0A78A1] py-1 cursor-pointer;
+
+    &--active {
+      @apply text-white;
+    }
+  }
+
+  &__label {
+    @apply cursor-pointer bg-transparent rounded-[5px] border-[1px] border-white border-solid text-base px-[16px] pt-[9px] pb-[11px] text-white;
+  }
+
+  &__item {
+    @apply relative;
+  }
+
+  &__check {
+    @apply hidden;
+
+    &:checked {
+      & + .header__option-wrapper {
+        @apply block;
+      }
+    }
+  }
+
+  &__option-wrapper {
+    @apply hidden bg-white absolute top-[125%] py-[10px] rounded-md shadow-md left-[50%] w-[55px] translate-x-[-50%];
+
+    &--lg {
+      @apply w-[130px];
+    }
+  }
+
+  &__option {
+    @apply block text-black text-base px-2.5 hover:text-[#0A78A1] py-1 cursor-pointer;
+
+    &--active {
+      @apply text-white;
+    }
+  }
+}

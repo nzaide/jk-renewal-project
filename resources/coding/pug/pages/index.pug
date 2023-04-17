@@ -1,0 +1,411 @@
+extends ../layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") 新規登録
+    a.header__link(href="#") ログイン
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .banner
+    .banner__wrapper
+      p.banner__text 働く人の鉄板ネタがある。もう滑らない。
+      .banner__search-wrapper
+        p.banner__search-text 口コミ登録者数
+          span.yellow  000,000 
+          | 社 / 求人数
+          span.yellow  000,000
+          |  件
+        .banner__search
+          input.form__input(type="text", name="banner_search" placeholder="企業名やブランド名で検索")
+          button.banner__search-button
+            img(src="/public/img/icon/search.svg", alt="search")
+        .text-right(class="sp:text-center")
+          a.link(href="#") 口コミ付き求人を探す
+  .main-wrapper#notifs
+    section.section
+      // Job List
+      h2.heading.mb-5 新着通知
+      .card.mb-4
+        .card__header
+          h2.card__heading 新着求人情報
+        .card__body
+          ul.card_list
+            li.card__item
+              .card__title-container
+                a.card__title(href="#") 中長期戦略[インドネシア・マレーシア事業］【名古屋】
+                .card__corporation-details
+                  p.card__corporation-text トヨタ自動車株式会社
+                  .flex-center-layout.mr-4
+                    img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                    p.card__corporation-text 愛知県
+                  .flex-center-layout
+                    img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                    p.card__corporation-text 自動車・運輸・輸送機
+              .card__details
+                p.card__text 【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計、事業、販
+            li.card__item
+              .card__title-container
+                a.card__title(href="#") リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】
+                .card__corporation-details
+                  p.card__corporation-text 旭化成株式会社
+                  .flex-center-layout.mr-4
+                    img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                    p.card__corporation-text 東京都
+                  .flex-center-layout
+                    img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                    p.card__corporation-text 化学・素材
+              .card__details
+                p.card__text 【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、
+          .card__show-more
+            a.link.link(href="#") もっと見る
+            img.card__icon.card__icon--sm(src="/public/img/icon/arrow-blue.svg", alt="arrow")
+
+      // Company Reviews
+      .card.mb-4
+        .card__header
+          h2.card__heading 新着口コミ情報
+        .card__body
+          ul.card_list
+            li.card__item
+              .card__title-container
+                a.card__title(href="#") 富士通株式会社
+                .card__corporation-details
+                  .flex-center-layout.mr-4
+                    img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                    p.card__corporation-text 神奈川県
+                  .flex-center-layout
+                    img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                    p.card__corporation-text ソフトウェア／ハード開発
+              .card__details
+                .flex.items-start
+                  .mr-4
+                    .card__review
+                      img(src="/public/img/icon/bakusyou.svg", alt="review emoji")
+                      span 爆笑
+                    .card__reviewer
+                      img(src="/public/img/icon/man.svg", alt="man")
+                      span 20代
+                        br
+                        | 男性
+                  div
+                    .card__evaluation
+                      span 口コミID
+                      span あるあるネタ
+                    .mb-3
+                      span.card__text.mb-1 【良かった点】
+                      p.card__text.card__text--3 ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+                    div
+                      span.card__text.mb-1 【良かった点】
+                      p.card__text ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+
+            li.card__item
+              .card__title-container
+                a.card__title(href="#") 富士通株式会社
+                .card__corporation-details
+                  .flex-center-layout.mr-4
+                    img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                    p.card__corporation-text 神奈川県
+                  .flex-center-layout
+                    img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                    p.card__corporation-text ソフトウェア／ハード開発
+              .card__details
+                .flex.items-start
+                  .mr-4
+                    .card__review
+                      img(src="/public/img/icon/samui.svg", alt="review emoji")
+                      span サムい
+                    .card__reviewer
+                      img(src="/public/img/icon/woman.svg", alt="woman")
+                      span 20代
+                        br
+                        | 女性
+                  div
+                    .card__evaluation
+                      span 口コミID
+                      span あるあるネタ
+                    .mb-3
+                      span.card__text.mb-1 【良かった点】
+                      p.card__text.card__text--3 ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+                    div
+                      span.card__text.mb-1 【良かった点】
+                      p.card__text ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+          .card__show-more
+            a.link.link(href="#") もっと見る
+            img.card__icon.card__icon--sm(src="/public/img/icon/arrow-blue.svg", alt="arrow")
+
+      // Company List
+      .card.mb-4
+        .card__header
+          h2.card__heading 話題の企業一覧
+        .card__body
+          - let n = 3;
+          ul.card_list
+            while n > 0
+              - n--
+              li.card__item
+                .card__title-container
+                  .flex.items-start.justify-between
+                    a.card__title(href="#") 日本生命保険相互会社
+                    .flex-center-layout.whitespace-nowrap(class="sp:hidden")
+                      .flex-center-layout.mr-4
+                        img.card__icon.card__icon--sm(src="/public/img/icon/recruit.svg", alt="recruit")
+                        p.text-xs(class="text-[#646464]") 求人数
+                          span.text-primary-orange.text-sm.font-bold  0件
+                      .flex-center-layout
+                        img.card__icon.card__icon--sm(src="/public/img/icon/kutikomi.svg", alt="kutikomi")
+                        p.text-xs(class="text-[#646464]") 口コミ
+                          span.text-primary-orange.text-sm.font-bold  000件
+                  .card__corporation-details
+                    .flex-center-layout.mr-4
+                      img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                      p.card__corporation-text 大阪府
+                    .flex-center-layout
+                      img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                      p.card__corporation-text 生命保険・損害保険
+                .card__details
+                  .flex.items-start.mb-3
+                    span.card__text.card__text--orange 所在地
+                    p.card__text 大阪府大阪市今橋３丁目５番１２号
+                  .flex.items-start.mb-3
+                    span.card__text.card__text--orange 事業内容
+                    p.card__text 生命保険や損害保険、確定拠出年金、住宅ローンなどの提供・販売のほか、保険料等収入をもとにした資産運用などを主な事業としています。
+                  .flex.items-start
+                    span.card__text.card__text--orange 従業員
+                    p.card__text 76,792人
+          .card__show-more
+            a.link.link(href="#") もっと見る
+            img.card__icon.card__icon--sm(src="/public/img/icon/arrow-blue.svg", alt="arrow")
+
+      // Company Reviews (HOT)
+      .card.mb-4
+        .card__header
+          h2.card__heading 新着口コミ情報
+        .card__body
+          ul.card_list
+            li.card__item
+              .card__title-container
+                a.card__title(href="#") 富士通株式会社
+                .card__corporation-details
+                  .flex-center-layout.mr-4
+                    img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                    p.card__corporation-text 神奈川県
+                  .flex-center-layout
+                    img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                    p.card__corporation-text ソフトウェア／ハード開発
+              .card__details
+                .flex.items-start
+                  .mr-4
+                    .card__review
+                      img(src="/public/img/icon/bakusyou.svg", alt="review emoji")
+                      span 爆笑
+                    .card__reviewer
+                      img(src="/public/img/icon/man.svg", alt="man")
+                      span 20代
+                        br
+                        | 男性
+                  div
+                    .card__evaluation
+                      span 口コミID
+                      span あるあるネタ
+                    .mb-3
+                      span.card__text.mb-1 【良かった点】
+                      p.card__text.card__text--3 ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+                    div
+                      span.card__text.mb-1 【良かった点】
+                      p.card__text ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+
+            li.card__item
+              .card__title-container
+                a.card__title(href="#") 富士通株式会社
+                .card__corporation-details
+                  .flex-center-layout.mr-4
+                    img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                    p.card__corporation-text 神奈川県
+                  .flex-center-layout
+                    img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                    p.card__corporation-text ソフトウェア／ハード開発
+              .card__details
+                .flex.items-start
+                  .mr-4
+                    .card__review
+                      img(src="/public/img/icon/samui.svg", alt="review emoji")
+                      span サムい
+                    .card__reviewer
+                      img(src="/public/img/icon/woman.svg", alt="woman")
+                      span 20代
+                        br
+                        | 女性
+                  div
+                    .card__evaluation
+                      span 口コミID
+                      span あるあるネタ
+                    .mb-3
+                      span.card__text.mb-1 【良かった点】
+                      p.card__text.card__text--3 ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+                    div
+                      span.card__text.mb-1 【良かった点】
+                      p.card__text ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+          .card__show-more
+            a.link.link(href="#") もっと見る
+            img.card__icon.card__icon--sm(src="/public/img/icon/arrow-blue.svg", alt="arrow")
+
+      // Company industries
+      h2.heading.mb-5.pt-4#reviews 口コミを探す
+      .card.mb-4
+        .card__header
+          h2.card__heading 業界から探す
+        .card__body.domain
+          ul.domain__list
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 金融
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 電機・機械
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name IT・メディア
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name サービス
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 小売・卸
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 飲食
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 食品
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 教育
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 物流
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 建設・不動産
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name エンターテイメント
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name エネルギー・資源
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 生活関連
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name 自動車関連
+                span.domain__count x件
+            li.domain__item
+              a.domain__link(href="#")
+                span.domain__name その他
+                span.domain__count x件
+
+      // Prefecture List
+      .card.mb-4
+        .card__header
+          h2.card__heading 企業の所在地から探す
+        .card__body
+          include components/prefecture.pug
+
+      // Job types
+      h2.heading.mb-5.pt-4#jobs 求人を探す
+      .card.mb-4
+        .card__header
+          h2.card__heading 職種から探す
+        .card__body
+          include components/job_types.pug
+
+      // Prefecture List
+      .card.mb-4
+        .card__header
+          h2.card__heading 求人の勤務地から探す
+        .card__body
+          include components/prefecture.pug
+
+    aside.sidebar
+      .mb-7
+        a.button.button--orange.w-full.mb-3(href="#") 会員登録（無料）
+        a.button.button--orange-reversed.w-full(href="#") ログイン
+      h3.heading.heading--xxs(class="mb-2.5") ガイド
+      ul.sidebar__list.sidebar__list--rounded
+        li.sidebar__item
+          a.sidebar__link(href="#notifs")
+            span 新着通知
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#reviews")
+            span 口コミを探す
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#jobs")
+            span 求人を探す
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+
+      .mt-8
+        a.block.mb-4(href="#")
+          img.sidebar__img-link(src="/public/img/icon/banner-1.jpg", alt="banner 1")
+        a.block.mb-7(href="#")
+          img.sidebar__img-link(src="/public/img/icon/banner-2.jpg", alt="banner 2")
+
+block footer
+  include ../footer.pug

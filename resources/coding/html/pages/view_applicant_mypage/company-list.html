@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">新規登録</a><a class="header__link" href="#">ログイン</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper content-wrapper--with-sidebar">
+        <div class="main-wrapper">
+          <section class="section">
+            <h2 class="heading heading--underlined">フォロー中の企業 (〇〇件) </h2>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4 mt-5">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container card__title-container--no-border"><a class="card__title" href="#">株式会社○○○○○</a>
+                      <div class="card__corporation-details items-start sp:flex-col">
+                        <div class="w-3/12 sp:w-full"><img src="/public/img/icon/company-default-img.jpg" alt="company"></div>
+                        <div class="ml-3">
+                          <div class="flex-center-layout mr-4 sp:mt-4"><img class="card__emoticon" src="/public/img/icon/bakusyou.svg" alt="emoticon">
+                            <p class="card__corporation-text">評価</p><img class="card__icon" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="card__corporation-text">求人数<span class="card__corporation-text text-primary-orange font-bold ml-2">0件</span></p><img class="card__icon" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="card__corporation-text">クチコミ<span class="card__corporation-text text-primary-orange font-bold ml-2">000件</span></p>
+                          </div>
+                          <div class="flex-center-layou mt-4">
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">業界</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">住所</p>
+                              <p class="card__corporation-text">○○○○○</p>
+                            </div>
+                            <div class="card__company-details flex">
+                              <p class="card__corporation-text text-primary-orange font-bold">URL</p>
+                              <p class="card__corporation-text">https://www.url.com/</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex justify-center flex-col w-32 ml-auto sp:w-full sp:mt-4"><a class="button button--orange button--small mb-2"><img class="mr-2" src="/public/img/icon/white-pencil.svg" alt="edit">クチコミを書く</a><a class="button button--orange-reversed button--small">フォローを解除</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="pagination"> 
+              <!-- For PC-->
+              <ol class="pagination__list">
+                <li class="pagination__item pagination__item--disabled"><a class="pagination__link" href="#"> <img class="pagination__icon pagination__icon--prev" src="/public/img/icon/arrow-white.svg" alt="arrow">前へ</a></li>
+                <li class="pagination__item pagination__item--active"><a class="pagination__link" href="#">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">次へ<img class="pagination__icon" src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+              </ol>
+              <!-- For SP-->
+              <button class="pagination__button">もっと見る<img src="/public/img/icon/arrow.svg" alt="arrow"></button>
+            </div>
+          </section>
+          <aside class="sidebar">
+            <div class="sidebar__card mb-5">
+              <p class="sidebar__card-header">個人設定</p>
+              <ul class="sidebar__list">
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>会員プロフィール</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>詳細情報</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>転職条件</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>サイト通知設定</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+              </ul>
+            </div>
+            <ul class="sidebar__list sidebar__list--rounded">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>トップページ</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー企業</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー求人</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>クチコミ管理</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>退会</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

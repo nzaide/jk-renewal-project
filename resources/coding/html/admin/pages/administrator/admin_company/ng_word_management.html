@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <link rel="stylesheet" href="/resources/admin_scss/admin.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>View Admin</title>
+  </head>
+  <body class="bg-[#E4E5EC]">
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="flex items-center justify-between">
+            <h1 class="m-0"><a class="header__logo" href="#">転ジョーク会議 管理画面</a></h1>
+            <ul class="header__list">
+              <li class="header__item">
+                <label class="header__label" for="name">山田　太郎 様<i class="fas fa-caret-down ml-2"></i></label>
+                <input class="header__check" id="name" type="checkbox">
+                <div class="header__option-wrapper header__option-wrapper--lg"><a class="header__option" href="#">Logout</a></div>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list"> 
+              <li class="nav__item"><a class="nav__link" href="#">管理者アカウント</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">登録企業管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求人管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求職者管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">クチコミ管理</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="section">
+        <div class="wrapper wrapper--admin">
+          <h2 class="heading">NGワード管理</h2>
+          <form class="form" action="">
+            <div class="mb-5">
+              <div class="flex items-center min-h-[40px] mb-2">
+                <label class="form__content-label">NGワード登録</label>
+              </div>
+              <div class="form__text-wrapper">
+                <input class="form__input text-black w-[90%] h-[40px] mr-[20px] text-base" type="text" placeholder="NGワード登録" value="NGワードを入力してください">
+                <button class="button button--primary h-[40px]">追加</button>
+              </div>
+            </div>
+            <div class="mb-5">
+              <div class="flex items-center min-h-[40px] mb-2">
+                <label class="form__content-label">フリーワード</label>
+              </div>
+              <div class="form__text-wrapper">
+                <input class="form__input text-black h-[40px] text-base" type="text" placeholder="フリーワード" value="キーワードで検索">
+              </div>
+            </div>
+            <div class="flex justify-center mb-16">
+              <button class="button button--primary w-[206px]">検索</button>
+            </div>
+          </form>
+          <div class="views mb-9">
+            <div class="text-[#333333]">
+              <div class="font-bold">該当件数 : 全<span class="text-[#007bff]">0000</span>件</div>
+            </div>
+            <div class="flex">
+              <p class="mr-5 text-[#646464]">ID順</p>
+              <p class="text-[#007bff]">あいうえお順</p>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <th class="table__header uppercase w-[10%]">Id</th>
+              <th class="table__header w-[68%]">NGワード</th>
+              <th class="table__header w-[22%]">アクション</th>
+            </thead>
+            <tbody>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">〇〇</td>
+                <td class="table__data">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <button class="button button--red min-w-max w-[100%]">削除</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <ol class="pagination mt-12">
+            <li class="pagination__item pagination__item--disabled w-[83px] mr-1"><a class="pagination__link" href="#">前へ</a></li>
+            <li class="pagination__item pagination__item--active mr-1"><a class="pagination__link" href="#">1</a></li>
+            <li class="pagination__item mr-1"><a class="pagination__link" href="#">2</a></li>
+            <li class="pagination__item mr-1"><a class="pagination__link" href="#">3</a></li>
+            <li class="pagination__item mr-1 w-[83px]"><a class="pagination__link" href="#">次へ</a></li>
+          </ol>
+          <button class="button button--secondary mx-auto mt-[40px] h-[57px] text-[28px]">クチコミ管理に戻る</button>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

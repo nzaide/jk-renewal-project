@@ -1,0 +1,58 @@
+.prefecture {
+  @apply p-5 sp:p-0;
+
+  &__wrapper {
+    @apply flex-center-layout mb-4 last:mb-0 sp:flex-col sp:mb-0;
+  }
+
+  &__check {
+    @apply hidden;
+
+    &:checked {
+      & ~ .prefecture__label {
+        img {
+          @apply -rotate-90;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      & ~ .prefecture__list {
+        @apply sp:max-h-[1000px];
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  &__label {
+    @apply font-medium text-[#343a40] text-sm min-w-[140px] sp:min-w-full sp:flex sp:items-center sp:bg-[#f4f4f4] sp:h-[50px] sp:px-5 sp:text-base sp:border-b sp:border-[#cfcfcf] sp:cursor-pointer;
+
+    img {
+      @apply hidden sp:block ml-auto rotate-90;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__list {
+    @apply flex-center-layout flex-wrap sp:flex-col sp:w-full sp:max-h-0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &__item {
+    @apply inline-flex items-center sp:w-full sp:h-[45px] sp:border-b sp:border-[#cfcfcf];
+
+    &:not(:first-child) {
+      &:before {
+        content: "";
+        @apply inline-block w-px h-3 bg-[#cfcfcf] mx-2.5 sp:hidden;
+      }
+    }
+  }
+
+  .link {
+    @apply bg-white text-xs sp:h-full sp:flex sp:items-center sp:px-5 sp:text-sm sp:text-[#646464] sp:w-full;
+
+    img {
+      @apply hidden sp:block ml-auto;
+    }
+  }
+}

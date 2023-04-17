@@ -1,0 +1,21 @@
+extends ../../../layout
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label(for="name").header__label.border-none
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg.left-0
+        a.header__option Logout
+
+block content
+  section.section(class="pt-[77px] pb-[364px]")
+    .wrapper.wrapper--admin
+      h2.heading 企業アカウント登録
+
+      .content(class="w-[1066px] mx-auto")
+        .text-center
+          p.text-center 貴社の企業アカウントの登録が完了しました。
+          | 貴社アカウントのメールアドレスとパスワードで、以下ログインページからログインしてください。
+          a.link.link--line.block.mt-14(href="#") ログインページへ

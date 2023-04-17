@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <link rel="stylesheet" href="/resources/admin_scss/admin.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>View Admin</title>
+  </head>
+  <body class="bg-[#E4E5EC]">
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="flex items-center justify-between">
+            <h1 class="m-0"><a class="header__logo" href="#">転ジョーク会議 管理画面</a></h1>
+            <ul class="header__list">
+              <li class="header__item">
+                <label class="header__label" for="name">山田　太郎 様<i class="fas fa-caret-down ml-2"></i></label>
+                <input class="header__check" id="name" type="checkbox">
+                <div class="header__option-wrapper header__option-wrapper--lg"><a class="header__option" href="#">Logout</a></div>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list"> 
+              <li class="nav__item"><a class="nav__link" href="#">管理者アカウント</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">登録企業管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求人管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求職者管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">クチコミ管理</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="section">
+        <div class="wrapper wrapper--admin">
+          <div class="flex justify-between">
+            <h2 class="heading">クチコミ管理</h2><a class="button button--primary w-52" href="#">NGワード管理</a>
+          </div>
+          <form class="form" action="">
+            <div class="mb-5">
+              <div class="flex items-center min-h-[40px] mb-2">
+                <label class="form__content-label">業界</label>
+                <button class="button button--white h-auto ml-5"><i class="fa-solid fa-plus mr-3"></i> 追加する</button>
+              </div>
+              <div class="form__text-wrapper">
+                <input class="form__input text-black h-[40px] text-base" type="text" placeholder="業界" value="IT/通信/インターネット系, 金融/保険系">
+              </div>
+            </div>
+            <div class="mb-5">
+              <div class="flex items-center min-h-[40px] mb-2">
+                <label class="form__content-label">所在地</label>
+                <button class="button button--white h-auto ml-5"><i class="fa-solid fa-plus mr-3"></i> 追加する</button>
+              </div>
+              <div class="form__text-wrapper">
+                <input class="form__input text-black h-[40px] text-base" type="text" placeholder="所在地" value="東京都, 神奈川県">
+              </div>
+            </div>
+            <div class="mb-5">
+              <div class="flex items-center min-h-[40px] mb-2">
+                <label class="form__content-label">ジャンル</label>
+                <button class="button button--white h-auto ml-5"><i class="fa-solid fa-plus mr-3"></i> 追加する</button>
+              </div>
+              <div class="form__text-wrapper">
+                <input class="form__input text-black h-[40px] text-base" type="text" placeholder="ジャンル" value="あるあるネタ, いい話ネタ ">
+              </div>
+            </div>
+            <div class="mb-5">
+              <div class="flex items-center min-h-[40px] mb-2">
+                <label class="form__content-label">フリーワード</label>
+                <button class="button button--white h-auto ml-5"><i class="fa-solid fa-plus mr-3"></i> 追加する</button>
+              </div>
+              <div class="form__text-wrapper">
+                <input class="form__input text-black h-[40px] text-base" type="text" placeholder="フリーワード" value="企業名やクチコミのキーワードで検索">
+              </div>
+            </div>
+            <div class="flex">
+              <div class="form__wrapper items-center w-full">
+                <div class="flex items-center min-h-[40px] w-1/5">
+                  <label class="form__content-label">表示</label>
+                </div>
+                <div class="form__input-wrapper">
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio1" type="radio" name="display" checked>
+                    <label class="cursor-pointer" for="radio1">表示・非表示両方</label>
+                  </div>
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio2" type="radio" name="display">
+                    <label class="cursor-pointer" for="radio2">有のみ</label>
+                  </div>
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio3" type="radio" name="display">
+                    <label class="cursor-pointer" for="radio3">無のみ</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form__wrapper items-center w-full">
+                <div class="flex items-center min-h-[40px] w-1/5">
+                  <label class="form__content-label">話題</label>
+                </div>
+                <div class="form__input-wrapper">
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio4" type="radio" name="topic" checked>
+                    <label class="cursor-pointer" for="radio4">有無両方</label>
+                  </div>
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio5" type="radio" name="topic">
+                    <label class="cursor-pointer" for="radio5">有のみ</label>
+                  </div>
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio6" type="radio" name="topic">
+                    <label class="cursor-pointer" for="radio6">無のみ</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="flex justify-center mb-16">
+            <button class="button button--primary w-[206px]">検索</button>
+          </div>
+          <div class="views mb-9">
+            <div class="text-[#333333]">
+              <div class="font-bold">該当件数 : 全<span class="text-[#007bff]">0000</span>件</div>
+            </div>
+            <div class="flex">
+              <p class="mr-5 text-[#646464]">日付順</p>
+              <p class="mr-5 text-[#007bff]">閲覧数順</p>
+              <p class="mr-5 text-[#007bff]">ウケる数順</p>
+              <p class="text-[#007bff]">わかる数順</p>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between"><span class="card__title text-[#333333]" href="#">富士通株式会社</span>
+                <div class="flex mb-[15px]">
+                  <button class="button button--primary mr-[15px] w-52">話題に設定</button>
+                  <button class="button button--primary">非表示</button>
+                </div>
+              </div>
+              <div class="card__corporation-details flex">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">神奈川県</p>
+                </div>
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="building">
+                  <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                </div>
+                <div class="flex flex-col ml-auto items-end">
+                  <p class="card__corporation-text mr-[0]">更新日：2022年△月△日　投稿日：2022年〇月〇日 </p>
+                  <p class="card__corporation-text mr-[0]">閲覧数: 20</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou"><span class="text-base">爆笑</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile"><span>20代<br>男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl">口コミID <span class="evaluation__divider">|</span> あるあるネタ</p>
+                </div>
+                <p>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります<br>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between"><span class="card__title text-[#333333]" href="#">富士通株式会社</span>
+                <div class="flex mb-[15px]">
+                  <button class="button button--secondary mr-[15px] w-52">話題設定の解除</button>
+                  <button class="button button--primary">非表示</button>
+                </div>
+              </div>
+              <div class="card__corporation-details flex">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">神奈川県</p>
+                </div>
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="building">
+                  <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                </div>
+                <div class="flex flex-col ml-auto items-end">
+                  <p class="card__corporation-text mr-[0]">更新日：2022年△月△日　投稿日：2022年〇月〇日 </p>
+                  <p class="card__corporation-text mr-[0]">閲覧数: 20</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou"><span class="text-base">爆笑</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile"><span>20代<br>男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl">口コミID <span class="evaluation__divider">|</span> あるあるネタ</p>
+                </div>
+                <p>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります<br>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between"><span class="card__title text-[#333333]" href="#">富士通株式会社</span>
+                <div class="flex mb-[15px]">
+                  <button class="button button--primary mr-[15px] w-52">話題に設定</button>
+                  <button class="button button--secondary">再表示</button>
+                </div>
+              </div>
+              <div class="card__corporation-details flex">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">神奈川県</p>
+                </div>
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="building">
+                  <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                </div>
+                <div class="flex flex-col ml-auto items-end">
+                  <p class="card__corporation-text mr-[0]">更新日：2022年△月△日　投稿日：2022年〇月〇日 </p>
+                  <p class="card__corporation-text mr-[0]">閲覧数: 20</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou"><span class="text-base">爆笑</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile"><span>20代<br>男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl">口コミID <span class="evaluation__divider">|</span> あるあるネタ</p>
+                </div>
+                <p>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります<br>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between"><span class="card__title text-[#333333]" href="#">富士通株式会社</span>
+                <div class="flex mb-[15px]">
+                  <button class="button button--primary mr-[15px] w-52">話題に設定</button>
+                  <button class="button button--primary">非表示</button>
+                </div>
+              </div>
+              <div class="card__corporation-details flex">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">神奈川県</p>
+                </div>
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="building">
+                  <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                </div>
+                <div class="flex flex-col ml-auto items-end">
+                  <p class="card__corporation-text mr-[0]">更新日：2022年△月△日　投稿日：2022年〇月〇日 </p>
+                  <p class="card__corporation-text mr-[0]">閲覧数: 20</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou"><span class="text-base">爆笑</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile"><span>20代<br>男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl">口コミID <span class="evaluation__divider">|</span> あるあるネタ</p>
+                </div>
+                <p>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります<br>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between"><span class="card__title text-[#333333]" href="#">富士通株式会社</span>
+                <div class="flex mb-[15px]">
+                  <button class="button button--primary mr-[15px] w-52">話題に設定</button>
+                  <button class="button button--primary">非表示</button>
+                </div>
+              </div>
+              <div class="card__corporation-details flex">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">神奈川県</p>
+                </div>
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="building">
+                  <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                </div>
+                <div class="flex flex-col ml-auto items-end">
+                  <p class="card__corporation-text mr-[0]">更新日：2022年△月△日　投稿日：2022年〇月〇日 </p>
+                  <p class="card__corporation-text mr-[0]">閲覧数: 20</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details flex">
+              <div class="evaluation__rating w-[10%] mr-4">
+                <div class="evaluation__react mb-[40px]"><img class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou"><span class="text-base">爆笑</span></div>
+                <div class="evaluation__profile"><img class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile"><span>20代<br>男性</span></div>
+              </div>
+              <div class="evaluation__details w-[88%]">
+                <div class="flex justify-between items-center mb-[10px]">
+                  <p class="text-xl">口コミID <span class="evaluation__divider">|</span> あるあるネタ</p>
+                </div>
+                <p>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります<br>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                <div class="flex justify-end mt-[45px]">
+                  <p class="reviews mr-5">ウケる<span>1</span></p>
+                  <p class="reviews reviews--blue">わかる<span>1</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="pagination mt-12">
+            <li class="pagination__item pagination__item--disabled w-[83px]"><a class="pagination__link" href="#">前へ</a></li>
+            <li class="pagination__item pagination__item--active"> <a class="pagination__link" href="#">1</a></li>
+            <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+            <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+            <li class="pagination__item w-[83px]"><a class="pagination__link" href="#">次へ</a></li>
+          </ol>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

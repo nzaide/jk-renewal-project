@@ -1,0 +1,254 @@
+extends ../layout.pug
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label(for="name").header__label 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content  
+  section.section
+    .wrapper
+      h2.heading Heading
+
+      .content
+        .mb-10
+          h4.text-black.font-bold.mt-0.mb-2 Buttons
+          .flex.items-end.flex-wrap
+            button.button.button--primary Button
+            button.button.button--secondary.ml-5 Button
+            button.button.button--red.ml-5 Button
+            button.button.button--gray.ml-5 Button
+            button.button.button--white.ml-5 Button
+          .flex.items-end.flex-wrap.mt-5
+            button.button.button--primary(disabled) Button
+            button.button.button--secondary(disabled).ml-5 Button
+            button.button.button--red(disabled).ml-5 Button
+            button.button.button--gray(disabled).ml-5 Button
+            button.button.button--white(disabled).ml-5 Button
+        .mb-10
+          h4.text-black.font-bold.mt-0.mb-2 Buttons links
+          .flex.items-end.flex-wrap
+            a.button.button--primary(href="#") Button
+            a.button.button--secondary.ml-5(href="#") Button
+            a.button.button--red.ml-5(href="#") Button
+            a.button.button--gray.ml-5(href="#") Button
+            a.button.button--white.ml-5(href="#") Button
+          .flex.items-end.flex-wrap.mt-5
+            a.button.button--primary.button--disabled(href="#") Button
+            a.button.button--secondary.button--disabled.ml-5(href="#") Button
+            a.button.button--red.button--disabled.ml-5(href="#") Button
+            a.button.button--gray.button--disabled.ml-5(href="#") Button
+            a.button.button--white.button--disabled.ml-5(href="#") Button
+        .mb-10
+          h4.text-black.font-bold.mt-0.mb-2 Links
+          a.link(href="#") Link
+          a.link.link--line.ml-5(href="#") Link
+        .mb-10
+          h4.content__heading.text-black.font-bold.mt-0.mb-2 Table
+          table.table
+            thead
+              th.table__header Header
+              th.table__header Header
+              th.table__header Header
+              th.table__header Header
+            tbody
+              tr.table__row
+                td.table__data body
+                td.table__data body
+                td.table__data body
+                td.table__data(class="px-[41px] py-[8px]")
+                  .flex.justify-between
+                    button.button.button--secondary(class="min-w-max") body
+                    button.button.button--red(class="min-w-max") body
+              tr.table__row
+                td.table__data body
+                td.table__data body
+                td.table__data body
+                td.table__data(class="px-[41px] py-[8px]")
+                  .flex.justify-between
+                    button.button.button--secondary(class="min-w-max") body
+                    button.button.button--red(class="min-w-max") body
+              tr.table__row
+                td.table__data body
+                td.table__data body
+                td.table__data body
+                td.table__data(class="px-[41px] py-[8px]")
+                  .flex.justify-between
+                    button.button.button--secondary(class="min-w-max") body
+                    button.button.button--red(class="min-w-max") body
+              tr.table__row
+                td.table__data body
+                td.table__data body
+                td.table__data body
+                td.table__data(class="px-[41px] py-[8px]")
+                  .flex.justify-between
+                    button.button.button--secondary(class="min-w-max") body
+                    button.button.button--red(class="min-w-max") body
+
+          ol.pagination.mt-12
+            li.pagination__item.pagination__item--disabled(class="w-[83px]")
+              a.pagination__link(href="#") 前へ
+            li.pagination__item.pagination__item--active 
+              a.pagination__link(href="#") 1
+            li.pagination__item
+              a.pagination__link(href="#") 2
+            li.pagination__item
+              a.pagination__link(href="#") 3
+            li.pagination__item(class="w-[83px]")
+              a.pagination__link(href="#") 次へ
+        .mb-10
+          h5.content__heading.mt-0.mb-2 Form
+          button.button.button--primary(type="button" @click="openModal('sampleModal')") Sample Modal
+
+        .mb-10
+          h5.content__heading.mt-0.mb-2 Form
+          div
+            .text-center
+              p.flash-message.flash-message--error Error Message
+            .w-full.flash-message.flash-message--error
+              p Error message
+            .mb-5
+              p Auto hide flash message
+              Transition
+                div(v-show="isElementVisible")
+                  .w-full.flash-message.flash-message--success
+                    p Success message
+
+          form.form(action="")
+            .form__wrapper
+              .flex.items-center(class="min-h-[40px] w-1/3")
+                label.form__content-label text
+              .form__text-wrapper
+                span Value
+            .form__wrapper
+              .flex.items-center(class="min-h-[40px] w-1/3")
+                label.form__content-label text
+              .w-full
+                input.form__input.form__input--error(type="text" class="h-[40px] text-base" placeholder="testtest")
+                p.form__error Error Message
+            .form__wrapper
+              .flex.items-center(class="min-h-[40px] w-1/3")
+                label.form__content-label text
+              .form__text-wrapper
+                input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="testtest")
+            .form__wrapper
+              .flex.items-center(class="min-h-[40px] w-1/3")
+                label.form__content-label text
+              .form__text-wrapper
+                input.form__input.text-black(type="password" class="h-[40px] text-base" placeholder="password")
+            .form__wrapper
+              .flex.items-center(class="min-h-[40px] w-1/3")
+                label.form__content-label text
+              .form__text-wrapper
+                select.form__select(name="#" class="h-[40px] text-base m-0 w-full rounded-[4px]")
+                  option test
+                  option test
+            .form__wrapper
+              .flex.items-center(class="min-h-[40px] w-1/3")
+                label.form__content-label text
+              .form__text-wrapper
+                textarea.form__textarea.text-base.text-black.resize-none(name="", cols="30", rows="8" placeholder="testtesttest")
+        .mb-10
+          h5.content__heading.mt-0.mb-2 Tabs
+          .flex
+            button.tabs.tabs--active tabs
+            button.tabs tabs
+            button.tabs tabs
+        .mb-10
+          h5.content__heading.mt-0.mb-2 Line
+          .views.mb-5
+            div(class='text-[#333333]')
+              .font-bold 全
+                span(class="text-[#007bff]") 000
+                | 件
+            .flex
+              .mr-5
+                input.views__radio#radio1(type="radio" name="sort")
+                label.views__label(for="radio1") 日付順
+              div
+                input.views__radio#radio2(type="radio" name="sort" checked)
+                label.views__label(for="radio2") 閲覧数順
+
+          .views__line
+        .mb-10
+          h5.content__heading.mt-0.mb-2 Reviews
+          .flex
+            .reviews.mr-5 test
+              span 1
+            .reviews.reviews--blue test
+              span 1
+      .mb-10
+        h2.heading(class="text-[#333333] font-bold") Heading
+        .content.content--shadow.mb-5
+          div
+            h5.content__heading.content__heading--top test
+          form.form(action="")
+            .form__wrapper
+              .flex.items-center(class="min-h-[50px] w-1/3")
+                label.form__content-label.form__content-label--gray text
+              .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+                span(class="text-[#333333]") test
+            .form__wrapper
+              .flex.items-center(class="min-h-[50px] w-1/3")
+                label.form__content-label.form__content-label--gray text
+              .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+                span(class="text-[#333333]") test
+      .mb-10
+        h2.heading(class="text-[#333333] font-bold") Heading
+        .content.content--shadow.mb-5
+          form.form(action="")
+            .form__wrapper
+              .flex.items-center(class="min-h-[50px] w-1/3")
+                label.form__content-label.form__content-label--gray text
+              .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+                span(class="text-[#333333]") test
+            .form__wrapper
+              .flex.items-center(class="min-h-[50px] w-1/3")
+                label.form__content-label.form__content-label--gray text
+              .form__text-wrapper.border-b-2.border-dashed.px-3(class="min-h-[50px] ")
+                span(class="text-[#333333]") test
+      .mb-10
+        h2.heading(class="text-[#333333] font-bold") Heading
+        .content(class="pb-[130px]")
+          p testtesttesttesttesttesttesttest
+          .content__footer
+            a.link.font-bold(href="#") test >
+
+block modals
+  include ./modal/sample.pug
+
+block script
+  script.
+    new Vue({
+      el: '#app',
+      data () {
+        return {
+          isElementVisible: true
+        };
+      },
+      methods: {
+      },
+      created() {
+        setTimeout(() => this.isElementVisible = false, 3000)
+      },
+      mounted() {
+      }
+    })

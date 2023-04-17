@@ -1,0 +1,195 @@
+extends ../../layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .main-wrapper
+    section.section
+      h2.heading.heading--underlined 学歴情報
+      .section__wrapper.mt-3
+        h3.heading.heading--underlined.heading--sm.mb-5 登録済学歴
+        form.form(action="")
+          .form__wrapper.items-center
+            .flex.items-center(class="min-w-[20%] sp:w-full")
+              label.form__label 2018年3月
+            .w-full.flex
+              p.mr-3 学部卒
+              p.mr-3 〇〇〇〇大学
+              p.mr-3 〇〇〇学部
+            .flex(class="sp:flex-col sp:w-full sp:mt-5")
+              button.button.mr-2(class="sp:mb-2 w-[88px] px-0 sp:w-full") 変更
+              button.button.button--red(class="w-[88px] px-0 sp:w-full" type="button" @click="openModal('sampleModal')") 削除
+
+      .section__wrapper.mt-5
+        h3.heading.heading--underlined.heading--sm.mb-5 変更・追加フォーム
+        form.form(action="")
+          .form__wrapper
+            .flex.items-center(class="min-w-[20%]")
+              label.form__label 学歴
+            .w-full
+              select.form__select(name="graduatedSchoolType" class="min-w-[160px]")
+                option 未選択 
+                option(value="中学卒") 中学卒
+                option(value="高校卒") 高校卒
+                option(value="専門学校卒") 専門学校卒
+                option(value="短大卒") 短大卒
+                option(value="高専卒") 高専卒
+                option(value="大学卒") 大学卒
+                option(value="大学院卒") 大学院卒
+          .form__wrapper
+            .flex.items-center(class="min-w-[20%]")
+              label.form__label 学校名
+            .w-full
+              input.form__input(type="text" placeholder="資格名等を入力してください")
+          .form__wrapper
+            .flex.items-center(class="min-w-[20%]")
+              label.form__label 学部・専攻
+            .w-full
+              input.form__input(type="text" placeholder="資格名等を入力してください")
+          .form__wrapper
+            .flex.items-center(class="min-w-[20%]")
+              label.form__label 卒業年月
+            .w-full
+              .form__input-wrapper
+                .flex.items-center(class="mr-[25px] mb-3 sp:mr-0 sp:w-full")
+                  select.form__select.mr-3(name="year")
+                    option 未選択 
+                    option(value="2019") 2019
+                    option(value="2020") 2020
+                    option(value="2021") 2021
+                    option(value="2022") 2022
+                  label.form__label(for="年") 年 
+                .flex.items-center(class="mr-[25px] mb-3 sp:mr-0 sp:w-full")
+                  select.form__select.mr-3(name="month")
+                    option 未選択 
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4") 4
+                    option(value="5") 5
+                    option(value="6") 6
+                    option(value="7") 7
+                    option(value="8") 8
+                    option(value="9") 9
+                    option(value="10") 10
+                    option(value="11") 11
+                    option(value="12") 12
+                  label.form__label(for="月") 月 
+
+        .flex.justify-center(class="sp:flex-col")
+          button.button.button--gray.mr-14(class="sp:mb-2") クリア
+          button.button.mr-2(class="sp:mb-2")  更新する
+
+      .flex.justify-center.mt-5
+        a.button.button--gray.mr-2(href="#" class="sp:mb-2") マイページに戻る
+
+    aside.sidebar
+      .sidebar__card.mb-5
+        p.sidebar__card-header 個人設定
+        ul.sidebar__list
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 会員プロフィール
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 詳細情報
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 転職条件
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span サイト通知設定
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+
+      ul.sidebar__list.sidebar__list--rounded
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span トップページ
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span フォロー企業
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span フォロー求人
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span クチコミ管理
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span 退会
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+
+block modals
+  include modal/sample.pug
+
+block footer
+  include ../../footer.pug
+
+block script
+  script.
+    new Vue({
+      el: '#app',
+      data () {
+        return {
+        };
+      },
+      methods: {
+      },
+      created() {
+      },
+      mounted() {
+      }
+    })

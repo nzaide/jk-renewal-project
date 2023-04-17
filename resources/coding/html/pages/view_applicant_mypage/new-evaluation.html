@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">マイページ</a><a class="header__link" href="#">ログアウト</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper">
+        <div class="main-wrapper">
+          <section class="section">
+            <div class="section__wrapper font-helvetica">
+              <div class="mb-10">
+                <h2 class="heading heading--underlined text-center">新規クチコミ投稿</h2>
+              </div>
+              <div class="sp:mt-3">
+                <form class="form" action="">
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">対象企業</label>
+                    </div>
+                    <div class="w-full">
+                      <div class="form__input-wrapper">
+                        <div class="form__radio-wrapper">
+                          <input class="form__radio" id="radio1" type="radio" name="radioOptions" checked @click="dropdown">
+                          <label class="form__text-label cursor-pointer" for="radio1">在職歴のある企業</label>
+                        </div>
+                        <div class="form__radio-wrapper">
+                          <input class="form__radio" id="radio2" type="radio" name="radioOptions" @click="input">
+                          <label class="form__text-label cursor-pointer" for="radio2">面接歴のある企業</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">企業名</label>
+                    </div>
+                    <div class="w-full relative max-w-[536px]">
+                      <select class="form__select" v-show="value1">
+                        <option>在職歴の企業から選択してください</option>
+                        <option value="option1">在職歴のある企業</option>
+                        <option value="option2">面接歴のある企業</option>
+                      </select>
+                      <input class="form__input" type="text" v-show="value2" autocomplete="off" v-model="sample" @input="filterSamples" @focus="modal = true" placeholder="企業名">
+                      <div v-if="filteredSamples &amp;&amp; modal">
+                        <ul class="suggestion">
+                          <li class="suggestion__item" v-for="filteredSample in filteredSamples" @click="setSample(filteredSample)">{{ filteredSample }}</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">ネタのジャンル</label>
+                    </div>
+                    <div class="w-full max-w-[536px]">
+                      <select class="form__select">
+                        <option>あるあるネタ</option>
+                        <option value="option1">あるあるネタ</option>
+                        <option value="option2">いい話ネタ</option>
+                        <option value="option3">長話ネタ</option>
+                        <option value="option4">五七五ネタ</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">自身のネタ評価</label>
+                    </div>
+                    <div class="w-full">
+                      <div class="form__input-wrapper sp:flex-row xm-screen:flex-col-reverse">
+                        <div class="flex xm-screen:w-full xm-screen:justify-between xm-screen:mb-3">
+                          <div class="form__radio-wrapper flex-col mr-5 xm-screen:m-0 xm-screen:w-6/12"><img class="m-0 w-[40px] h-[40px]" src="/public/img/icon/samui.svg">
+                            <input class="form__radio m-0 my-3" id="radio3" type="radio" name="rating">
+                            <label class="form__text-label cursor-pointer text-grey" for="radio3"> <span class="font-bold inline-flex">( 1 ) </span>サムい</label>
+                          </div>
+                          <div class="form__radio-wrapper flex-col mr-5 xm-screen:m-0 xm-screen:w-6/12 xm-screen:order-[-1]"><img class="m-0 w-[40px] h-[40px]" src="/public/img/icon/shirakeru.svg">
+                            <input class="form__radio m-0 my-3" id="radio4" type="radio" name="rating">
+                            <label class="form__text-label cursor-pointer text-grey" for="radio4"> <span class="font-bold inline-flex">( 2 ) </span>シラける</label>
+                          </div>
+                        </div>
+                        <div class="flex xm-screen:w-full xm-screen:justify-between xm-screen:mb-3">
+                          <div class="form__radio-wrapper flex-col mr-5 xm-screen:m-0 xm-screen:w-6/12"><img class="m-0 w-[40px] h-[40px]" src="/public/img/icon/kusu.svg">
+                            <input class="form__radio m-0 my-3" id="radio5" type="radio" name="rating">
+                            <label class="form__text-label cursor-pointer text-grey" for="radio5"> <span class="font-bold inline-flex">( 3 ) </span>クスッ</label>
+                          </div>
+                          <div class="form__radio-wrapper flex-col mr-5 xm-screen:m-0 xm-screen:w-6/12 xm-screen:order-[-1]"><img class="m-0 w-[40px] h-[40px]" src="/public/img/icon/omoshiroi.svg">
+                            <input class="form__radio m-0 my-3" id="radio6" type="radio" name="rating" checked>
+                            <label class="form__text-label cursor-pointer text-grey" for="radio6"><span class="font-bold inline-flex">( 4 ) </span>オモシロい</label>
+                          </div>
+                        </div>
+                        <div class="flex xm-screen:w-full xm-screen:justify-center">
+                          <div class="form__radio-wrapper flex-col xm-screen:w-6/12 xm-screen:m-0"><img class="m-0 w-[40px] h-[40px]" src="/public/img/icon/bakusyou.svg">
+                            <input class="form__radio m-0 my-3" id="radio7" type="radio" name="rating">
+                            <label class="form__text-label cursor-pointer text-grey" for="radio7"><span class="font-bold inline-flex">( 5 ) </span>爆笑</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__wrapper">
+                    <div class="flex items-center min-w-[20%]">
+                      <label class="form__label">投稿内容</label>
+                    </div>
+                    <div class="w-full">
+                      <textarea class="form__textarea" placeholder="選択したネタジャンルに対して、個人のエピソードを記載してください 川柳形式の五七五の文体など記載の形式は自由です 個人が特定できる情報や過度な誹謗・中傷については、 削除対象となりますので、注意してください"></textarea>
+                    </div>
+                  </div>
+                  <div class="flex justify-center sp:flex-col">
+                    <button class="button button--gray mr-5 sp:mb-2">キャンセル</button>
+                    <button class="button">投稿する</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <ul class="footer__links">
+            <li class="footer__item"><a class="footer__link" href="#">運営会社</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">利用規約</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">個人情報の取り扱い</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">転ジョーク会議のコンセプト</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">クチコミ投稿への取り組み</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">投稿のガイドライン</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">お問い合わせ </a></li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data () {
+          return {
+            value1: true,
+            value2: false,
+            modal: false,
+            sample: '',
+            samples: [
+              'sample1', 'snake', 'apple', 'phone'
+            ],
+            filteredSamples: [],
+          };
+        },
+        methods: {
+          filterSamples() {
+            if (this.sample.lenght == 0) {
+              this.filteredSamples = this.samples;
+            }
+      
+            this.filteredSamples = this.samples.filter(sample => {
+              return sample.toLowerCase().startsWith(this.sample.toLowerCase());
+            });
+          },
+          setSample(sample) {
+            this.sample = sample;
+            this.modal = false;
+          },
+          dropdown() {
+            this.value1 = true;
+            this.value2 = false;
+          },
+          input() {
+            this.value2 = true;
+            this.value1 = false;
+          }
+        },
+        created() {
+        },
+        mounted() {
+          this.filterSamples();
+        }
+      })
+    </script>
+  </body>
+</html>

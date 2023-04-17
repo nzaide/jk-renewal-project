@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <link rel="stylesheet" href="/resources/admin_scss/admin.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>View Admin</title>
+  </head>
+  <body class="bg-[#E4E5EC]">
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="flex items-center justify-between">
+            <h1 class="m-0"><a class="header__logo" href="#">転ジョーク会議 管理画面</a></h1>
+            <ul class="header__list">
+              <li class="header__item">
+                <label class="header__label" for="name">山田　太郎 様<i class="fas fa-caret-down ml-2"></i></label>
+                <input class="header__check" id="name" type="checkbox">
+                <div class="header__option-wrapper header__option-wrapper--lg"><a class="header__option" href="#">Logout</a></div>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list"> 
+              <li class="nav__item"><a class="nav__link" href="#">管理者アカウント</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">登録企業管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求人管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求職者管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">クチコミ管理</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="section">
+        <div class="wrapper wrapper--admin">
+          <h2 class="heading">求職者管理 - 応募履歴（求職者ID）</h2>
+          <div class="views mb-5">
+            <div class="text-[#333333]">
+              <div class="font-bold">全<span class="text-[#007bff]">0000</span>件</div>
+            </div>
+            <div class="flex">
+              <div class="mr-5">
+                <input class="views__radio" id="radio1" type="radio" name="sort">
+                <label class="views__label" for="radio1">応募日付順</label>
+              </div>
+            </div>
+          </div>
+          <div class="views__line"></div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between mb-5"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a></div>
+              <div class="card__corporation-details">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">愛知県</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details">
+              <p class="text-base">【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計</p>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between mb-5"><a class="card__title" href="#">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</a></div>
+              <div class="card__corporation-details">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">東京都</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details">
+              <p class="text-base">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止</p>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between mb-5"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a></div>
+              <div class="card__corporation-details">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">愛知県</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details">
+              <p class="text-base">【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計</p>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between mb-5"><a class="card__title" href="#">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</a></div>
+              <div class="card__corporation-details">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">東京都</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details">
+              <p class="text-base">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止</p>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between mb-5"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a></div>
+              <div class="card__corporation-details">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">愛知県</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details">
+              <p class="text-base">【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計</p>
+            </div>
+          </div>
+          <div class="content content--shadow my-5 py-[35px]">
+            <div class="card__title-container">
+              <div class="flex items-center justify-between mb-5"><a class="card__title" href="#">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</a></div>
+              <div class="card__corporation-details">
+                <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                  <p class="card__corporation-text">東京都</p>
+                </div>
+              </div>
+            </div>
+            <div class="card__details">
+              <p class="text-base">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止</p>
+            </div>
+          </div>
+          <ol class="pagination mt-12 mb-[35px]">
+            <li class="pagination__item pagination__item--disabled w-[83px]"><a class="pagination__link" href="#">前へ</a></li>
+            <li class="pagination__item pagination__item--active"> <a class="pagination__link" href="#">1</a></li>
+            <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+            <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+            <li class="pagination__item w-[83px]"><a class="pagination__link" href="#">次へ</a></li>
+          </ol>
+          <button class="button button--secondary mx-auto font-bold w-[280px] h-[57px] text-[28px]">求職者詳細に戻る</button>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

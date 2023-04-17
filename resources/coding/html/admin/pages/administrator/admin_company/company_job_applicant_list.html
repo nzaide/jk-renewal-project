@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <link rel="stylesheet" href="/resources/admin_scss/admin.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>View Admin</title>
+  </head>
+  <body class="bg-[#E4E5EC]">
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="flex items-center justify-between">
+            <h1 class="m-0"><a class="header__logo" href="#">転ジョーク会議 管理画面</a></h1>
+            <ul class="header__list">
+              <li class="header__item">
+                <label class="header__label" for="name">山田　太郎 様<i class="fas fa-caret-down ml-2"></i></label>
+                <input class="header__check" id="name" type="checkbox">
+                <div class="header__option-wrapper header__option-wrapper--lg"><a class="header__option">Logout</a></div>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list"> 
+              <li class="nav__item"><a class="nav__link" href="#">管理者アカウント</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">登録企業管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求人管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求職者管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">クチコミ管理</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="section">
+        <div class="wrapper wrapper--admin">
+          <h2 class="heading">企業管理 - 株式会社〇〇〇〇〇〇 <br> 応募者一覧</h2>
+          <div class="flex mb-[100px]">
+            <button class="tabs tabs--white">企業情報</button>
+            <button class="tabs tabs--white">評価・クチコミ</button>
+            <button class="tabs tabs--white tabs--active">求人・応募</button>
+          </div>
+          <div class="content content--shadow mb-10 py-[25px] px-[20px]">
+            <div>
+              <p class="text-2xl font-bold">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</p>
+            </div>
+          </div>
+          <div class="views mb-9">
+            <div class="text-[#333333]">
+              <div class="font-bold">該当件数: 全<span class="text-[#007bff]">000</span>人</div>
+            </div>
+            <div class="flex">
+              <p class="mr-5 text-[#646464]">応募日順</p>
+              <p class="mr-5 text-[#007bff]">ID順</p>
+            </div>
+          </div>
+          <table class="table mb-[38px]">
+            <thead>
+              <th class="table__header uppercase w-[15%]">ID</th>
+              <th class="table__header w-[33%]">求職者名</th>
+              <th class="table__header w-[12%]">世代</th>
+              <th class="table__header w-[20%]">居住地</th>
+              <th class="table__header w-[20%]">応募日</th>
+            </thead>
+            <tbody>
+              <tr class="table__row">
+                <td class="table__data"><a class="link link--line" href="#">〇〇</a></td>
+                <td class="table__data">〇〇〇〇〇〇〇</td>
+                <td class="table__data">20代</td>
+                <td class="table__data">大阪府</td>
+                <td class="table__data">2022年7月1日</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data"><a class="link link--line" href="#">〇〇</a></td>
+                <td class="table__data">〇〇〇〇〇〇〇</td>
+                <td class="table__data">20代</td>
+                <td class="table__data">神奈川県</td>
+                <td class="table__data">2022年7月1日</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data"><a class="link link--line" href="#">〇〇</a></td>
+                <td class="table__data">〇〇〇〇〇〇〇</td>
+                <td class="table__data">30代</td>
+                <td class="table__data">東京都</td>
+                <td class="table__data">2022年6月30日</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data"><a class="link link--line" href="#">〇〇</a></td>
+                <td class="table__data">〇〇〇〇〇〇〇</td>
+                <td class="table__data">20代</td>
+                <td class="table__data">千葉県</td>
+                <td class="table__data">2022年6月29日</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data"><a class="link link--line" href="#">〇〇</a></td>
+                <td class="table__data">〇〇〇〇〇〇〇</td>
+                <td class="table__data">40代</td>
+                <td class="table__data">埼玉県</td>
+                <td class="table__data">2022年6月29日</td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="button button--secondary mx-auto font-bold w-[252px] h-[57px] text-[28px]">求人詳細に戻る</button>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

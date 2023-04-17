@@ -1,0 +1,44 @@
+.sidebar {
+  @apply min-w-[278px] max-w-[278px] w-[278px] ml-[45px] mt-[50px] sp:mt-0 sp:min-w-full sp:ml-0;
+
+  &__card {
+    @apply w-full rounded overflow-hidden bg-white;
+    box-shadow: 3px 3px 10px rgba($color: #000, $alpha: 0.1);
+  }
+
+  &__card-header {
+    @apply flex-center-layout bg-primary-orange text-white font-bold pl-3 h-[40px];
+
+    &--transparent {
+      @apply bg-transparent text-[#333333];
+    }
+  }
+
+  &__item {
+    @apply w-full border-b border-[#cfcfcf] last:border-0;
+  }
+
+  &__link {
+    @apply w-full flex items-center justify-between px-3 py-2 text-xs text-[#646464] cursor-pointer hover:bg-[#f9f9f9];
+  }
+
+  &__list {
+    &--rounded {
+      & .sidebar__item {
+        @apply bg-white rounded-[50px] border border-[#cfcfcf] mb-2.5 overflow-hidden;
+      }
+
+      & .sidebar__link {
+        @apply text-sm font-bold sp:py-3;
+
+        span {
+          @apply sp:block sp:text-center sp:w-full sp:pl-[7px];
+        }
+      }
+    }
+  }
+
+  &__img-link {
+    @apply sp:max-w-[280px] h-auto mx-auto;
+  }
+}

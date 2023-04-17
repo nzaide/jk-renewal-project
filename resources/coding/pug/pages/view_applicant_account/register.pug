@@ -1,0 +1,50 @@
+extends ../../applicant_account_layout.pug
+
+block content
+  .wrapper.wrapper--account
+    .card.card--account(class="sp:!p-4")
+      p.card__header 無料会員登録
+
+      div(class="pb-[71px] pt-[42px] flex justify-center md-screen:py-7")
+        div
+          .form__checkbox-wrapper.pb-2
+            input.form__checkbox.form__checkbox--solid-bg(type="checkbox", name="" id="terms")
+            label.form__label(for="terms" class="md-screen:!text-xs")
+              a(href="#" class="text-[#007BFF]") 利用規約
+              | に同意いたします
+          .form__checkbox-wrapper
+            input.form__checkbox.form__checkbox--solid-bg(type="checkbox", name="" id="personal")
+            label.form__label(for="personal" class="md-screen:!text-xs")
+              a(href="#" class="text-[#007BFF]") 個人情報の取り扱い
+              | に同意いたします
+
+      .card__group
+        form.form(action="#")
+          p.card__header-second(class="md-screen:!text-base") メールアドレスで登録する
+          .form__group
+            input.form__input(type="email" placeholder="メールアドレス" class="mb-[35px] md-screen:!text-base" required)
+            input.form__input(type="password" placeholder="パスワード" class="mb-[19px] md-screen:!text-base" required)
+            input.form__input(type="password" placeholder="パスワード・確認" class="mb-[19px] md-screen:!text-base" required)
+
+            p.form__role.text-base(class="text-[#707070] lg-screen:text-base md-screen:text-xs") ※パスワードは8文字以上12文字以内で設定してください。
+              br
+              | ※パスワードには数字とアルファベットをそれぞれ1文字以上
+              br
+              | 　含めるようにしてください。
+            .text-center(class="pt-2.5")
+              button.button.text-white 登録する
+        .social
+          p.card__header-second(class="sp:text-sm") 外部のソーシャルサービスで登録する
+          div
+            button.button__social 
+              i.text-white(class="fab fa-google")
+              span.button__social-text Google でログイン
+            button.button__social.button__social--facebook
+              i.text-white(class="fab fa-facebook-f")
+              span.button__social-text Facebook でログイン
+            button.button__social.button__social--twitter
+              i.text-white(class="fab fa-twitter")
+              span.button__social-text twitter でログイン
+
+      .flex.justify-center
+        a.card__link(href="#" class="mt-[20px]") トップページへ戻る

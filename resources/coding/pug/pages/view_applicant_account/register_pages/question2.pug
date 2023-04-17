@@ -1,0 +1,89 @@
+extends ../profile_register.pug
+
+block section
+  .progress
+    p.progress__text プロフィール登録  2 / 4 完了
+    .flex.justify-end(class="mb-[25px]")
+      .progress__bar-wrapper
+        .progress__bar.progress__bar--50
+
+  form.form.mx-auto(action="#" class="max-w-[800px]")
+    p.form__text(class="mb-[50px] sp:mb-[25px]") 2. ご自身の現在の年収と最終学歴について、以下を入力してください。
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 現在の年収
+      .w-full
+        select.form__select(name="annualSalary" class="min-w-[160px]")
+              option 未選択 
+              option(value="200万円未満") 200万円未満
+              option(value="250万円") 250万円
+              option(value="300万円") 300万円
+              option(value="350万円") 350万円
+              option(value="400万円") 400万円
+              option(value="450万円") 450万円
+              option(value="500万円") 500万円
+              option(value="550万円") 550万円
+              option(value="600万円") 600万円
+              option(value="650万円") 650万円
+              option(value="700万円") 700万円
+              option(value="750万円") 750万円
+              option(value="800万円") 800万円
+              option(value="850万円") 850万円
+              option(value="900万円") 900万円
+              option(value="950万円") 950万円
+              option(value="1,000万円以上") 1,000万円以上
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 最終学歴
+      .w-full
+        select.form__select(name="graduatedSchoolType" class="min-w-[160px]")
+              option 未選択 
+              option(value="中学卒") 中学卒
+              option(value="高校卒") 高校卒
+              option(value="専門学校卒") 専門学校卒
+              option(value="短大卒") 短大卒
+              option(value="高専卒") 高専卒
+              option(value="大学卒") 大学卒
+              option(value="大学院卒") 大学院卒
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 最終学歴の学校名
+      .w-full
+        input.form__input(type="text" placeholder="学校名を入力してください")
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 学部・専攻
+      .w-full
+        input.form__input(type="text" placeholder="学部・専攻を入力してください")
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 卒業年月
+      .w-full
+        .form__input-wrapper
+          .flex.items-center(class="mr-[25px] mb-3 sp:mr-0 sp:w-full")
+            select.form__select.mr-3(name="year")
+              option 未選択 
+              option(value="2019") 2019
+              option(value="2020") 2020
+              option(value="2021") 2021
+              option(value="2022") 2022
+            label.form__label(for="年") 年 
+          .flex.items-center(class="mr-[25px] mb-3 sp:mr-0 sp:w-full")
+            select.form__select.mr-3(name="month")
+              option 未選択 
+              option(value="1") 1
+              option(value="2") 2
+              option(value="3") 3
+              option(value="4") 4
+              option(value="5") 5
+              option(value="6") 6
+              option(value="7") 7
+              option(value="8") 8
+              option(value="9") 9
+              option(value="10") 10
+              option(value="11") 11
+              option(value="12") 12
+            label.form__label(for="月") 月 
+    .flex.justify-center(class="sp:flex-col")
+      button.button(class="mr-20 sp:mr-0 sp:mb-3") 前へ
+      button.button 次へ

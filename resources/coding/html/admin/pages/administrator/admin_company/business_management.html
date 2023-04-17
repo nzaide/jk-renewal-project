@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <link rel="stylesheet" href="/resources/admin_scss/admin.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>View Admin</title>
+  </head>
+  <body class="bg-[#E4E5EC]">
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="flex items-center justify-between">
+            <h1 class="m-0"><a class="header__logo" href="#">転ジョーク会議 管理画面</a></h1>
+            <ul class="header__list">
+              <li class="header__item">
+                <label class="header__label" for="name">山田　太郎 様<i class="fas fa-caret-down ml-2"></i></label>
+                <input class="header__check" id="name" type="checkbox">
+                <div class="header__option-wrapper header__option-wrapper--lg"><a class="header__option">Logout</a></div>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list"> 
+              <li class="nav__item"><a class="nav__link" href="#">管理者アカウント</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">登録企業管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求人管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求職者管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">クチコミ管理</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="section pt-[77px] pb-[364px]">
+        <div class="wrapper wrapper--admin">
+          <h2 class="heading">企業管理</h2>
+          <div class="flex justify-end"><a class="button button--primary w-52" href="#"><i class="fa-solid fa-plus mr-3"></i> 新規登録</a></div>
+          <form class="form" action="">
+            <div class="mb-5">
+              <div class="flex items-center min-h-[40px] mb-2">
+                <label class="form__content-label">業界</label>
+                <button class="button button--white h-auto ml-5"><i class="fa-solid fa-plus mr-3"></i> 追加する</button>
+              </div>
+              <div class="form__text-wrapper">
+                <input class="form__input text-black h-[40px] text-base" type="text" placeholder="業界" value="IT/通信/インターネット系, 金融/保険系">
+              </div>
+            </div>
+            <div class="mb-5">
+              <div class="flex items-center min-h-[40px] mb-2">
+                <label class="form__content-label">所在地</label>
+              </div>
+              <div class="form__text-wrapper">
+                <input class="form__input text-black h-[40px] text-base" type="text" placeholder="所在地" value="東京都, 神奈川県 ">
+              </div>
+            </div>
+            <div class="mb-5">
+              <div class="flex items-center min-h-[40px] mb-2">
+                <label class="form__content-label">フリーワード</label>
+              </div>
+              <div class="form__text-wrapper">
+                <input class="form__input text-black h-[40px] text-base" type="text" placeholder="企業名や電話番号で検索">
+              </div>
+            </div>
+            <div class="flex">
+              <div class="form__wrapper items-center w-full">
+                <div class="flex items-center min-h-[40px] w-1/5">
+                  <label class="form__content-label">アカウント</label>
+                </div>
+                <div class="form__input-wrapper">
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio1" type="radio" name="account" checked>
+                    <label class="cursor-pointer" for="radio1">有無両方</label>
+                  </div>
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio2" type="radio" name="account">
+                    <label class="cursor-pointer" for="radio2">有のみ</label>
+                  </div>
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio3" type="radio" name="account">
+                    <label class="cursor-pointer" for="radio3">無のみ</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form__wrapper items-center w-full">
+                <div class="flex items-center min-h-[40px] w-1/5">
+                  <label class="form__content-label">話題</label>
+                </div>
+                <div class="form__input-wrapper">
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio4" type="radio" name="topic" checked>
+                    <label class="cursor-pointer" for="radio4">有無両方</label>
+                  </div>
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio5" type="radio" name="topic">
+                    <label class="cursor-pointer" for="radio5">有のみ</label>
+                  </div>
+                  <div class="form__radio-wrapper">
+                    <input class="form__radio bg-transparent cursor-pointer" id="radio6" type="radio" name="topic">
+                    <label class="cursor-pointer" for="radio6">無のみ</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="flex justify-center mb-16">
+            <button class="button button--primary w-[206px]">検索</button>
+          </div>
+          <div class="views mb-9">
+            <div class="text-[#333333]">
+              <div class="font-bold">該当件数: 全<span class="text-[#007bff]">000</span>社</div>
+            </div>
+            <div class="flex">
+              <p class="mr-5 text-[#646464]">名前順</p>
+              <p class="mr-5 text-[#007bff]">所在地順</p>
+              <p class="mr-5 text-[#007bff]">求人数順</p>
+              <p class="text-[#007bff]">クチコミ数順</p>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="table">
+              <thead>
+                <th class="table__header uppercase w-[135px]">Id</th>
+                <th class="table__header w-[328px]">企業名</th>
+                <th class="table__header w-[269px]">業界</th>
+                <th class="table__header w-[199px]">所在地</th>
+                <th class="table__header w-[351px]">連絡先</th>
+                <th class="table__header w-[116px]">求人</th>
+                <th class="table__header w-[116px]">クチコミ</th>
+                <th class="table__header w-[209px]">アクション</th>
+              </thead>
+              <tbody>
+                <tr class="table__row">
+                  <td class="table__data"><a class="link link--line" href="#">〇〇</a></td>
+                  <td class="table__data"><a class="link link--line" href="#">〇〇〇〇〇〇〇〇</a></td>
+                  <td class="table__data">〇〇〇〇〇〇</td>
+                  <td class="table__data">〇〇〇〇〇〇</td>
+                  <td class="table__data"> 
+                    <p class="mb-5">メール: 〇〇〇〇@△△△.co.jp</p>
+                    <p>TEL: 000-0000-0000</p>
+                  </td>
+                  <td class="table__data">17件</td>
+                  <td class="table__data">51件</td>
+                  <td class="table__data px-[30px] py-[8px]">
+                    <button class="button button--primary mb-3 min-w-max w-[100%]">アカウント発行</button>
+                    <button class="button button--secondary mb-3 min-w-max w-[100%]">話題設定の解除</button>
+                    <button class="button button--red min-w-max w-[100%]">削除</button>
+                  </td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__data"><a class="link link--line" href="#">〇〇</a></td>
+                  <td class="table__data"><a class="link link--line" href="#">〇〇〇〇〇〇〇〇</a></td>
+                  <td class="table__data">〇〇〇〇〇〇</td>
+                  <td class="table__data">〇〇〇〇〇〇</td>
+                  <td class="table__data"> 
+                    <p class="mb-5">メール: 〇〇〇〇@△△△.co.jp</p>
+                    <p>TEL: 000-0000-0000</p>
+                  </td>
+                  <td class="table__data">17件</td>
+                  <td class="table__data">51件</td>
+                  <td class="table__data px-[30px] py-[8px]">
+                    <button class="button button--primary mb-3 min-w-max w-[100%]">アカウント発行</button>
+                    <button class="button button--secondary mb-3 min-w-max w-[100%]">話題設定の解除</button>
+                    <button class="button button--red min-w-max w-[100%]">削除</button>
+                  </td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__data"><a class="link link--line" href="#">〇〇</a></td>
+                  <td class="table__data"><a class="link link--line" href="#">〇〇〇〇〇〇〇〇</a></td>
+                  <td class="table__data">〇〇〇〇〇〇</td>
+                  <td class="table__data">〇〇〇〇〇〇</td>
+                  <td class="table__data"> 
+                    <p>TEL: 000-0000-0000</p>
+                  </td>
+                  <td class="table__data">17件</td>
+                  <td class="table__data">51件</td>
+                  <td class="table__data px-[30px] py-[8px]">
+                    <button class="button button--primary mb-3 min-w-max w-[100%]">アカウント発行</button>
+                    <button class="button button--secondary mb-3 min-w-max w-[100%]">話題設定の解除</button>
+                    <button class="button button--red min-w-max w-[100%]">削除</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ol class="pagination mt-12">
+            <li class="pagination__item pagination__item--disabled w-[83px] mr-1"><a class="pagination__link" href="#">前へ</a></li>
+            <li class="pagination__item pagination__item--active mr-1"><a class="pagination__link" href="#">1</a></li>
+            <li class="pagination__item mr-1"><a class="pagination__link" href="#">2</a></li>
+            <li class="pagination__item mr-1"><a class="pagination__link" href="#">3</a></li>
+            <li class="pagination__item mr-1 w-[83px]"><a class="pagination__link" href="#">次へ</a></li>
+          </ol>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

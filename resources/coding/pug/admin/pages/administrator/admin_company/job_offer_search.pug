@@ -1,0 +1,221 @@
+extends ../../../layout.pug
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label.header__label(for="name") 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option(href="#") Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content
+  section.section
+    .wrapper.wrapper--admin
+      h2.heading 求人管理
+      form.form(action="")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label 職種
+            button.button.button--white.h-auto.ml-5
+              i(class="fa-solid fa-plus mr-3")
+              |  追加する
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="職種" value="営業, 人事管理")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label 勤務地
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="勤務地" value="東京都, 神奈川県 ")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label 業界
+            button.button.button--white.h-auto.ml-5
+              i(class="fa-solid fa-plus mr-3")
+              |  追加する
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="業界" value="IT/通信/インターネット系, 金融/保険系 ")
+        .flex
+          .form__wrapper.items-center.w-full
+            .flex.items-center(class="min-h-[40px] mr-5")
+              label.form__content-label 掲載
+            .form__input-wrapper
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio1(type="radio", name="publish" checked)
+                label.cursor-pointer(for="radio1") 掲載・非掲載両方
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio2(type="radio", name="publish")
+                label.cursor-pointer(for="radio2") 掲載のみ
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio3(type="radio", name="publish")
+                label.cursor-pointer(for="radio3") 非掲載のみ
+      .flex.justify-center.mb-16
+        button.button.button--primary(class="w-[206px]") 検索
+      .views.mb-5
+        div(class='text-[#333333]')
+          .font-bold 全
+            span(class="text-[#007bff]") 000
+            | 件
+        .flex
+          .mr-5
+            input.views__radio#radio1(type="radio" name="sort")
+            label.views__label(for="radio1") 日付順
+          div
+            input.views__radio#radio2(type="radio" name="sort" checked)
+            label.views__label(for="radio2") 閲覧数順
+      .views__line
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") 中長期戦略[インドネシア・マレーシア事業］【名古屋】
+            .flex.items-center
+              span.mr-10 応募件数: 5件
+              button.button.button--primary 非掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 愛知県
+        .card__details
+          p.text-base 【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】
+            .flex.items-center
+              span.mr-10 応募件数: 0件
+              button.button.button--secondary 再掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 東京都
+        .card__details
+          p.text-base 【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") 中長期戦略[インドネシア・マレーシア事業］【名古屋】
+            .flex.items-center
+              span.mr-10 応募件数: 5件
+              button.button.button--primary 非掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 愛知県
+        .card__details
+          p.text-base 【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】
+            .flex.items-center
+              span.mr-10 応募件数: 0件
+              button.button.button--secondary 再掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 東京都
+        .card__details
+          p.text-base 【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") 中長期戦略[インドネシア・マレーシア事業］【名古屋】
+            .flex.items-center
+              span.mr-10 応募件数: 5件
+              button.button.button--primary 非掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 愛知県
+        .card__details
+          p.text-base 【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】
+            .flex.items-center
+              span.mr-10 応募件数: 0件
+              button.button.button--secondary 再掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 東京都
+        .card__details
+          p.text-base 【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") 中長期戦略[インドネシア・マレーシア事業］【名古屋】
+            .flex.items-center
+              span.mr-10 応募件数: 5件
+              button.button.button--primary 非掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 愛知県
+        .card__details
+          p.text-base 【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】
+            .flex.items-center
+              span.mr-10 応募件数: 0件
+              button.button.button--secondary 再掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 東京都
+        .card__details
+          p.text-base 【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") 中長期戦略[インドネシア・マレーシア事業］【名古屋】
+            .flex.items-center
+              span.mr-10 応募件数: 5件
+              button.button.button--primary 非掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 愛知県
+        .card__details
+          p.text-base 【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            a.card__title(href="#") リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】
+            .flex.items-center
+              span.mr-10 応募件数: 0件
+              button.button.button--secondary 再掲載
+          .card__corporation-details
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 東京都
+        .card__details
+          p.text-base 【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止
+      ol.pagination.mt-12
+        li.pagination__item.pagination__item--disabled(class="w-[83px]")
+          a.pagination__link(href="#") 前へ
+        li.pagination__item.pagination__item--active 
+          a.pagination__link(href="#") 1
+        li.pagination__item
+          a.pagination__link(href="#") 2
+        li.pagination__item
+          a.pagination__link(href="#") 3
+        li.pagination__item(class="w-[83px]")
+          a.pagination__link(href="#") 次へ

@@ -1,0 +1,7 @@
+.footer {
+  @apply bg-[#0A78A1] flex justify-center items-center py-7 text-white;
+
+  &__copyright-text {
+    @apply text-xs tracking-wider sp:text-[12px];
+  }
+}

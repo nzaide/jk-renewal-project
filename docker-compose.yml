@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  php:
+    build:
+      context: ./docker/php
+      args:
+        PHP_MODE: production
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+      - httpd
+
+  httpd:
+    build:
+      context: ./docker/httpd/
+    restart: unless-stopped
+    volumes:
+      - ./:/usr/local/apache2/htdocs
+      - ./docker/httpd/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: jk-renewal
+      MYSQL_ROOT_PASSWORD: password
+      TZ: Asia/Manila
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_ai_ci
+
+volumes:
+  db:

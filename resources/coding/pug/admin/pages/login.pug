@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block content
+  section.section.pt-24.pb-60
+    .wrapper
+      h2.heading.underline.text-center.mb-10 ログイン
+
+      .content(class="w-[856px] mx-auto pt-[32px] pb-[38px]")
+        form.form(action="")
+          .form__wrapper
+            .form__text-wrapper
+              input.form__input.text-black(type="email" class="h-[40px] text-base" placeholder="メールアドレス")
+          .form__wrapper.mb-3
+            .form__text-wrapper
+              input.form__input.text-black(type="password" class="h-[40px] text-base" placeholder="パスワード")
+        a.link(href="#") パスワードを忘れた場合
+        button.button.button--primary.m-auto.mt-10(class="h-[57px] w-[115px]") ログイン

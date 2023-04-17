@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1>
+          </div>
+        </div>
+      </header>
+      <div class="content-wrapper">
+        <div class="main-wrapper">
+          <section class="section">
+            <div class="card card--account">
+              <h2 class="heading heading--underlined text-center">ログイン</h2>
+              <div class="card__group mt-20 sp:mt-10">
+                <form class="form sp:mb-14" action="#">
+                  <h3 class="heading heading--sm mb-5 text-center">メールアドレスでログインする</h3>
+                  <div class="form__group">
+                    <input class="form__input mb-7" type="email" placeholder="メールアドレス">
+                    <input class="form__input mb-4" type="password" placeholder="パスワード">
+                    <div class="mb-10"><a class="link font-helvetica text-base" href="#">パスワードを忘れた場合</a></div>
+                    <div class="flex justify-center">
+                      <button class="button">ログイン</button>
+                    </div>
+                  </div>
+                </form>
+                <div class="social">
+                  <h3 class="heading heading--sm mb-5 text-center">外部のソーシャルサービスでログインする</h3>
+                  <div>
+                    <button class="button__social"><i class="text-white fab fa-google"></i><span class="button__social-text">Google でログイン</span></button>
+                    <button class="button__social button__social--facebook"><i class="text-white fab fa-facebook-f"></i><span class="button__social-text">Facebook でログイン</span></button>
+                    <button class="button__social button__social--twitter"><i class="text-white fab fa-twitter"></i><span class="button__social-text">Twitter でログイン</span></button>
+                  </div>
+                </div>
+              </div>
+              <div class="flex justify-center"><a class="link link--md font-helvetica mt-[75px] sp:mt-10" href="#">トップページへ戻る</a></div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

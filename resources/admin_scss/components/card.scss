@@ -1,0 +1,50 @@
+.card {
+  @apply w-full;
+
+  &--account {
+    @apply border border-[#707070] bg-white min-h-[934px] pt-[36px] pb-[69px] pr-[61px] pl-[77px] lg-screen:p-8 lg-screen:min-h-full;
+
+    p,
+    a,
+    span {
+      @apply font-helvetica;
+    }
+  }
+
+  &__header {
+    @apply text-[40px] text-center underline lg-screen:text-xl sp:text-[20px];
+
+    &-second {
+      @apply text-3xl text-center pb-6 text-[#868D96] lg-screen:text-xl md-screen:text-base sp:text-sm;
+    }
+  }
+
+  &__group {
+    @apply grid grid-cols-2 gap-x-14 sp:flex sp:flex-col relative;
+
+    &:after {
+      content: '';
+      @apply w-[1px] h-[451px] bg-[#707070] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] sp:hidden;
+    }
+  }
+
+  &__link {
+    @apply text-[#007BFF] mt-[31px] text-[32px] hover:text-[#024996] lg-screen:text-xl;
+  }
+
+  &__title-container {
+    @apply pb-2.5 border-b border-[#cfcfcf] border-dashed mb-2.5;
+  }
+
+  &__title {
+    @apply text-xl text-primary-blue;
+  }
+
+  &__icon {
+    @apply mr-1.5 w-auto h-4;
+  }
+
+  &__corporation-text {
+    @apply text-[#646464] mr-4 text-xs;
+  }
+}

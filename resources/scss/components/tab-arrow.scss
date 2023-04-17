@@ -1,0 +1,24 @@
+.tab-arrow {
+
+  &__list {
+    @apply flex;
+  }
+
+  &__item {
+    @apply p-[8px] bg-[#CFCFCF] text-white mr-3 w-full text-center max-w-[170px];
+
+    &--active {
+      @apply bg-[#D65327] relative;
+
+      &:after {
+        @apply border-transparent border-solid absolute border-t-[#D65327];
+        content: " ";
+        right: 48%;
+        bottom: -8px;
+        border-top-width: 8px;
+        border-right-width: 8px;
+        border-left-width: 8px;
+      }
+    }
+  }
+}

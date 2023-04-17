@@ -1,0 +1,116 @@
+.modal#addJob
+  .modal__overlay(@click="closeAllModals()")
+  .modal__content.modal__content--lg
+    .flex.justify-end
+      i.modal__close.block(class="fa-solid fa-xmark" @click="closeAllModals()")
+    .modal__header.modal__header--gray
+      h4.m-0  職種を追加
+    form.form(action="#")
+      .flex(class="sp:flex-col")
+        .prefecture(class="sp:block hidden overflow-hidden mb-2")
+          .prefecture__wrapper
+            input.prefecture__check#prefecture1(type="checkbox")
+            label.prefecture__label(for="prefecture1" class="bg-white") 経営企画・マーケティング系
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            ul.prefecture__list
+              li.prefecture__item
+                a.link(href="#") 営業系
+              li.prefecture__item
+                a.link(href="#") 販売・サービス系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+              li.prefecture__item
+                a.link(href="#") 〇〇系
+        ul.modal__scrollbar(class="h-[321px] mr-4 w-[48%] sp:hidden")
+          li.modal__item 営業系
+          li.modal__item.modal__item--active 経営企画・マーケティング系
+          li.modal__item 販売・サービス系
+          li.modal__item 〇〇系
+          li.modal__item 〇〇系
+          li.modal__item 〇〇系
+          li.modal__item 〇〇系
+          li.modal__item 〇〇系
+          li.modal__item 〇〇系
+          li.modal__item 〇〇系
+          li.modal__item 〇〇系
+          li.modal__item 〇〇系
+          li.modal__item 〇〇系 
+        .modal__blue
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check1(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check1") 全て選択
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check2(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check2") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check3(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check3") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check4(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check4") 法人営業
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check2(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check2") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check3(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check3") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check4(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check4") 法人営業
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check2(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check2") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check3(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check3") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check4(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check4") 法人営業
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check2(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check2") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check3(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check3") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check4(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check4") 法人営業
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check2(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check2") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check3(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check3") 法人営業
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check4(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check4") 法人営業
+    .modal__button-wrapper.modal__button-wrapper--confirmation
+      button.button.w-full(type="button" class="min-w-[237px] min-h-[57px] sp:min-w-full sp:min-h-[40px]") 業界を設定

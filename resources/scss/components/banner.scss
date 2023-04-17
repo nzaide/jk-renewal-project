@@ -1,0 +1,44 @@
+.banner {
+  @apply relative w-full h-[370px] sp:h-[290px] flex-center-layout justify-center bg-[url('/public/img/icon/tenjork-mv.jpg')] sp:bg-[url('/public/img/icon/tenjork-mv-sp.jpg')];
+
+  &--second {
+    @apply bg-[url('/public/img/icon/banner.jpg')] sp:bg-[url('/public/img/icon/banner-sp.jpg')] h-[270px] sp:h-[140px] bg-no-repeat bg-center block bg-cover;
+  }
+
+  &__wrapper {
+    @apply max-w-[515px] mx-auto sp:absolute sp:left-0 sp:bottom-0;
+  }
+
+  &__text {
+    @apply text-[27px] font-bold text-white mb-5 text-center sp:px-4;
+  }
+
+  &__search-wrapper {
+    @apply py-5 px-8 sp:px-3;
+    background-color: rgba($color: #000, $alpha: 0.5)
+  }
+
+  &__search-text {
+    @apply text-white font-bold text-[17px] sp:text-[13px] text-center mb-2.5;
+
+    & .yellow {
+      @apply text-[#ffc531] text-[25px] sp:text-[19px];
+    }
+  }
+
+  &__search {
+    @apply flex-center-layout overflow-hidden rounded-md mb-2.5;
+
+    & .form__input {
+      @apply min-h-[50px] rounded-tr-none rounded-br-none;
+    }
+  }
+
+  &__search-button {
+    @apply bg-primary-orange flex-center-layout justify-center min-h-[50px] min-w-[50px] w-[50px];
+  }
+
+  & .link {
+    @apply text-[#77c6f0] font-bold text-sm;
+  }
+}

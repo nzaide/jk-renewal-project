@@ -1,0 +1,11 @@
+.modal#sampleModal
+  .modal__overlay(@click="closeAllModals()")
+  .modal__content.modal__content--xs
+    i.modal__close.block(class="fa-solid fa-xmark" @click="closeAllModals()")
+    .modal__header.text-center
+      i.mb-8(class="fa-regular fa-circle-xmark modal__xmark")
+      p.modal__title Are you sure?
+    p.modal__confirmation-message.text-center.text-grey Do you really want to delete these records? This process cannot be undone.
+    .modal__button-wrapper.modal__button-wrapper--confirmation
+      button.button.button--gray.mr-3.w-full(type="button" @click="closeAllModals()") Cancel
+      button.button.button--red.w-full(type="button") Delete

@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  php:
+    build:
+      args:
+        PHP_MODE: development
+
+  httpd:
+    ports:
+      - 80:80
+    depends_on:
+      - mailhog
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    restart: unless-stopped
+    ports:
+      - 8025:8025
+
+  db:
+    ports:
+      - 3306:3306
+
+  db2:
+    image: mysql:8.0
+    restart: unless-stopped
+    volumes:
+      - db2:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: jk-renewal
+      MYSQL_ROOT_PASSWORD: password
+      TZ: Asia/Manila
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_ai_ci
+    ports:
+      - 3307:3306
+
+volumes:
+  db2:

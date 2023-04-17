@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="35.75" viewBox="0 0 36 35.75">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="icon-sns-fb" class="cls-1" d="M1534,8432.05a18,18,0,1,0-20.81,17.78v-12.58h-4.57v-5.2h4.57v-3.97c0-4.51,2.68-7,6.79-7a27.8,27.8,0,0,1,4.03.35v4.43h-2.27a2.6,2.6,0,0,0-2.93,2.81v3.38h4.99l-0.8,5.2h-4.19v12.58A18,18,0,0,0,1534,8432.05Z" transform="translate(-1498 -8414.06)"/>
+</svg>

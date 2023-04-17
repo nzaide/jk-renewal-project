@@ -1,0 +1,23 @@
+.domain {
+  @apply p-5;
+
+  &__list {
+    @apply grid grid-cols-3 gap-2 sp:grid-cols-1;
+  }
+
+  &__item {
+    @apply w-full bg-[#f4f4f4] hover:bg-[#eee] h-[50px];
+  }
+
+  &__link {
+    @apply flex-center-layout justify-between w-full h-full p-2.5 cursor-pointer;
+  }
+
+  &__name {
+    @apply text-[#333] text-sm font-bold;
+  }
+
+  &__count {
+    @apply text-xs text-[#646464] ml-4 whitespace-nowrap;
+  }
+}

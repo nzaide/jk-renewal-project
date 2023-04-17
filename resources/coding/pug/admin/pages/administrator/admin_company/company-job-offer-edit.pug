@@ -1,0 +1,112 @@
+extends ../../../layout.pug
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label(for="name").header__label 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content  
+  section.section
+    .wrapper.wrapper--admin
+      h2.heading(class="text-[#333333] font-bold") 企業管理 - 株式会社〇〇〇〇〇〇 
+      .flex.mb-10
+        button.tabs.tabs--white 企業情報
+        button.tabs.tabs--white 評価・クチコミ
+        button.tabs.tabs--white.tabs--active 求人・応募
+      .wrapper
+        .content.content--shadow.mb-10(class="py-[25px] px-[20px]")
+          div
+            form.form(action="#")
+              .form__wrapper.form__wrapper--center
+                .flex.items-center(class="min-w-[20%]")
+                  label.form__label.fs24 求人タイトル
+                .w-full
+                  input.form__input.text-black(type="text" value="〇〇〇〇〇〇")
+              .form__wrapper.form__wrapper--center
+                .flex.items-center(class="min-w-[20%]")
+                  label.form__label.fs24 勤務地
+                .w-full
+                  select.form__select.text-black(class="w-[100%]")
+                    option(value="option1") 都道府県
+                    option(value="option2") 都道府県
+        .content.content--shadow.mb-10.px-5
+          div
+            h5.content__heading.content__heading--top 募集要項・職務内容
+            form.form(action="#")
+              .w-full
+                textarea.form__textarea.fs14(rows="22") 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+        .content.content--shadow.mb-10.px-5
+          div
+            h5.content__heading.content__heading--top 基本情報
+            form.form(action="#")
+              .w-full
+                textarea.form__textarea.fs14(rows="30") 【勤務地】
+                  | 本社　〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 支社　〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 
+                  | &lt;転勤&gt;
+                  | 無
+                  | 
+                  | 【労働時間区分】
+                  | フレックスタイム制
+                  | コアタイム　10:00 〜 16:30
+                  | 休憩時間　60分
+                  | 時間外労働有無　有
+                  | 
+                  | 【給与】
+                  | 〇〇〇〜〇〇〇万円
+                  | &lt;内訳&gt;
+                  | 月額（基本給）〇〇〜〇〇万円
+                  | 
+                  | 【賃金形態】
+                  | 月給制
+                  | ※職位・ランクによって年俸制
+                  | 
+                  | 【昇級有無】
+                  | 有
+                  | 
+                  | 【残業手当】
+                  | 有
+                  | 
+                  | 【休暇制度】
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+        .content.content--shadow.mb-10.px-5
+          div
+            h5.content__heading.content__heading--top 応募要項
+            form.form(action="#")
+              .w-full
+                textarea.form__textarea.fs14(rows="8") 【掲載期間】
+                  | 〇〇〇〇年〇〇月〇〇日 〜 〇〇〇〇年〇〇月〇〇日
+                  | 
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                  | 
+                  | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+        .flex.mb-10.justify-center
+          button.button.button--secondary.mr-185 キャンセル
+          button.button.button--primary 保存する

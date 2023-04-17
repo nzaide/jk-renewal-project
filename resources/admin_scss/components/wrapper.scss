@@ -1,0 +1,7 @@
+.wrapper {
+  @apply max-w-[1300px] w-full mx-auto;
+
+  &--sm {
+    @apply max-w-[1066px];
+  }
+}

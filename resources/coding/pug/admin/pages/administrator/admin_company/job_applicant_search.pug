@@ -1,0 +1,295 @@
+extends ../../../layout.pug
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label.header__label(for="name") 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option(href="#") Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content  
+  section.section
+    .wrapper.wrapper--admin
+      h2.heading 求職者管理
+      form.form(action="")
+        .flex
+          .form__wrapper.flex-col(class="w-[48%] mr-[4%]")
+            .flex.items-center(class="min-h-[40px] mb-2")
+              label.form__content-label 名前検索
+            .form__text-wrapper
+              input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="名前検索" value="求職者名で検索")
+        .flex
+          .form__wrapper.flex-col(class="w-[48%] mr-[4%]")
+            .flex.items-center(class="min-h-[40px] mb-2")
+              label.form__content-label 世代
+              button.button.button--white.h-auto.ml-5
+                i(class="fa-solid fa-plus mr-3")
+                |  追加する
+            .form__text-wrapper
+              input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="世代" value="20代, 30代")
+          .form__wrapper.flex-col(class="w-[48%]")
+            .flex.items-center(class="min-h-[40px] mb-2")
+              label.form__content-label 居住地
+              button.button.button--white.h-auto.ml-5
+                i(class="fa-solid fa-plus mr-3")
+                |  追加する
+            .form__text-wrapper
+              input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="居住地" value="東京都, 神奈川県")
+        .flex
+          .form__wrapper.flex-col(class="w-[48%] mr-[4%]")
+            .flex.items-center(class="min-h-[40px] mb-2")
+              label.form__content-label 転職希望度
+              button.button.button--white.h-auto.ml-5
+                i(class="fa-solid fa-plus mr-3")
+                |  追加する
+            .form__text-wrapper
+              input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="転職希望度" value="東京都, 神奈川県")
+        .flex
+          .form__wrapper.flex-col(class="w-[48%] mr-[4%]")
+            .flex.items-center(class="min-h-[40px] mb-2")
+              label.form__content-label 転職希望の業界
+              button.button.button--white.h-auto.ml-5
+                i(class="fa-solid fa-plus mr-3")
+                |  追加する
+            .form__text-wrapper
+              input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="転職希望の業界" value="東京都, 神奈川県")
+          .form__wrapper.flex-col(class="w-[48%]")
+            .flex.items-center(class="min-h-[40px] mb-2")
+              label.form__content-label 転職希望の職種
+              button.button.button--white.h-auto.ml-5
+                i(class="fa-solid fa-plus mr-3")
+                |  追加する
+            .form__text-wrapper
+              input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="転職希望の職種" value="東京都, 神奈川県")
+        .flex
+          .form__wrapper.flex-col(class="w-[48%] mr-[4%]")
+            .flex.items-center(class="min-h-[40px] mb-2")
+              label.form__content-label 転職希望の勤務地
+              button.button.button--white.h-auto.ml-5
+                i(class="fa-solid fa-plus mr-3")
+                |  追加する
+            .form__text-wrapper
+              input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="転職希望の勤務地" value="東京都, 神奈川県")
+          .form__wrapper.flex-col(class="w-[48%]")
+            .flex.items-center(class="min-h-[40px] mb-2")
+              label.form__content-label 希望年収
+              button.button.button--white.h-auto.ml-5
+                i(class="fa-solid fa-plus mr-3")
+                |  追加する
+            .form__text-wrapper
+              input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="希望年収" value="東京都, 神奈川県 ")
+        .flex
+          .form__wrapper.flex-col(class="w-[48%] mr-[4%]")
+            .flex.items-center(class="min-h-[40px] mb-2")
+              label.form__content-label 転職で重視すること
+              button.button.button--white.h-auto.ml-5
+                i(class="fa-solid fa-plus mr-3")
+                |  追加する
+            .form__text-wrapper
+              input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="転職で重視すること" value="東京都, 神奈川県 ")
+      .flex.justify-center.mb-16
+        button.button.button--primary(class="w-[206px]") 検索
+      .flex.justify-end.mb-10
+        a.button.button--primary.w-52(href="#") CSVダウンロード
+      .views.mb-9
+        div(class='text-[#333333]')
+          .font-bold 該当件数: 全
+            span(class="text-[#007bff]") 000
+            | 人
+      .overflow-x-auto
+        table.table
+          thead
+            th.table__header.uppercase(class="w-[134px]") Id
+            th.table__header(class="w-[303px]") 求職者名
+            th.table__header(class="w-[118px]") 世代
+            th.table__header(class="w-[182px]") 居住地
+            th.table__header(class="w-[231px]") 希望度
+            th.table__header(class="w-[211px]") 希望の業界
+            th.table__header(class="w-[198px]") 希望の職種
+            th.table__header(class="w-[182px]") 希望の勤務地
+            th.table__header(class="w-[158px]") 希望年収
+            th.table__header(class="w-[158px]") 重視すること
+          tbody
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data 〇〇〇〇〇〇〇
+              td.table__data 20代
+              td.table__data 大阪府
+              td.table__data 今すぐ転職したい
+              td.table__data 製造業
+              td.table__data 営業
+              td.table__data 大阪府
+              td.table__data 500~550万
+              td.table__data 土日休み
+      ol.pagination.mt-12
+        li.pagination__item.pagination__item--disabled(class="w-[83px] mr-1")
+          a.pagination__link(href="#") 前へ
+        li.pagination__item.pagination__item--active.mr-1
+          a.pagination__link(href="#") 1
+        li.pagination__item.mr-1
+          a.pagination__link(href="#") 2
+        li.pagination__item.mr-1
+          a.pagination__link(href="#") 3
+        li.pagination__item.mr-1(class="w-[83px]")
+          a.pagination__link(href="#") 次へ

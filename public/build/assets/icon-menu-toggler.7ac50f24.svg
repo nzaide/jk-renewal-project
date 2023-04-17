@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="31.375" viewBox="0 0 36 31.375">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #001f80;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="icon-menu-toggler" class="cls-1" d="M1830,25.317v4.5h36v-4.5h-36Zm0,13.365v4.5h36v-4.5h-36Zm0,13.5v4.5h36v-4.5h-36Z" transform="translate(-1830 -25.313)"/>
+</svg>

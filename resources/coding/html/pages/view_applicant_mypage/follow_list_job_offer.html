@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">マイページ</a><a class="header__link" href="#">ログアウト</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper content-wrapper--with-sidebar">
+        <div class="main-wrapper">
+          <section class="section">
+            <h2 class="heading heading--underlined mb-4">フォロー中の求人<span>（〇〇件）</span></h2>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper">
+                              <div class="card__emoji"></div>
+                            </div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper"></div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper"></div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper"></div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper"></div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper"></div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper"></div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper"></div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper"></div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="flex justify-between mb-5 sp:flex-col">
+                      <div>
+                        <h3 class="heading heading--underlined heading--sm">求人タイトル</h3>
+                        <p class="heading heading--xxs text-xs text-grey">職種</p>
+                      </div>
+                      <button class="button button--orange-reversed mr-2 sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm">フォローを解除</button>
+                    </div>
+                    <div class="flex sp:flex-col">
+                      <div class="mr-4 w-full">
+                        <div class="card__title-container border-solid">
+                          <p class="card__title pb-1 no-underline">【業務内容】</p>
+                          <div class="card__corporation-details">
+                            <p class="card__text card__text--3">
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                              ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex justify-between items-end sp:flex-col sp:items-start">
+                          <div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【給与】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">〇〇〇〜〇〇〇万円</p>
+                              </div>
+                            </div>
+                            <div class="card__details">
+                              <p class="card__title pb-1 no-underline">【勤務地】</p>
+                              <div class="card__corporation-details">
+                                <p class="card__corporation-text">東京都〇〇〇〇〇〇</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4">求人詳細を見る</button>
+                        </div>
+                      </div>
+                      <div class="card card--blue h-auto w-8/12 sp:w-full sp:mt-6">
+                        <p class="text-xs mb-2">企業情報</p><a class="card__title underline" href="#">株式会社○○○○○○</a>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">評価</label>
+                          <div class="flex-center-layout w-full">
+                            <div class="card__emoji-wrapper"></div><span>（口コミ ○○○○件）</span>
+                          </div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">住所</label>
+                          <div class="block w-full"><span>東京都〇〇区〇〇〇〇</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">URL</label>
+                          <div class="block w-full"><span>https://○○○○○○○○○.○○.○○</span></div>
+                        </div>
+                        <div class="flex-center-layout text-xs mb-1">
+                          <label class="mr-2 w-10 block">業界</label>
+                          <div class="block w-full"><span>〇〇〇〇</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="pagination"> 
+              <!-- For PC-->
+              <ol class="pagination__list">
+                <li class="pagination__item pagination__item--disabled"><a class="pagination__link" href="#"> <img class="pagination__icon pagination__icon--prev" src="/public/img/icon/arrow-white.svg" alt="arrow">前へ</a></li>
+                <li class="pagination__item pagination__item--active"><a class="pagination__link" href="#">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">次へ<img class="pagination__icon" src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+              </ol>
+              <!-- For SP-->
+              <button class="pagination__button">もっと見る<img src="/public/img/icon/arrow.svg" alt="arrow"></button>
+            </div>
+          </section>
+          <aside class="sidebar">
+            <div class="sidebar__card mb-5">
+              <p class="sidebar__card-header">個人設定</p>
+              <ul class="sidebar__list">
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>会員プロフィール</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>詳細情報</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>転職条件</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>サイト通知設定</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+              </ul>
+            </div>
+            <ul class="sidebar__list sidebar__list--rounded">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>トップページ</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー企業</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>クチコミ管理</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>退会</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="modal" id="sampleModal">
+          <div class="modal__overlay" @click="closeAllModals()"></div>
+          <div class="modal__content modal__content--xs"><i class="modal__close block fa-solid fa-xmark" @click="closeAllModals()"></i>
+            <div class="modal__header text-center"><i class="mb-8 fa-regular fa-circle-xmark modal__xmark"></i>
+              <p class="modal__title">Are you sure?</p>
+            </div>
+            <p class="modal__confirmation-message text-center text-grey">Do you really want to delete these records? This process cannot be undone.</p>
+            <div class="modal__button-wrapper modal__button-wrapper--confirmation">
+              <button class="button button--gray mr-3 w-full" type="button" @click="closeAllModals()">Cancel</button>
+              <button class="button button--red w-full" type="button">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <ul class="footer__links">
+            <li class="footer__item"><a class="footer__link" href="#">運営会社</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">利用規約</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">個人情報の取り扱い</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">転ジョーク会議のコンセプト</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">クチコミ投稿への取り組み</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">投稿のガイドライン</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">お問い合わせ </a></li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data () {
+          return {
+          };
+        },
+        methods: {
+        },
+        created() {
+        },
+        mounted() {
+        }
+      })
+    </script>
+  </body>
+</html>

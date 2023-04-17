@@ -1,0 +1,161 @@
+extends ../../../layout
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label(for="name").header__label 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content
+  section.section(class="pt-[77px] pb-[364px]")
+    .wrapper.wrapper--admin
+      h2.heading 企業管理
+      .flex.justify-end
+        a.button.button--primary.w-52(href="#")
+          i(class="fa-solid fa-plus mr-3")
+          |  新規登録
+      form.form(action="")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label 業界
+            button.button.button--white.h-auto.ml-5
+              i(class="fa-solid fa-plus mr-3")
+              |  追加する
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="業界" value="IT/通信/インターネット系, 金融/保険系")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label 所在地
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="所在地" value="東京都, 神奈川県 ")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label フリーワード
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="企業名や電話番号で検索")
+        .flex
+          .form__wrapper.items-center.w-full
+            .flex.items-center(class="min-h-[40px] w-1/5")
+              label.form__content-label アカウント
+            .form__input-wrapper
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio1(type="radio", name="account" checked)
+                label.cursor-pointer(for="radio1") 有無両方
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio2(type="radio", name="account")
+                label.cursor-pointer(for="radio2") 有のみ
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio3(type="radio", name="account")
+                label.cursor-pointer(for="radio3") 無のみ
+          .form__wrapper.items-center.w-full
+            .flex.items-center(class="min-h-[40px] w-1/5")
+              label.form__content-label 話題
+            .form__input-wrapper
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio4(type="radio", name="topic" checked)
+                label.cursor-pointer(for="radio4") 有無両方
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio5(type="radio", name="topic")
+                label.cursor-pointer(for="radio5") 有のみ
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio6(type="radio", name="topic")
+                label.cursor-pointer(for="radio6") 無のみ
+      .flex.justify-center.mb-16
+        button.button.button--primary(class="w-[206px]") 検索
+      .views.mb-9
+        div(class='text-[#333333]')
+          .font-bold 該当件数: 全
+            span(class="text-[#007bff]") 000
+            | 社
+        .flex
+          p.mr-5(class="text-[#646464]") 名前順
+          p.mr-5(class="text-[#007bff]") 所在地順
+          p.mr-5(class="text-[#007bff]") 求人数順
+          p(class="text-[#007bff]") クチコミ数順
+      .overflow-x-auto
+        table.table
+          thead
+            th.table__header.uppercase(class="w-[135px]") Id
+            th.table__header(class="w-[328px]") 企業名
+            th.table__header(class="w-[269px]") 業界
+            th.table__header(class="w-[199px]") 所在地
+            th.table__header(class="w-[351px]") 連絡先
+            th.table__header(class="w-[116px]") 求人
+            th.table__header(class="w-[116px]") クチコミ
+            th.table__header(class="w-[209px]") アクション
+          tbody
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data
+                a.link.link--line(href="#") 〇〇〇〇〇〇〇〇
+              td.table__data 〇〇〇〇〇〇
+              td.table__data 〇〇〇〇〇〇
+              td.table__data 
+                p.mb-5 メール: 〇〇〇〇@△△△.co.jp
+                p TEL: 000-0000-0000
+              td.table__data 17件
+              td.table__data 51件
+              td.table__data(class="px-[30px] py-[8px]")
+                button.button.button--primary.mb-3(class="min-w-max w-[100%]") アカウント発行
+                button.button.button--secondary.mb-3(class="min-w-max w-[100%]") 話題設定の解除
+                button.button.button--red(class="min-w-max w-[100%]") 削除
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data
+                a.link.link--line(href="#") 〇〇〇〇〇〇〇〇
+              td.table__data 〇〇〇〇〇〇
+              td.table__data 〇〇〇〇〇〇
+              td.table__data 
+                p.mb-5 メール: 〇〇〇〇@△△△.co.jp
+                p TEL: 000-0000-0000
+              td.table__data 17件
+              td.table__data 51件
+              td.table__data(class="px-[30px] py-[8px]")
+                button.button.button--primary.mb-3(class="min-w-max w-[100%]") アカウント発行
+                button.button.button--secondary.mb-3(class="min-w-max w-[100%]") 話題設定の解除
+                button.button.button--red(class="min-w-max w-[100%]") 削除
+            tr.table__row
+              td.table__data
+                a.link.link--line(href="#") 〇〇
+              td.table__data
+                a.link.link--line(href="#") 〇〇〇〇〇〇〇〇
+              td.table__data 〇〇〇〇〇〇
+              td.table__data 〇〇〇〇〇〇
+              td.table__data 
+                p TEL: 000-0000-0000
+              td.table__data 17件
+              td.table__data 51件
+              td.table__data(class="px-[30px] py-[8px]")
+                button.button.button--primary.mb-3(class="min-w-max w-[100%]") アカウント発行
+                button.button.button--secondary.mb-3(class="min-w-max w-[100%]") 話題設定の解除
+                button.button.button--red(class="min-w-max w-[100%]") 削除
+      ol.pagination.mt-12
+        li.pagination__item.pagination__item--disabled(class="w-[83px] mr-1")
+          a.pagination__link(href="#") 前へ
+        li.pagination__item.pagination__item--active.mr-1
+          a.pagination__link(href="#") 1
+        li.pagination__item.mr-1
+          a.pagination__link(href="#") 2
+        li.pagination__item.mr-1
+          a.pagination__link(href="#") 3
+        li.pagination__item.mr-1(class="w-[83px]")
+          a.pagination__link(href="#") 次へ

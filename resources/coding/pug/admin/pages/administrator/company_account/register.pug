@@ -1,0 +1,41 @@
+extends ../../../layout
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label(for="name").header__label.border-none
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg.left-0
+        a.header__option(href="#") Logout
+
+block content
+  section.section(class="pt-[77px] pb-[364px]")
+    .wrapper.wrapper--admin
+      h2.heading 企業アカウント登録
+
+      .content(class="w-[1066px] mx-auto")
+        form.form(action="")
+          .form__wrapper
+            .flex.items-center(class="w-1/3")
+              label.form__content-label 企業名
+            .form__text-wrapper
+              span 〇〇〇〇〇株式会社
+          .form__wrapper
+            .flex.items-center(class="w-1/3")
+              label.form__content-label メールアドレス
+            .form__text-wrapper
+              span 〇〇〇〇〇@test.co.jp
+          .form__wrapper
+            .flex.items-center(class="w-1/3")
+              label.form__content-label パスワード
+            .form__text-wrapper
+              input.form__input.text-black(type="password" class="text-base" placeholder="パスワードを入力してください")
+          .form__wrapper
+            .flex.items-center(class="w-1/3")
+              label.form__content-label 再パスワード
+            .form__text-wrapper
+              input.form__input.text-black(type="password" class="text-base" placeholder="パスワードを再入力してください")
+      .flex.justify-center.mt-8
+        button.button.button--secondary.mr-5 キャンセル
+        button.button.button--primary 登録する

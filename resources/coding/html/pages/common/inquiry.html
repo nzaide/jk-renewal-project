@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1>
+          </div>
+        </div>
+      </header>
+      <div class="content-wrapper">
+        <div class="main-wrapper">
+          <section class="section pb-3">
+            <h2 class="heading heading--underlined">問い合わせ・良くあるご質問</h2>
+            <div class="mt-7">
+              <p class="text-sm text-grey">回答までにお時間を頂戴する場合がありますので、ヘルプに該当の回答がないか問い合わせ前にご確認ください。</p>
+              <div class="section__wrapper mt-2">
+                <p class="text-grey">※　年末年始、GW、お盆の時期などはご返信が遅れる場合がございます。予めご了承ください。<br><br>※　転職会議では、メンバーの皆様からの機能改善、および機能追加のご要望をお待ちしています。皆様から頂いた貴重なご意見は、今後のサービス開発における重要テーマとさせていただきます。</p>
+              </div>
+            </div>
+            <h2 class="heading heading--underlined mt-12">良くあるご質問</h2>
+            <div class="mt-7">
+              <div class="section__wrapper mt-2"><a class="link text-base" href="#">ログインができない/パスワードを忘れてしまった</a>
+                <p class="text-grey text-sm mt-2">ログインできない場合、入力したIDとパスワードが一致していない可能性がございます。<br>再度、IDとパスワードをご確認ください。<br>パスワードを忘れてしまった場合は、パスワードの再発行を行ってください。<br>パスワード再発行はこちらから</p>
+              </div>
+              <div class="section__wrapper mt-5"><a class="link text-base" href="#">ログインができない/パスワードを忘れてしまった</a>
+                <p class="text-grey text-sm mt-2">ログインできない場合、入力したIDとパスワードが一致していない可能性がございます。<br>再度、IDとパスワードをご確認ください。<br>パスワードを忘れてしまった場合は、パスワードの再発行を行ってください。<br>パスワード再発行はこちらから</p>
+              </div>
+              <div class="section__wrapper mt-5"><a class="link text-base" href="#">ログインができない/パスワードを忘れてしまった</a>
+                <p class="text-grey text-sm mt-2">ログインできない場合、入力したIDとパスワードが一致していない可能性がございます。<br>再度、IDとパスワードをご確認ください。<br>パスワードを忘れてしまった場合は、パスワードの再発行を行ってください。<br>パスワード再発行はこちらから</p>
+              </div>
+            </div>
+            <h2 class="heading heading--underlined mt-12">問い合わせフォーム</h2>
+            <div class="section__wrapper mt-7">
+              <form class="form px-10 sp:px-0">
+                <div class="form__wrapper">
+                  <div class="min-w-[200px]">
+                    <label class="form__label text-grey">お名前<span class="form__required">*</span></label>
+                  </div>
+                  <div class="w-full">
+                    <input class="form__input" type="text">
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="min-w-[200px]">
+                    <label class="form__label text-grey">メールアドレス<span class="form__required">*</span></label>
+                  </div>
+                  <div class="w-full">
+                    <input class="form__input" type="text">
+                    <p class="form__error">Sample error message</p>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="min-w-[200px]">
+                    <label class="form__label text-grey">問い合わせ内容<span class="form__required">*</span></label>
+                  </div>
+                  <div class="w-full">
+                    <textarea class="form__textarea"></textarea>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center justify-center pt-3"><a class="link text-base mb-5" href="#">利用規約及び個人情報保護に関する事項</a>
+                  <button class="button">利用規約及び個人情報保護に関する事項に同意して送信する</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

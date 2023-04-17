@@ -1,0 +1,19 @@
+.nav {
+  @apply mt-6;
+
+  &__list {
+    @apply max-w-[1300px] w-full mx-auto flex items-center;
+  }
+
+  &__item {
+    @apply ml-10;
+
+    &:first-child {
+      @apply m-0
+    }
+  }
+
+  &__link {
+    @apply text-base text-white underline underline-offset-4 hover:text-[#E2E6EA]
+  }
+}

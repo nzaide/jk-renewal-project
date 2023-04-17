@@ -1,0 +1,11 @@
+.reviews {
+  @apply font-noto text-base text-white rounded-[3px] bg-[#e8c22e] h-[34px] flex items-center w-[93px] px-[10px] justify-center;
+
+  span {
+    @apply rounded-[2px] bg-white text-black text-xs h-[20px] w-[20px] flex items-center ml-[5px] justify-center;
+  }
+
+  &--blue {
+    @apply bg-[#47b4d5];
+  }
+}

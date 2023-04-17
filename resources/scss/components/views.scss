@@ -1,0 +1,7 @@
+.views {
+  @apply h-[50px] bg-[#abd5ee] flex justify-between p-[11px] w-full;
+
+  &__line {
+    @apply h-[2px] w-full bg-[#007bff];
+  }
+}

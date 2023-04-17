@@ -1,0 +1,31 @@
+.content {
+  @apply bg-white border-solid border-[#707070] border-[1px] px-[72px] py-[60px] relative;
+
+  &--shadow {
+    @apply rounded-[5px] border-none drop-shadow-md relative;
+  }
+
+  &__heading {
+    @apply text-xl text-black m-0 font-noto;
+
+    &--top {
+      @apply bg-[#4b90d2] absolute top-0 left-0 w-full px-5 py-2 rounded-tl-[5px] rounded-tr-[5px] font-bold text-white;
+    }
+  }
+
+  &__sub-heading {
+    @apply text-[#646464] text-base m-0 font-noto;
+  }
+
+  &__title {
+    @apply font-noto text-base text-[#646464] font-bold mb-[10px];
+  }
+
+  &__body {
+    @apply text-sm text-[#646464];
+  }
+
+  &__footer {
+    @apply h-[50px] bg-[#f4f4f4] w-full absolute bottom-0 left-0 flex items-center justify-center;
+  }
+}

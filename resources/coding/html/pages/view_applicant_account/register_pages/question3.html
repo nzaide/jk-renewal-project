@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1>
+          </div>
+        </div>
+      </header>
+      <div class="content-wrapper">
+        <div class="main-wrapper">
+          <section class="section">
+            <div class="card card--account">
+              <h2 class="heading heading--underlined mb-14 text-center">会員プロフィール登録</h2>
+              <div class="progress">
+                <p class="progress__text">プロフィール登録  3 / 4 完了</p>
+                <div class="flex justify-end mb-[25px]">
+                  <div class="progress__bar-wrapper">
+                    <div class="progress__bar progress__bar--75"></div>
+                  </div>
+                </div>
+              </div>
+              <form class="form mx-auto max-w-[800px]" action="#">
+                <p class="form__text mb-[50px] sp:mb-[25px]">3. 企業でのご経験ついて、入力してください。</p>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label">企業名</label>
+                  </div>
+                  <div class="w-full">
+                    <input class="form__input" type="text" placeholder="企業名を入力してください">
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label items-start sp:items-center">在職状況</label>
+                  </div>
+                  <div class="w-full">
+                    <div class="form__input-wrapper">
+                      <div class="form__radio-wrapper sp:mb-3">
+                        <input class="form__radio" id="radio1" type="radio" name="employment">
+                        <label class="form__text-label cursor-pointer" for="radio1">在職</label>
+                      </div>
+                      <div class="form__radio-wrapper sp:mb-3">
+                        <input class="form__radio" id="radio2" type="radio" name="employment">
+                        <label class="form__text-label cursor-pointer" for="radio2">離職</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label">卒業年月</label>
+                  </div>
+                  <div class="w-full">
+                    <div class="form__input-wrapper items-center">
+                      <div class="flex items-center mr-[10px] sp:mb-3 sp:mr-0 sp:w-full">
+                        <select class="form__select mr-3" name="year">
+                          <option>未選択 </option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                        </select>
+                        <label class="form__label" for="年">年 </label>
+                      </div>
+                      <div class="flex items-center sp:mb-3 sp:w-full">
+                        <select class="form__select mr-3" name="month">
+                          <option>未選択 </option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <label class="form__label" for="月">月 </label>
+                      </div><span class="font-helvetica ml-1 mr-3 text-[29px] sp:mb-2 h-[40px]">~</span>
+                      <div class="flex items-center mr-[10px] sp:mb-3 sp:mr-0 sp:w-full">
+                        <select class="form__select mr-3" name="year">
+                          <option>未選択 </option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                        </select>
+                        <label class="form__label" for="年">年 </label>
+                      </div>
+                      <div class="flex items-center mr-[10px] sp:mb-3 sp:mr-0 sp:w-full">
+                        <select class="form__select mr-3" name="month">
+                          <option>未選択 </option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <label class="form__label" for="月">月 </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label">職種</label>
+                  </div>
+                  <div class="w-full">
+                    <div class="flex items-center">
+                      <select class="form__select" name="occupation">
+                        <option>未選択 </option>
+                        <option value="営業系 &lt;営業・人材関連職&gt;">営業系 (営業・人材関連職)</option>
+                        <option value="事務・経営管理系 &lt;事務・受付・秘書・アシスタント&gt;">事務・経営管理系 (事務・受付・秘書・アシスタント)</option>
+                        <option value="経営企画・マーケティング・企画系 &lt;経営企画・事業開発・マーケティング・企画&gt;">経営企画・マーケティング・企画系 (経営企画・事業開発・マーケティング・企画)</option>
+                        <option value="販売・サービス系 &lt;契約・小売&gt;">販売・サービス系 (契約・小売)</option>
+                        <option value="クリエイティブ系（WEBデザイン・広告・グラフィック・イラスト）">クリエイティブ系（WEBデザイン・広告・グラフィック・イラスト）</option>
+                        <option value="技術系(IT系)  &lt;システム開発・サーバー・ネットワーク・通信インフラ設計&gt;">技術系(IT系)  (システム開発・サーバー・ネットワーク・通信インフラ設計)</option>
+                        <option value="技術系（電気系）&lt;機械関連・電気・電子関連・半導体関連&gt;">技術系（電気系）(機械関連・電気・電子関連・半導体関連)</option>
+                        <option value="技術系(医薬・食品・化学) &lt;医薬・医療機器・食品・化粧品・素材&gt;">技術系(医薬・食品・化学) (医薬・医療機器・食品・化粧品・素材)</option>
+                        <option value="建築・土木系&lt;建築・土木関連&gt;">建築・土木系(建築・土木関連)</option>
+                        <option value="医療・福祉・保育系">医療・福祉・保育系</option>
+                        <option value="専門職系 &lt;各種コンサルタント・法律・会計・労務&gt;">専門職系 (各種コンサルタント・法律・会計・労務)</option>
+                        <option value="その他 &lt;教育・農業・公務員・インストラクター・技能工&gt;">その他 (教育・農業・公務員・インストラクター・技能工)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label">役職</label>
+                  </div>
+                  <div class="w-full">
+                    <div class="flex items-center">
+                      <select class="form__select" name="position">
+                        <option>未選択 </option>
+                        <option value="契約社員">契約社員</option>
+                        <option value="一般社員">一般社員</option>
+                        <option value="主任クラス相当">主任クラス相当</option>
+                        <option value="係長クラ">係長クラ</option>
+                        <option value="ス相当">ス相当</option>
+                        <option value="課長クラス相当">課長クラス相当</option>
+                        <option value="部長クラス相当">部長クラス相当</option>
+                        <option value="本部長クラス相当">本部長クラス相当</option>
+                        <option value="取締役クラス相当">取締役クラス相当</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label">職務内容</label>
+                  </div>
+                  <div class="w-full">
+                    <textarea class="form__textarea leading-normal" name="" cols="30" rows="8" placeholder="職務内容を簡潔に記載してください"></textarea>
+                  </div>
+                </div>
+                <div class="flex justify-center sp:flex-col">
+                  <button class="button mr-20 sp:mr-0 sp:mb-3">前へ</button>
+                  <button class="button">次へ</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

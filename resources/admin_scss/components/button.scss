@@ -1,0 +1,71 @@
+.button {
+  @apply bg-[#007BFF] text-[30px] font-helvetica rounded-[5px] min-w-[132px] h-[57px] py-2 px-4 cursor-pointer active:bg-[#0069D9] sp:text-[20px] flex items-center justify-center;
+
+  &:disabled {
+    @apply pointer-events-none opacity-50;
+  }
+
+  &__social {
+    @apply bg-red-700 text-white w-full text-center relative py-4 px-[31px] h-[106px] flex items-center justify-center mb-9 hover:bg-red-500 sp:px-6 sp:h-14 sp:mb-4;
+
+    &-text {
+      @apply w-full text-center text-xl md-screen:text-base;
+    }
+
+    &:disabled {
+      @apply cursor-auto bg-[#dddddd] hover:bg-[#dddddd];
+    }
+
+    &:nth-of-type(3) {
+      @apply m-0;
+    }
+
+    i {
+      @apply text-4xl sp:text-2xl;
+    }
+
+    &--facebook {
+      @apply bg-[#4267B2] hover:bg-blue-500;
+    }
+
+    &--twitter {
+      @apply bg-[#00acee] hover:bg-sky-400;
+    }
+  }
+
+  &--primary {
+    @apply text-base text-white bg-[#007bff] active:bg-[#0069d9];
+  }
+
+  &--secondary {
+    @apply text-base text-[#007bff] bg-transparent border-solid border-[#007bff] border-[1px] active:bg-transparent active:border-[#0069d9] active:text-[#0069d9];
+  }
+
+  &--red {
+    @apply text-base text-[#dc3545] bg-transparent border-solid border-[#dc3545] border-[1px] bg-transparent active:bg-transparent active:border-[#c82333] active:text-[#c82333];
+  }
+
+  &--gray {
+    @apply text-base text-white bg-[#6c757d] active:bg-[#5a6268];
+  }
+
+  &--white {
+    @apply text-base text-[#646464] bg-[#f4f4f4] border border-[#cfcfcf] active:bg-[#f4f4f4];
+  }
+
+  &--disabled {
+    @apply pointer-events-none opacity-50;
+  }
+
+  &.w332 {
+    @apply w-[332px] h-[57px] mx-auto;
+  }
+
+  &.w206 {
+    @apply w-[206px] h-[48px];
+  }
+
+  &.mr-185 {
+    @apply mr-[185px];
+  }
+}

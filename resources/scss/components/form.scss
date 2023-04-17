@@ -1,0 +1,191 @@
+.form {
+  @apply w-full;
+
+  &__wrapper {
+    @apply mb-[25px] flex items-start justify-start sp:flex-col sp:mb-5;
+  }
+
+  &__group {
+    @apply bg-[#ece8e8] pt-[32px] pb-[17px] px-[38px] sp:p-5;
+  }
+
+  &__textarea {
+    @apply font-helvetica rounded-[5px] w-full border-[#E0E0E0] resize-none h-[250px];
+  }
+
+  &__checkbox-wrapper {
+    @apply flex items-center;
+  }
+
+  &__label {
+    @apply flex items-center font-helvetica text-base mr-[10px] min-h-[40px] font-bold tracking-[1px];
+  }
+
+  &__checkbox {
+    @apply appearance-none w-[30px] h-[30px] border-[1px] border-solid border-[#ccc] rounded align-top relative outline-0 md-screen:w-[20px] md-screen:h-[20px];
+
+    &--solid-bg {
+      &:checked {
+        @apply bg-[#ccc];
+
+        &:after {
+          @apply text-[#fff];
+        }
+      }
+    }
+  }
+
+  &__role {
+    @apply font-meiryo #{!important};
+  }
+
+  &__text {
+    @apply font-helvetica text-[1.10rem] font-bold;
+
+    &-label {
+      @apply text-base;
+    }
+  }
+
+  &__input-wrapper {
+    @apply flex flex-wrap items-center justify-start min-h-[40px] sp:flex-col sp:items-start;
+  }
+
+  &__input {
+    @apply font-helvetica border-[#E0E0E0] px-[15px] border rounded-[5px] h-[40px] w-full bg-white;
+
+    &::placeholder {
+      @apply text-[#868D96];
+    }
+
+    &--error {
+      @apply border-[#dc3545] bg-[#f6ecec] focus:border-[#dc3545];
+    }
+  }
+
+  &__error {
+    @apply text-[#dc3545] text-base font-bold mt-2;
+  }
+
+  &__check-wrapper,
+  &__radio-wrapper {
+    @apply flex items-center sp:mb-4;
+
+    &:not(:last-child) {
+      @apply mr-5;
+    }
+  }
+
+  &__check {
+    @apply rounded;
+
+    &:checked {
+      &:after {
+        content: "\02143";
+        @apply text-base text-[#007BFF] rotate-[40deg] font-bold flex items-center justify-center pb-[3px] mt-[-6px] sp:mt-[-3px];
+      }
+    }
+  }
+
+  &__check,
+  &__radio {
+    @apply w-[20px] h-[20px] mr-[10px] focus:ring-0 focus:ring-offset-0 border-2 border-[#007BFF] relative cursor-pointer;
+
+    &:checked {
+      @apply text-white bg-none border-[#007BFF] focus:border-[#007BFF] hover:border-[#007BFF];
+    }
+
+    &--secondary {
+      @apply border-[#B7B7B7];
+
+      &:checked {
+        @apply border-[#B7B7B7] focus:border-[#B7B7B7] hover:border-[#B7B7B7];
+      }
+    }
+  }
+
+  &__radio {
+    &:checked {
+      &:after {
+        content: "";
+        @apply bg-[#007BFF] block absolute m-auto bottom-0 top-0 right-0 left-0 w-[11px] h-[11px] rounded-full;
+      }
+    }
+  }
+
+  &__select {
+    @apply border-[#CED4DA] w-full h-[40px] rounded-[5px];
+  }
+
+  &__required {
+    @apply text-primary-red ml-0.5;
+  }
+
+  &__error {
+    @apply block text-primary-red font-medium text-sm mt-1;
+  }
+
+  &__toggle {
+    @apply appearance-none border-0 w-[60px] h-[30px] rounded-[50px] relative outline-none bg-[#ddd] cursor-pointer focus:ring-0 focus:ring-offset-0;
+    transition: all 0.3s linear;
+
+    &:after {
+      content: "";
+      transition: all 0.3s linear;
+      @apply block w-5 h-5 bg-white rounded-full absolute m-auto bottom-0 top-0 left-[10%];
+    }
+
+    &:checked {
+      @apply bg-primary-blue;
+      background-image: none;
+
+      &:after {
+        left: calc(90% - 20px);
+      }
+    }
+  }
+
+  &__toggle-wrapper {
+    @apply flex items-center min-h-[40px];
+  }
+
+  &__toggle-label {
+    @apply ml-2 text-primary-blue text-sm font-noto;
+  }
+
+  &__content-label {
+    @apply text-base font-helvetica text-black;
+
+    &--gray {
+      @apply font-bold text-[#646464];
+    }
+  }
+
+  &__text-wrapper {
+    @apply min-h-[40px] flex items-center w-full;
+  }
+
+  &__content-label {
+    @apply text-base font-helvetica text-black;
+
+    &--gray {
+      @apply font-bold text-[#646464];
+    }
+  }
+
+  &__text-wrapper {
+    @apply min-h-[40px] flex items-center w-full;
+  }
+
+  &__content-label {
+    @apply text-base font-helvetica text-black;
+
+    &--gray {
+      @apply font-bold text-[#646464];
+    }
+  }
+
+  &__text-wrapper {
+    @apply min-h-[40px] flex items-center w-full;
+  }
+}

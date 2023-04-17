@@ -1,0 +1,1 @@
+new Vue({el:"#app",data(){return{notificationFlg:""}},computed:{isActive(){return this.notificationFlg},checkedValue:{get(){return this.notificationFlg=document.getElementById("toggle_button").checked},set(t){this.notificationFlg=t,this.updateNotificationFlg(t)}}},methods:{async updateNotificationFlg(t){axios.post("/members/notofication-flg",{notification_flg:t}).then(i=>{})}}});

@@ -1,0 +1,237 @@
+extends ../../layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .main-wrapper
+    section.section
+      h2.heading.heading--underlined.mb-4 フォロー中の求人
+        span （〇〇件）
+      .card.mb-4
+        .card__body
+          ul.card_list
+            li.card__item
+              .flex.justify-between.mb-5(class="sp:flex-col")
+                div
+                  h3.heading.heading--underlined.heading--sm 求人タイトル
+                  p.heading.heading--xxs.text-xs.text-grey 職種
+                button.button.button--orange-reversed.mr-2(class="sp:my-2 h-[36px] min-h-0 px-4 text-sm") フォローを解除
+              .flex(class="sp:flex-col")
+                .mr-4.w-full
+                  .card__title-container.border-solid
+                    p.card__title.pb-1(class="no-underline") 【業務内容】
+                    .card__corporation-details
+                      p.card__text.card__text--3 ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                        | ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                        | ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                  .flex.justify-between.items-end(class="sp:flex-col sp:items-start")
+                    div
+                      .card__details
+                        p.card__title.pb-1(class="no-underline") 【給与】
+                        .card__corporation-details
+                          p.card__corporation-text 〇〇〇〜〇〇〇万円
+                      .card__details
+                        p.card__title.pb-1(class="no-underline") 【勤務地】
+                        .card__corporation-details
+                          p.card__corporation-text 東京都〇〇〇〇〇〇
+                    button.button(class="h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4") 求人詳細を見る
+                .card.card--blue(class="h-auto w-8/12 sp:w-full sp:mt-6")
+                  p.text-xs.mb-2 企業情報
+                  a.card__title.underline(href="#") 株式会社○○○○○○
+                  .flex-center-layout.text-xs.mb-1
+                    label.mr-2.w-10.block 評価
+                    .flex-center-layout.w-full
+                      .card__emoji-wrapper
+                        .card__emoji
+                      span （口コミ ○○○○件）
+                  .flex-center-layout.text-xs.mb-1
+                    label.mr-2.w-10.block 住所
+                    .block.w-full
+                      span 東京都〇〇区〇〇〇〇
+                  .flex-center-layout.text-xs.mb-1
+                    label.mr-2.w-10.block URL
+                    .block.w-full
+                      span https://○○○○○○○○○.○○.○○
+                  .flex-center-layout.text-xs.mb-1
+                    label.mr-2.w-10.block 業界
+                    .block.w-full
+                      span 〇〇〇〇
+      - let n = 0
+      while n < 9
+        - n++
+        .card.mb-4
+          .card__body
+            ul.card_list
+              li.card__item
+                .flex.justify-between.mb-5(class="sp:flex-col")
+                  div
+                    h3.heading.heading--underlined.heading--sm 求人タイトル
+                    p.heading.heading--xxs.text-xs.text-grey 職種
+                  button.button.button--orange-reversed.mr-2(class="sp:my-2 text-sm h-[36px] min-h-0 px-4 text-sm") フォローを解除
+                .flex(class="sp:flex-col")
+                  .mr-4.w-full
+                    .card__title-container.border-solid
+                      p.card__title.pb-1(class="no-underline") 【業務内容】
+                      .card__corporation-details
+                        p.card__text.card__text--3 ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                          | ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                          | ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○…
+                    .flex.justify-between.items-end(class="sp:flex-col sp:items-start")
+                      div
+                        .card__details
+                          p.card__title.pb-1(class="no-underline") 【給与】
+                          .card__corporation-details
+                            p.card__corporation-text 〇〇〇〜〇〇〇万円
+                        .card__details
+                          p.card__title.pb-1(class="no-underline") 【勤務地】
+                          .card__corporation-details
+                            p.card__corporation-text 東京都〇〇〇〇〇〇
+                      button.button(class="h-[36px] text-sm min-h-0 px-4 sp:w-full sp:mt-4") 求人詳細を見る
+                  .card.card--blue(class="h-auto w-8/12 sp:w-full sp:mt-6")
+                    p.text-xs.mb-2 企業情報
+                    a.card__title.underline(href="#") 株式会社○○○○○○
+                    .flex-center-layout.text-xs.mb-1
+                      label.mr-2.w-10.block 評価
+                      .flex-center-layout.w-full
+                        .card__emoji-wrapper
+                        span （口コミ ○○○○件）
+                    .flex-center-layout.text-xs.mb-1
+                      label.mr-2.w-10.block 住所
+                      .block.w-full
+                        span 東京都〇〇区〇〇〇〇
+                    .flex-center-layout.text-xs.mb-1
+                      label.mr-2.w-10.block URL
+                      .block.w-full
+                        span https://○○○○○○○○○.○○.○○
+                    .flex-center-layout.text-xs.mb-1
+                      label.mr-2.w-10.block 業界
+                      .block.w-full
+                        span 〇〇〇〇
+
+      .pagination 
+        // For PC
+        ol.pagination__list
+          li.pagination__item.pagination__item--disabled
+            a.pagination__link(href="#") 
+              img.pagination__icon.pagination__icon--prev(src="/public/img/icon/arrow-white.svg", alt="arrow")
+              | 前へ
+          li.pagination__item.pagination__item--active
+            a.pagination__link(href="#") 1
+          li.pagination__item
+            a.pagination__link(href="#") 2
+          li.pagination__item
+            a.pagination__link(href="#") 3
+          li.pagination__item
+            a.pagination__link(href="#") 次へ
+              img.pagination__icon(src="/public/img/icon/arrow-gray.svg", alt="arrow")
+        
+        // For SP
+        button.pagination__button もっと見る
+          img(src="/public/img/icon/arrow.svg", alt="arrow")
+
+    aside.sidebar
+      .sidebar__card.mb-5
+        p.sidebar__card-header 個人設定
+        ul.sidebar__list
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 会員プロフィール
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 詳細情報
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 転職条件
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span サイト通知設定
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+
+      ul.sidebar__list.sidebar__list--rounded
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span トップページ
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span フォロー企業
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span クチコミ管理
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span 退会
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+
+block modals
+  include modal/sample.pug
+
+block footer
+  include ../../footer.pug
+
+block script
+  script.
+    new Vue({
+      el: '#app',
+      data () {
+        return {
+        };
+      },
+      methods: {
+      },
+      created() {
+      },
+      mounted() {
+      }
+    })

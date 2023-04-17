@@ -1,0 +1,28 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/resources/scss/app.scss")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet")
+    script(src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous")
+    title Fullfill
+  body
+    main#app
+      include header.pug
+
+      .content-wrapper
+        block content
+        block modals
+
+      block footer
+
+      // Use @vite() for blade files
+      // This is for static html files only
+    script(src="/node_modules/vue/dist/vue.js")
+    script(src="/resources/js/commonMethods.js")
+
+    block script

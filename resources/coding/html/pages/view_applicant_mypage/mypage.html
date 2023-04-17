@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">マイページ</a><a class="header__link" href="#">ログアウト</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper content-wrapper--with-sidebar">
+        <div class="banner banner--second">
+          <div class="flex items-center h-full mx-auto max-w-[1140px] px-[20px]">
+            <p class="banner__text text-left m-0 p-0">マイページ</p>
+          </div>
+        </div>
+        <div class="main-wrapper">
+          <section class="section sp:mb-8">
+            <div class="flex justify-between">
+              <h2 class="heading">会員プロフィール</h2>
+              <button class="button button--with-icon"> <img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">編集する</button>
+            </div>
+            <div class="section__wrapper mt-10">
+              <form class="form">
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">性別</label>
+                  </div>
+                  <div class="w-full dash">
+                    <p class="form__label font-normal">男性　</p>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">生年月日</label>
+                  </div>
+                  <div class="w-full dash">
+                    <p class="form__label font-normal">1995年4月1日</p>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">お住まいの都道府県</label>
+                  </div>
+                  <div class="w-full dash">
+                    <p class="form__label font-normal">東京都</p>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">現在の年収</label>
+                  </div>
+                  <div class="w-full dash">
+                    <p class="form__label font-normal">400~500万円</p>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="flex justify-between mt-10">
+              <h2 class="heading">詳細情報</h2>
+            </div>
+            <div class="card mt-10">
+              <div class="card__header">
+                <h2 class="card__heading">基本情報</h2>
+                <button class="button button--with-icon"> <img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">編集する</button>
+              </div>
+              <div class="card__body">
+                <div class="card__item">
+                  <form class="form" action="">
+                    <div class="form__wrapper">
+                      <div class="flex items-center min-w-[25%]">
+                        <label class="form__label text-primary-gray">名前</label>
+                      </div>
+                      <div class="w-full dash">
+                        <p class="form__label font-normal">斎藤　拓斗</p>
+                      </div>
+                    </div>
+                    <div class="form__wrapper">
+                      <div class="flex items-center min-w-[25%]">
+                        <label class="form__label text-primary-gray">フリガナ</label>
+                      </div>
+                      <div class="w-full dash">
+                        <p class="form__label font-normal">サイトウ　タクト</p>
+                      </div>
+                    </div>
+                    <div class="form__wrapper">
+                      <div class="flex items-center min-w-[25%]">
+                        <label class="form__label text-primary-gray">住所</label>
+                      </div>
+                      <div class="w-full dash">
+                        <p class="form__label font-normal">東京都杉並区〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                      </div>
+                    </div>
+                    <div class="form__wrapper">
+                      <div class="flex items-center min-w-[25%]">
+                        <label class="form__label text-primary-gray">Tel</label>
+                      </div>
+                      <div class="w-full dash">
+                        <p class="form__label font-normal">090-1234-5678 (携帯)</p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-10">
+              <div class="card__header">
+                <h2 class="card__heading">学歴情報</h2>
+                <button class="button button--with-icon"> <img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">編集する</button>
+              </div>
+              <div class="card__body">
+                <div class="card__item">
+                  <form class="form" action="">
+                    <div class="form__wrapper">
+                      <div class="flex items-center min-w-[25%]">
+                        <label class="form__label text-primary-gray">2017年3月</label>
+                      </div>
+                      <div class="w-full">
+                        <p class="form__label">東京大学<span class="font-normal text-primary-gray ml-1">(大学卒)</span></p>
+                        <p class="text-primary-gray">専攻・学部：理科I類</p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-10">
+              <div class="card__header">
+                <h2 class="card__heading">基本情報</h2>
+                <button class="button button--with-icon"> <img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">編集する</button>
+              </div>
+              <div class="card__body">
+                <div class="card__item">
+                  <form class="form" action="">
+                    <div class="form__wrapper">
+                      <div class="flex items-center min-w-[25%]">
+                        <p class="form__label text-primary-gray">2018年4月~</p>
+                      </div>
+                      <div class="w-full dash pb-2.5">
+                        <p class="card__title no-underline">Fulfill株式会社</p>
+                        <div class="card__corporation-details pb-2.5">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">大阪府</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">業界名が入ります</p>
+                          </div>
+                        </div>
+                        <p class="card__title no-underline text-primary-gray font-normal">職務内容：職務名が入ります</p>
+                        <p class="text-primary-gray">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                      </div>
+                    </div>
+                    <div class="form__wrapper">
+                      <div class="flex items-center min-w-[25%]">
+                        <p class="form__label text-primary-gray">2019年4月~</p>
+                      </div>
+                      <div class="w-full dash pb-2.5">
+                        <p class="card__title no-underline">Fulfill株式会社</p>
+                        <div class="card__corporation-details pb-2.5">
+                          <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                            <p class="card__corporation-text">大阪府</p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                            <p class="card__corporation-text">業界名が入ります</p>
+                          </div>
+                        </div>
+                        <p class="card__title no-underline text-primary-gray font-normal">職務内容：職務名が入ります</p>
+                        <p class="text-primary-gray">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇<br>〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-10">
+              <div class="card__header">
+                <h2 class="card__heading">資格・スキル</h2>
+                <button class="button button--with-icon"> <img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">編集する</button>
+              </div>
+              <div class="card__body">
+                <div class="card__item">
+                  <form class="form" action="">
+                    <div class="form__wrapper">
+                      <div class="flex items-center min-w-[25%]">
+                        <label class="form__label text-primary-gray uppercase">toeic</label>
+                      </div>
+                      <div class="w-full dash">
+                        <p class="form__label font-normal">650点</p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-between mt-10">
+              <h2 class="heading">転職条件</h2>
+              <button class="button button--with-icon"> <img class="mr-2" src="/public/img/icon/pen.svg" alt="edit">編集する</button>
+            </div>
+            <div class="section__wrapper mt-10">
+              <form class="form">
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">転職希望度</label>
+                  </div>
+                  <div class="w-full dash">
+                    <p class="form__label font-normal">1~3ヶ月以内に転職したい</p>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">転職希望の業界</label>
+                  </div>
+                  <div class="w-full dash">
+                    <p class="form__label font-normal">IT・メディア</p>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">転職希望の職種</label>
+                  </div>
+                  <div class="w-full dash">
+                    <p class="form__label font-normal">人事管理</p>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">転職希望の勤務地</label>
+                  </div>
+                  <div class="w-full dash">
+                    <p class="form__label font-normal">愛知県</p>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">希望年収</label>
+                  </div>
+                  <div class="w-full dash">
+                    <p class="form__label font-normal">500~600万</p>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label text-primary-gray">
+                      転職で重視すること（属性）</label>
+                  </div>
+                  <div class="w-full dash flex min-h-[48px]">
+                    <button class="button button--with-icon mr-2" disabled>稼ぎたい</button>
+                    <button class="button button--with-icon" disabled>転勤なし</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="flex justify-between mt-10">
+              <h2 class="heading">サイトの通知設定</h2>
+            </div>
+            <div class="section__wrapper mt-10">
+              <form class="form">
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[45%]">
+                    <label class="form__label text-primary-gray">サイトからの新着情報のメール通知</label>
+                  </div>
+                  <div class="w-full">
+                    <div class="form__toggle-wrapper">
+                      <input class="form__toggle" id="toggle" type="checkbox" name="toggle" checked>
+                      <label class="form__toggle-label" for="toggle">ON</label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+          <aside class="sidebar">
+            <div class="sidebar__card mb-5">
+              <p class="sidebar__card-header">個人設定</p>
+              <ul class="sidebar__list">
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>会員プロフィール</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>詳細情報</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>転職条件</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>サイト通知設定</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+              </ul>
+            </div>
+            <ul class="sidebar__list sidebar__list--rounded">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>トップページ</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー企業</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー求人</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>クチコミ管理</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>退会</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

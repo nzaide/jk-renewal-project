@@ -1,0 +1,228 @@
+extends ../../../layout.pug
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label.header__label(for="name") 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option(href="#") Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content  
+  section.section
+    .wrapper.wrapper--admin
+      h2.heading 企業管理
+      .flex.mb-10
+        button.tabs.tabs--white 企業情報
+        button.tabs.tabs--white.tabs--active 評価・クチコミ
+        button.tabs.tabs--white 求人・応募
+      .content.content--shadow.mb-10(class="py-[35px]")
+        ul.flex.flex-wrap
+          li.evaluation__react-item
+            .evaluation__react-wrap
+              img(src="/public/img/icon/omoshiroi.svg" alt="omoshiroi")
+              span 総合評価
+            span(class="text-[21px] text-[#646464]") x件
+          li.evaluation__react-item
+            .evaluation__react-wrap
+              img(src="/public/img/icon/kusu.svg" alt="kusu")
+              span あるあるネタ
+            span(class="text-[21px] text-[#646464]") x件
+          li.evaluation__react-item
+            .evaluation__react-wrap
+              img(src="/public/img/icon/shirakeru.svg" alt="shirakeru")
+              span いい話ネタ
+            span(class="text-[21px] text-[#646464]") x件
+          li.evaluation__react-item
+            .evaluation__react-wrap
+              img(src="/public/img/icon/bakusyou.svg" alt="bakusyou")
+              span 長話ネタ
+            span(class="text-[21px] text-[#646464]") x件
+          li.evaluation__react-item
+            .evaluation__react-wrap
+              img(src="/public/img/icon/samui.svg" alt="samui")
+              span 五七五ネタ
+            span(class="text-[21px] text-[#646464]") x件
+      .content.content--shadow.mb-10(class="py-[35px]")
+        .flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou")
+              span.text-base 評価アイコン
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile")
+              span 人物アイコン
+                br
+                | 20代男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl.text-primary-blue クチコミID
+                span.evaluation__divider  | 
+                | クチコミを行う評価ネタ（例：あるあるネタ）
+              .flex
+                button.button.button--primary.mr-5 返信する
+                button.button.button--primary 非表示
+            p [〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+              br
+              | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+            .evaluation__comment
+              form.form(action="")
+                .form__wrapper
+                  .flex.items-center(class="min-h-[40px] whitespace-nowrap mr-10")
+                    label.form__content-label 返信者
+                  .form__text-wrapper
+                    select.form__select(name="#" class="h-[40px] text-base m-0 rounded-[4px]")
+                      option 社長
+                      option 社長
+                .form__wrapper
+                  .form__text-wrapper
+                    textarea.form__textarea.text-base.text-black.resize-none(name="", cols="30", rows="") 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+      .content.content--shadow.mb-10(class="py-[35px]")
+        .flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/omoshiroi.svg" alt="omoshiroi")
+              span.text-base 評価アイコン
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile")
+              span 人物アイコン
+                br
+                | 20代男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl.text-primary-blue クチコミID
+                span.evaluation__divider  | 
+                | クチコミを行う評価ネタ（例：あるあるネタ）
+              .flex
+                button.button.button--primary.mr-5 返信する
+                button.button.button--primary 非表示
+            p [〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+              br
+              | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+            .evaluation__comment
+              .flex.justify-between.mb-2.5
+                span(class="text-[#0088D0]") 社長からの返信
+                span 投稿日：2022年〇月〇日 
+              p 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                br
+                | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+              .flex.justify-end.mt-5
+                button.button.button--secondary.mr-5 編集
+                button.button.button--red 削除
+      .content.content--shadow.mb-10(class="py-[35px]")
+        .flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/kusu.svg" alt="kusu")
+              span.text-base 評価アイコン
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile")
+              span 人物アイコン
+                br
+                | 20代男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl.text-primary-blue クチコミID
+                span.evaluation__divider  | 
+                | クチコミを行う評価ネタ（例：あるあるネタ）
+              .flex
+                button.button.button--primary.mr-5 返信する
+                button.button.button--secondary 再表示
+            p [〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+              br
+              | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+      .content.content--shadow.mb-10(class="py-[35px]")
+        .flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/shirakeru.svg" alt="shirakeru")
+              span.text-base 評価アイコン
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile")
+              span 人物アイコン
+                br
+                | 20代男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl.text-primary-blue クチコミID
+                span.evaluation__divider  | 
+                | クチコミを行う評価ネタ（例：あるあるネタ）
+              .flex
+                button.button.button--primary.mr-5 返信する
+                button.button.button--primary 非表示
+            p [〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+              br
+              | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+      .content.content--shadow.mb-10(class="py-[35px]")
+        .flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/samui.svg" alt="samui")
+              span.text-base 評価アイコン
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/sample-profile-img.jpg" alt="sample profile")
+              span 人物アイコン
+                br
+                | 20代男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl.text-primary-blue クチコミID
+                span.evaluation__divider  | 
+                | クチコミを行う評価ネタ（例：あるあるネタ）
+              .flex
+                button.button.button--primary.mr-5 返信する
+                button.button.button--secondary 再表示
+            p [〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+              br
+              | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+      ol.pagination.mt-12
+        li.pagination__item.pagination__item--disabled(class="w-[83px]")
+          a.pagination__link(href="#") 前へ
+        li.pagination__item.pagination__item--active 
+          a.pagination__link(href="#") 1
+        li.pagination__item
+          a.pagination__link(href="#") 2
+        li.pagination__item
+          a.pagination__link(href="#") 3
+        li.pagination__item(class="w-[83px]")
+          a.pagination__link(href="#") 次へ

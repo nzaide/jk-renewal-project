@@ -1,0 +1,314 @@
+extends ../../../layout.pug
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label.header__label(for="name") 山田　太郎 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option(href="#") Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 管理者アカウント
+      li.nav__item
+        a.nav__link(href="#") 登録企業管理
+      li.nav__item
+        a.nav__link(href="#") 求人管理
+      li.nav__item
+        a.nav__link(href="#") 求職者管理
+      li.nav__item
+        a.nav__link(href="#") クチコミ管理
+
+block content  
+  section.section
+    .wrapper.wrapper--admin
+      .flex.justify-between
+        h2.heading クチコミ管理
+        a.button.button--primary.w-52(href="#") NGワード管理
+      form.form(action="")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label 業界
+            button.button.button--white.h-auto.ml-5
+              i(class="fa-solid fa-plus mr-3")
+              |  追加する
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="業界" value="IT/通信/インターネット系, 金融/保険系")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label 所在地
+            button.button.button--white.h-auto.ml-5
+              i(class="fa-solid fa-plus mr-3")
+              |  追加する
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="所在地" value="東京都, 神奈川県")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label ジャンル
+            button.button.button--white.h-auto.ml-5
+              i(class="fa-solid fa-plus mr-3")
+              |  追加する
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="ジャンル" value="あるあるネタ, いい話ネタ ")
+        .mb-5
+          .flex.items-center(class="min-h-[40px] mb-2")
+            label.form__content-label フリーワード
+            button.button.button--white.h-auto.ml-5
+              i(class="fa-solid fa-plus mr-3")
+              |  追加する
+          .form__text-wrapper
+            input.form__input.text-black(type="text" class="h-[40px] text-base" placeholder="フリーワード" value="企業名やクチコミのキーワードで検索")
+        .flex
+          .form__wrapper.items-center.w-full
+            .flex.items-center(class="min-h-[40px] w-1/5")
+              label.form__content-label 表示
+            .form__input-wrapper
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio1(type="radio", name="display" checked)
+                label.cursor-pointer(for="radio1") 表示・非表示両方
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio2(type="radio", name="display")
+                label.cursor-pointer(for="radio2") 有のみ
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio3(type="radio", name="display")
+                label.cursor-pointer(for="radio3") 無のみ
+          .form__wrapper.items-center.w-full
+            .flex.items-center(class="min-h-[40px] w-1/5")
+              label.form__content-label 話題
+            .form__input-wrapper
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio4(type="radio", name="topic" checked)
+                label.cursor-pointer(for="radio4") 有無両方
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio5(type="radio", name="topic")
+                label.cursor-pointer(for="radio5") 有のみ
+              .form__radio-wrapper
+                input.form__radio.bg-transparent.cursor-pointer#radio6(type="radio", name="topic")
+                label.cursor-pointer(for="radio6") 無のみ
+      .flex.justify-center.mb-16
+        button.button.button--primary(class="w-[206px]") 検索
+      .views.mb-9
+        div(class="text-[#333333]")
+          .font-bold 該当件数 : 全
+            span(class="text-[#007bff]") 0000
+            | 件
+        .flex
+          p.mr-5(class="text-[#646464]") 日付順
+          p.mr-5(class="text-[#007bff]") 閲覧数順
+          p.mr-5(class="text-[#007bff]") ウケる数順
+          p(class="text-[#007bff]") わかる数順
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            span.card__title(class="text-[#333333]" href="#") 富士通株式会社
+            .flex(class="mb-[15px]")
+              button.button.button--primary(class="mr-[15px] w-52") 話題に設定
+              button.button.button--primary 非表示
+          .card__corporation-details.flex
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 神奈川県
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/building.svg", alt="building")
+              p.card__corporation-text ソフトウェア／ハード開発
+            .flex.flex-col.ml-auto.items-end
+              p.card__corporation-text(class="mr-[0]") 更新日：2022年△月△日　投稿日：2022年〇月〇日 
+              p.card__corporation-text(class="mr-[0]") 閲覧数: 20
+        .card__details.flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou")
+              span.text-base 爆笑
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile")
+              span 20代
+                br
+                | 男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl 口コミID 
+                span.evaluation__divider |
+                |  あるあるネタ
+            p ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+              br
+              | ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            span.card__title(class="text-[#333333]" href="#") 富士通株式会社
+            .flex(class="mb-[15px]")
+              button.button.button--secondary(class="mr-[15px] w-52") 話題設定の解除
+              button.button.button--primary 非表示
+          .card__corporation-details.flex
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 神奈川県
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/building.svg", alt="building")
+              p.card__corporation-text ソフトウェア／ハード開発
+            .flex.flex-col.ml-auto.items-end
+              p.card__corporation-text(class="mr-[0]") 更新日：2022年△月△日　投稿日：2022年〇月〇日 
+              p.card__corporation-text(class="mr-[0]") 閲覧数: 20
+        .card__details.flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou")
+              span.text-base 爆笑
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile")
+              span 20代
+                br
+                | 男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl 口コミID 
+                span.evaluation__divider |
+                |  あるあるネタ
+            p ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+              br
+              | ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            span.card__title(class="text-[#333333]" href="#") 富士通株式会社
+            .flex(class="mb-[15px]")
+              button.button.button--primary(class="mr-[15px] w-52") 話題に設定
+              button.button.button--secondary 再表示
+          .card__corporation-details.flex
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 神奈川県
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/building.svg", alt="building")
+              p.card__corporation-text ソフトウェア／ハード開発
+            .flex.flex-col.ml-auto.items-end
+              p.card__corporation-text(class="mr-[0]") 更新日：2022年△月△日　投稿日：2022年〇月〇日 
+              p.card__corporation-text(class="mr-[0]") 閲覧数: 20
+        .card__details.flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou")
+              span.text-base 爆笑
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile")
+              span 20代
+                br
+                | 男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl 口コミID 
+                span.evaluation__divider |
+                |  あるあるネタ
+            p ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+              br
+              | ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            span.card__title(class="text-[#333333]" href="#") 富士通株式会社
+            .flex(class="mb-[15px]")
+              button.button.button--primary(class="mr-[15px] w-52") 話題に設定
+              button.button.button--primary 非表示
+          .card__corporation-details.flex
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 神奈川県
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/building.svg", alt="building")
+              p.card__corporation-text ソフトウェア／ハード開発
+            .flex.flex-col.ml-auto.items-end
+              p.card__corporation-text(class="mr-[0]") 更新日：2022年△月△日　投稿日：2022年〇月〇日 
+              p.card__corporation-text(class="mr-[0]") 閲覧数: 20
+        .card__details.flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou")
+              span.text-base 爆笑
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile")
+              span 20代
+                br
+                | 男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl 口コミID 
+                span.evaluation__divider |
+                |  あるあるネタ
+            p ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+              br
+              | ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+      .content.content--shadow.my-5(class="py-[35px]")
+        .card__title-container
+          .flex.items-center.justify-between
+            span.card__title(class="text-[#333333]" href="#") 富士通株式会社
+            .flex(class="mb-[15px]")
+              button.button.button--primary(class="mr-[15px] w-52") 話題に設定
+              button.button.button--primary 非表示
+          .card__corporation-details.flex
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/map.svg", alt="map")
+              p.card__corporation-text 神奈川県
+            .flex-center-layout
+              img.card__icon(src="/public/img/icon/building.svg", alt="building")
+              p.card__corporation-text ソフトウェア／ハード開発
+            .flex.flex-col.ml-auto.items-end
+              p.card__corporation-text(class="mr-[0]") 更新日：2022年△月△日　投稿日：2022年〇月〇日 
+              p.card__corporation-text(class="mr-[0]") 閲覧数: 20
+        .card__details.flex
+          .evaluation__rating(class="w-[10%] mr-4")
+            .evaluation__react(class="mb-[40px]")
+              img(class="w-[60px] h-[auto] mb-[10px]" src="/public/img/icon/bakusyou.svg" alt="bakusyou")
+              span.text-base 爆笑
+            .evaluation__profile
+              img(class="w-[64px] h-[auto] mb-[10px]" src="/public/img/profile-img.png" alt="sample profile")
+              span 20代
+                br
+                | 男性
+          .evaluation__details(class="w-[88%]")
+            .flex.justify-between.items-center(class="mb-[10px]")
+              p.text-xl 口コミID 
+                span.evaluation__divider |
+                |  あるあるネタ
+            p ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+              br
+              | ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+            .flex.justify-end(class="mt-[45px]")
+              p.reviews.mr-5 ウケる
+                span 1
+              p.reviews.reviews--blue わかる
+                span 1
+      ol.pagination.mt-12
+        li.pagination__item.pagination__item--disabled(class="w-[83px]")
+          a.pagination__link(href="#") 前へ
+        li.pagination__item.pagination__item--active 
+          a.pagination__link(href="#") 1
+        li.pagination__item
+          a.pagination__link(href="#") 2
+        li.pagination__item
+          a.pagination__link(href="#") 3
+        li.pagination__item(class="w-[83px]")
+          a.pagination__link(href="#") 次へ

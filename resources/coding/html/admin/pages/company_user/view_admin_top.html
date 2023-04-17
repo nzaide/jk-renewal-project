@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <link rel="stylesheet" href="/resources/admin_scss/admin.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>View Admin</title>
+  </head>
+  <body class="bg-[#E4E5EC]">
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="flex items-center justify-between">
+            <h1 class="m-0"><a class="header__logo" href="#">転ジョーク会議 管理画面</a></h1>
+            <ul class="header__list">
+              <li class="header__item">
+                <label class="header__label" for="name">〇〇〇株式会社 様<i class="fas fa-caret-down ml-2"></i></label>
+                <input class="header__check" id="name" type="checkbox">
+                <div class="header__option-wrapper header__option-wrapper--lg"><a class="header__option">Logout</a></div>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list"> 
+              <li class="nav__item"><a class="nav__link" href="#">企業管理</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="section pt-[71px] pb-[609px]">
+        <div class="wrapper">
+          <h2 class="heading">新着情報</h2>
+          <div class="content pb-[130px]">
+            <div class="flex">
+              <div class="w-1/4">
+                <p>2022年05月09日</p>
+              </div>
+              <div class="w-full">
+                <p> <span class="link cursor-auto">4件</span>の貴社への新しいクチコミがあります。</p>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="w-1/4">
+                <p>2022年04月30日</p>
+              </div>
+              <div class="w-full">
+                <p> <span class="link cursor-auto">1件</span>の貴社への新しいクチコミがあります。</p>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="w-1/4">
+                <p>2022年04月20日</p>
+              </div>
+              <div class="w-full">
+                <p> <span class="link cursor-auto">2件</span>の貴社への新しいクチコミがあります。</p>
+              </div>
+            </div>
+            <div class="content__footer"></div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

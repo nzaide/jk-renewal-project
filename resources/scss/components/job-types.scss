@@ -1,0 +1,27 @@
+.job-types {
+  @apply p-5 sp:p-0;
+
+  &__list {
+    @apply grid grid-cols-3 gap-x-3 gap-y-4 sp:grid-cols-1 sp:gap-0;
+  }
+
+  &__item {
+    @apply sp:border-b sp:border-[#cfcfcf] last:border-0;
+  }
+
+  &__description {
+    @apply text-xs mt-2.5 text-[#646464] font-normal;
+  }
+
+  .link {
+    @apply sp:px-5 sp:py-4 sp:block;
+
+    span {
+      @apply sp:inline-flex sp:items-center sp:w-full;
+
+      img {
+        @apply hidden sp:block ml-auto;
+      }
+    }
+  }
+}

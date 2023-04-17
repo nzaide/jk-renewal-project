@@ -1,0 +1,46 @@
+.search-result {
+  @apply bg-[#FFE4D3] px-2.5;
+
+  &__wrapper {
+    @apply flex-center-layout justify-between w-full min-h-[50px];
+  }
+
+  &__count {
+    @apply flex-center-layout font-bold text-xs text-[#333] sp:items-baseline;
+
+    &--orange {
+      @apply text-primary-orange text-base;
+    }
+  }
+
+  &__sort-wrapper {
+    @apply flex-center-layout;
+  }
+
+  &__sort-label {
+    @apply text-xs cursor-pointer;
+  }
+
+  &__option {
+    @apply inline-flex items-center;
+
+    &:not(:first-child) {
+      &:before {
+        content: "";
+        @apply inline-block w-px h-3 bg-[#cfcfcf] mx-2.5;
+      }
+    }
+
+    & > input {
+      &:checked {
+        & + label {
+          @apply text-primary-orange font-bold;
+        }
+      }
+    }
+  }
+
+  &-divider {
+    @apply bg-primary-orange w-full h-0.5 my-4;
+  }
+}

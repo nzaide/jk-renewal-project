@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <link rel="stylesheet" href="/resources/admin_scss/admin.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>View Admin</title>
+  </head>
+  <body class="bg-[#E4E5EC]">
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="flex items-center justify-between">
+            <h1 class="m-0"><a class="header__logo" href="#">転ジョーク会議 管理画面</a></h1>
+            <ul class="header__list">
+              <li class="header__item">
+                <label class="header__label" for="name">山田　太郎 様<i class="fas fa-caret-down ml-2"></i></label>
+                <input class="header__check" id="name" type="checkbox">
+                <div class="header__option-wrapper header__option-wrapper--lg"><a class="header__option">Logout</a></div>
+              </li>
+            </ul>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list"> 
+              <li class="nav__item"><a class="nav__link" href="#">管理者アカウント</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">登録企業管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求人管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">求職者管理</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">クチコミ管理</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="section">
+        <div class="wrapper">
+          <h2 class="heading">管理者アカウント一覧</h2>
+          <div class="flex justify-end"><a class="button button--primary w-52" href="#"><i class="fa-solid fa-plus mr-3"></i> 管理アカウント追加</a></div>
+          <table class="table mt-[23px]">
+            <thead>
+              <th class="table__header uppercase w-[135px]">Id</th>
+              <th class="table__header">管理者名</th>
+              <th class="table__header">メールアドレス</th>
+              <th class="table__header w-[272px]">アクション</th>
+            </thead>
+            <tbody>
+              <tr class="table__row">
+                <td class="table__data">1</td>
+                <td class="table__data">山田　太郎</td>
+                <td class="table__data">tarou@test.co.jp</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">2</td>
+                <td class="table__data">山田　二郎</td>
+                <td class="table__data">jirou@test.co.jp</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">3</td>
+                <td class="table__data">山田　三郎</td>
+                <td class="table__data">saburou@test.co.jp</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">4</td>
+                <td class="table__data">山田　四郎</td>
+                <td class="table__data">shirou@test.co.jp</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">*</td>
+                <td class="table__data">** **</td>
+                <td class="table__data">*****@*****.**.**</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">*</td>
+                <td class="table__data">** **</td>
+                <td class="table__data">*****@*****.**.**</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">*</td>
+                <td class="table__data">** **</td>
+                <td class="table__data">*****@*****.**.**</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">*</td>
+                <td class="table__data">** **</td>
+                <td class="table__data">*****@*****.**.**</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">*</td>
+                <td class="table__data">** **</td>
+                <td class="table__data">*****@*****.**.**</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__data">*</td>
+                <td class="table__data">** **</td>
+                <td class="table__data">*****@*****.**.**</td>
+                <td class="table__data px-[30px] py-[8px]">
+                  <div class="flex justify-between">
+                    <button class="button button--secondary min-w-max w-[45%]">編集</button>
+                    <button class="button button--red min-w-max w-[45%]">削除</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <ol class="pagination mt-12">
+            <li class="pagination__item pagination__item--disabled w-[83px] mr-1"><a class="pagination__link" href="#">前へ</a></li>
+            <li class="pagination__item pagination__item--active mr-1"><a class="pagination__link" href="#">1</a></li>
+            <li class="pagination__item mr-1"><a class="pagination__link" href="#">2</a></li>
+            <li class="pagination__item mr-1"><a class="pagination__link" href="#">3</a></li>
+            <li class="pagination__item mr-1 w-[83px]"><a class="pagination__link" href="#">次へ</a></li>
+          </ol>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- Use @vite() for blade files-->
+    <!-- This is for static html files only-->
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

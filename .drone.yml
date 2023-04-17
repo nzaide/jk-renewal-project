@@ -1,0 +1,196 @@
+---
+kind: pipeline
+type: ssh
+name: staging
+
+clone:
+  disable: true
+
+concurrency:
+  limit: 1
+
+platform:
+  arch: amd64
+  os: linux
+
+server:
+  host:
+    from_secret: STG_SSH_HOST
+  user:
+    from_secret: STG_SSH_USER
+  ssh_key:
+    from_secret: STG_SSH_KEY
+
+steps:
+  - name: check
+    environment:
+      WWW_ROOT:
+        from_secret: STG_WWW_ROOT
+    commands:
+      - cd $${WWW_ROOT}
+      - git fetch
+      - git status
+
+  - name: promote
+    environment:
+      WWW_ROOT:
+        from_secret: STG_WWW_ROOT
+    commands:
+      - cd $${WWW_ROOT}
+      - git pull
+      - git diff --quiet @{1} -- database/migrations || php artisan migrate --force
+    when:
+      event: [promote]
+      target: [staging]
+
+  - name: rollback
+    environment:
+      WWW_ROOT:
+        from_secret: STG_WWW_ROOT
+    commands:
+      - cd $${WWW_ROOT}
+      - git reset --keep @{1}
+    when:
+      event: [rollback]
+      target: [staging]
+
+  - name: deploy
+    environment:
+      WWW_ROOT:
+        from_secret: STG_WWW_ROOT
+    commands:
+      - cd $${WWW_ROOT}
+      - php artisan down
+      - git diff --quiet @{1} -- composer.lock || composer install --no-dev
+      - php artisan optimize:clear
+      - php artisan queue:restart
+      - php artisan up
+    when:
+      event: [promote, rollback]
+      target: [staging]
+
+trigger:
+  branch: [staging]
+  event: [push, promote, rollback]
+
+---
+kind: pipeline
+type: docker
+name: staging-notification
+
+clone:
+  disable: true
+
+depends_on: [staging]
+
+platform:
+  arch: amd64
+  os: linux
+
+steps:
+  - name: slack
+    image: plugins/slack
+    settings:
+      channel: jk-network
+      webhook:
+        from_secret: SLACK_WEBHOOK
+      template: >
+        {{#success build.status}}
+          ✔ Staging deployment success
+        {{ else }}
+          :x: Staging deployment failed
+        {{/success}}
+
+        Build: <{{ build.link }}| Build #{{ build.number }}>
+
+        Branch: <https://bitbucket.org/{{ repo.owner }}/{{ repo.name }}/commits/branch/{{ build.branch }}|{{ build.branch }}>
+
+trigger:
+  branch: [staging]
+  event: [promote]
+  status: [success, failure]
+
+---
+kind: pipeline
+type: ssh
+name: testing
+
+clone:
+  disable: true
+
+concurrency:
+  limit: 1
+
+platform:
+  arch: amd64
+  os: linux
+
+server:
+  host:
+    from_secret: TEST_SSH_HOST
+  user:
+    from_secret: TEST_SSH_USER
+  ssh_key:
+    from_secret: TEST_SSH_KEY
+
+steps:
+  - name: deploy
+    environment:
+      WWW_ROOT:
+        from_secret: TEST_WWW_ROOT
+    commands:
+      - cd $${WWW_ROOT}
+      - docker compose exec -T php php artisan down
+      - git pull
+      - git diff --quiet @{1} -- database/migrations || docker compose exec -T php php artisan migrate
+      - git diff --quiet @{1} -- composer.lock || docker compose exec -T php composer install
+      - docker compose exec -T php php artisan optimize:clear
+      - docker compose exec -T php php artisan queue:restart
+      - docker compose exec -T php php artisan up
+
+trigger:
+  branch: [testing]
+  event: [push]
+
+---
+kind: pipeline
+type: docker
+name: testing-notification
+
+clone:
+  disable: true
+
+depends_on: [testing]
+
+platform:
+  arch: amd64
+  os: linux
+
+steps:
+  - name: slack
+    image: plugins/slack
+    settings:
+      channel: jk-network
+      webhook:
+        from_secret: SLACK_WEBHOOK
+      template: >
+        {{#success build.status}}
+          ✔ Testing deployment success
+        {{ else }}
+          :x: Testing deployment failed
+        {{/success}}
+
+        Build: <{{ build.link }}| Build #{{ build.number }}>
+
+        Branch: <https://bitbucket.org/{{ repo.owner }}/{{ repo.name }}/commits/branch/{{ build.branch }}|{{ build.branch }}>
+
+trigger:
+  branch: [testing]
+  event: [push]
+  status: [success, failure]
+
+---
+kind: signature
+hmac: c2fb838a4954c9a542d6781092a498ed58b0647f7c44831146fbee1ffc1406e0
+
+...

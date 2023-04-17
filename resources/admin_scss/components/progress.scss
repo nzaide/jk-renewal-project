@@ -1,0 +1,25 @@
+.progress {
+  &__text {
+    @apply text-[#868D96] font-helvetica text-[30px] flex justify-end sp:text-[20px];
+  }
+
+  &__bar-wrapper {
+    @apply w-full max-w-[400px] h-[16px] rounded-[4px] bg-[#E9ECEF];
+  }
+
+  &__bar {
+    @apply w-full max-w-[25%] h-[16px] rounded-l-[4px] bg-[#007BFF];
+
+    &--50 {
+      @apply max-w-[50%];
+    }
+
+    &--75 {
+      @apply max-w-[75%];
+    }
+
+    &--100 {
+      @apply max-w-full rounded-[4px];
+    }
+  }
+}

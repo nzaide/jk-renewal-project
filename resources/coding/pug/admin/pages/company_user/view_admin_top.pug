@@ -1,0 +1,45 @@
+extends ../../layout
+
+block dropdown
+  ul.header__list
+    li.header__item
+      label(for="name").header__label 〇〇〇株式会社 様
+        i.fas.fa-caret-down.ml-2
+      input#name.header__check(type="checkbox")
+      .header__option-wrapper.header__option-wrapper--lg
+        a.header__option Logout
+
+block nav
+  nav.nav
+    ul.nav__list 
+      li.nav__item
+        a.nav__link(href="#") 企業管理
+
+block content
+  section.section(class="pt-[71px] pb-[609px]")
+    .wrapper
+      h2.heading 新着情報
+      .content(class="pb-[130px]")
+        .flex
+          div(class="w-1/4")
+            p 2022年05月09日
+          .w-full
+            p 
+              span.link.cursor-auto 4件
+              | の貴社への新しいクチコミがあります。
+        .flex
+          div(class="w-1/4")
+            p 2022年04月30日
+          .w-full
+            p 
+              span.link.cursor-auto 1件
+              | の貴社への新しいクチコミがあります。
+        .flex
+          div(class="w-1/4")
+            p 2022年04月20日
+          .w-full
+            p 
+              span.link.cursor-auto 2件
+              | の貴社への新しいクチコミがあります。
+          
+        .content__footer

@@ -1,0 +1,280 @@
+extends ../../layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .banner.banner--second
+    .flex.items-center.h-full.mx-auto(class="max-w-[1140px] px-[20px]")
+      p.banner__text.text-left.m-0.p-0 マイページ
+
+  .main-wrapper
+    section.section(class="sp:mb-8")
+      .flex.justify-between
+        h2.heading 会員プロフィール
+        button.button.button--with-icon 
+          img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+          | 編集する
+      .section__wrapper.mt-10
+        form.form
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 性別
+            .w-full.dash
+              p.form__label.font-normal 男性　
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 生年月日
+            .w-full.dash
+              p.form__label.font-normal 1995年4月1日
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray お住まいの都道府県
+            .w-full.dash
+              p.form__label.font-normal 東京都
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 現在の年収
+            .w-full.dash
+              p.form__label.font-normal 400~500万円
+
+      .flex.justify-between.mt-10
+        h2.heading 詳細情報
+      .card.mt-10
+        .card__header
+          h2.card__heading 基本情報
+          button.button.button--with-icon 
+            img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+            | 編集する
+        .card__body
+          .card__item
+            form.form(action="")
+              .form__wrapper
+                .flex.items-center(class="min-w-[25%]")
+                  label.form__label.text-primary-gray 名前
+                .w-full.dash
+                  p.form__label.font-normal 斎藤　拓斗
+              .form__wrapper
+                .flex.items-center(class="min-w-[25%]")
+                  label.form__label.text-primary-gray フリガナ
+                .w-full.dash
+                  p.form__label.font-normal サイトウ　タクト
+              .form__wrapper
+                .flex.items-center(class="min-w-[25%]")
+                  label.form__label.text-primary-gray 住所
+                .w-full.dash
+                  p.form__label.font-normal 東京都杉並区〇〇〇〇〇〇〇〇〇〇〇〇
+              .form__wrapper
+                .flex.items-center(class="min-w-[25%]")
+                  label.form__label.text-primary-gray Tel
+                .w-full.dash
+                  p.form__label.font-normal 090-1234-5678 (携帯)
+      .card.mt-10
+        .card__header
+          h2.card__heading 学歴情報
+          button.button.button--with-icon 
+            img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+            | 編集する
+        .card__body
+          .card__item
+            form.form(action="")
+              .form__wrapper
+                .flex.items-center(class="min-w-[25%]")
+                  label.form__label.text-primary-gray 2017年3月
+                .w-full
+                  p.form__label 東京大学
+                    span.font-normal.text-primary-gray.ml-1 (大学卒)
+                  p.text-primary-gray 専攻・学部：理科I類
+      .card.mt-10
+        .card__header
+          h2.card__heading 基本情報
+          button.button.button--with-icon 
+            img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+            | 編集する
+        .card__body
+          .card__item
+            form.form(action="")
+              .form__wrapper
+                .flex.items-center(class="min-w-[25%]")
+                  p.form__label.text-primary-gray 2018年4月~
+                .w-full.dash(class="pb-2.5")
+                  p.card__title.no-underline Fulfill株式会社
+                  .card__corporation-details(class="pb-2.5")
+                    .flex-center-layout.mr-4
+                      img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                      p.card__corporation-text 大阪府
+                    .flex-center-layout
+                      img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                      p.card__corporation-text 業界名が入ります
+                  p.card__title.no-underline.text-primary-gray.font-normal 職務内容：職務名が入ります
+                  p.text-primary-gray 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                    br
+                    | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+              .form__wrapper
+                .flex.items-center(class="min-w-[25%]")
+                  p.form__label.text-primary-gray 2019年4月~
+                .w-full.dash(class="pb-2.5")
+                  p.card__title.no-underline Fulfill株式会社
+                  .card__corporation-details(class="pb-2.5")
+                    .flex-center-layout.mr-4
+                      img.card__icon(src="/public/img/icon/map.svg", alt="map")
+                      p.card__corporation-text 大阪府
+                    .flex-center-layout
+                      img.card__icon(src="/public/img/icon/building.svg", alt="map")
+                      p.card__corporation-text 業界名が入ります
+                  p.card__title.no-underline.text-primary-gray.font-normal 職務内容：職務名が入ります
+                  p.text-primary-gray 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+                    br
+                    | 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+      .card.mt-10
+        .card__header
+          h2.card__heading 資格・スキル
+          button.button.button--with-icon 
+            img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+            | 編集する
+        .card__body
+          .card__item
+            form.form(action="")
+              .form__wrapper
+                .flex.items-center(class="min-w-[25%]")
+                  label.form__label.text-primary-gray.uppercase toeic
+                .w-full.dash
+                  p.form__label.font-normal 650点
+      .flex.justify-between.mt-10
+        h2.heading 転職条件
+        button.button.button--with-icon 
+          img.mr-2(src="/public/img/icon/pen.svg", alt="edit")
+          | 編集する
+      .section__wrapper.mt-10
+        form.form
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 転職希望度
+            .w-full.dash
+              p.form__label.font-normal 1~3ヶ月以内に転職したい
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 転職希望の業界
+            .w-full.dash
+              p.form__label.font-normal IT・メディア
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 転職希望の職種
+            .w-full.dash
+              p.form__label.font-normal 人事管理
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 転職希望の勤務地
+            .w-full.dash
+              p.form__label.font-normal 愛知県
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 希望年収
+            .w-full.dash
+              p.form__label.font-normal 500~600万
+          .form__wrapper
+            .flex.items-center(class="min-w-[25%]")
+              label.form__label.text-primary-gray 転職で重視すること
+                |（属性）
+            .w-full.dash.flex(class="min-h-[48px]")
+              button.button.button--with-icon(disabled).mr-2 稼ぎたい
+              button.button.button--with-icon(disabled) 転勤なし
+      .flex.justify-between.mt-10
+        h2.heading サイトの通知設定
+      .section__wrapper.mt-10
+        form.form
+          .form__wrapper
+            .flex.items-center(class="min-w-[45%]")
+              label.form__label.text-primary-gray サイトからの新着情報のメール通知
+            .w-full
+              .form__toggle-wrapper
+                  input.form__toggle#toggle(type="checkbox" name="toggle" checked)
+                  label.form__toggle-label(for="toggle") ON
+
+    aside.sidebar
+      .sidebar__card.mb-5
+        p.sidebar__card-header 個人設定
+        ul.sidebar__list
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 会員プロフィール
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 詳細情報
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span 転職条件
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+          li.sidebar__item
+            a.sidebar__link(href="#")
+              span サイト通知設定
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+
+      ul.sidebar__list.sidebar__list--rounded
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span トップページ
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span フォロー企業
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span フォロー求人
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span クチコミ管理
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span 退会
+            img(src="/public/img/icon/arrow.svg" alt="arrow")

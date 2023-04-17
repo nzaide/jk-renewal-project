@@ -1,0 +1,49 @@
+.header {
+  @apply bg-[#0A78A1] py-6;
+
+  &__wrapper {
+    @apply max-w-[1300px] w-full mx-auto;
+  }
+
+  &__logo {
+    @apply font-helvetica font-bold text-[36px] text-white underline underline-offset-4;
+  }
+
+  &--account {
+    @apply w-full h-[151px] bg-white flex items-center;
+  }
+
+  &__label {
+    @apply cursor-pointer bg-transparent rounded-[5px] border-[1px] border-white border-solid text-base px-[16px] pt-[9px] pb-[11px] text-white;
+  }
+
+  &__item {
+    @apply relative;
+  }
+
+  &__check {
+    @apply hidden;
+
+    &:checked {
+      & + .header__option-wrapper {
+        @apply block;
+      }
+    }
+  }
+
+  &__option-wrapper {
+    @apply hidden bg-white absolute top-[125%] py-[10px] rounded-md shadow-md left-[50%] w-[55px] translate-x-[-50%];
+
+    &--lg {
+      @apply w-[130px];
+    }
+  }
+
+  &__option {
+    @apply block text-black text-base px-2.5 hover:text-[#0A78A1] py-1 cursor-pointer;
+
+    &--active {
+      @apply text-white;
+    }
+  }
+}

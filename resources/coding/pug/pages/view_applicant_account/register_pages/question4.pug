@@ -1,0 +1,168 @@
+extends ../profile_register.pug
+
+block section
+  .progress
+    p.progress__text プロフィール登録  4 / 4 完了
+    .flex.justify-end(class="mb-[25px]")
+      .progress__bar-wrapper
+        .progress__bar.progress__bar--100
+
+  form.form.mx-auto(action="#" class="max-w-[800px]")
+    p.form__text(class="mb-[50px] sp:mb-[25px]") 4. ご自身の転職希望度・転職条件をついて、入力してください。
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 転職希望度
+      .w-full
+        select.form__select(name="changeJobs")
+          option 未選択 
+          option(value="転職は当面考えていない") 転職は当面考えていない
+          option(value="転職を迷っている") 転職を迷っている
+          option(value="現在より好条件であれば転職したい") 現在より好条件であれば転職したい
+          option(value="現在と同条件でも転職したい") 現在と同条件でも転職したい
+          option(value="条件問わす転職したい") 条件問わす転職したい
+
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 転職希望の業界
+      .w-full
+        select.form__select(name="businessDomain")
+          option 未選択 
+          option(value="金融") 金融
+          option(value="電機・機械") 電機・機械
+          option(value="IT・メディア") IT・メディア
+          option(value="サービス") サービス
+          option(value="小売・卸") 小売・卸
+          option(value="飲食") 飲食
+          option(value="食品") 食品
+          option(value="教育") 教育
+          option(value="物流") 物流
+          option(value="建設・不動産") 建設・不動産
+          option(value="エンターテイメント") エンターテイメント
+          option(value="エネルギー・資源") エネルギー・資源
+          option(value="生活関連") 生活関連
+          option(value="自動車関連") 自動車関連
+          option(value="その他") その他
+
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__text-label 転職希望の職種
+      .w-full
+        select.form__select(name="occupation")
+          option 未選択 
+          option(value="営業系 <営業・人材関連職>") 営業系 &lt営業・人材関連職&gt
+          option(value="事務・経営管理系 <事務・受付・秘書・アシスタント>") 事務・経営管理系 &lt事務・受付・秘書・アシスタント&gt
+          option(value="経営企画・マーケティング・企画系 <経営企画・事業開発・マーケティング・企画>") 経営企画・マーケティング・企画系 (経営企画・事業開発・マーケティング・企画)
+          option(value="販売・サービス系 <契約・小売>") 販売・サービス系 &lt契約・小売&gt
+          option(value="クリエイティブ系（WEBデザイン・広告・グラフィック・イラスト）") クリエイティブ系（WEBデザイン・広告・グラフィック・イラスト）
+          option(value="技術系(IT系)  <システム開発・サーバー・ネットワーク・通信インフラ設計>") 技術系(IT系)  &ltシステム開発・サーバー・ネットワーク・通信インフラ設計&gt
+          option(value="技術系（電気系）<機械関連・電気・電子関連・半導体関連>") 技術系（電気系）&lt機械関連・電気・電子関連・半導体関連&gt
+          option(value="技術系(医薬・食品・化学) <医薬・医療機器・食品・化粧品・素材>") 技術系(医薬・食品・化学) &lt医薬・医療機器・食品・化粧品・素材&gt
+          option(value="建築・土木系<建築・土木関連>") 建築・土木系&lt建築・土木関連&gt
+          option(value="医療・福祉・保育系") 医療・福祉・保育系
+          option(value="専門職系 <各種コンサルタント・法律・会計・労務>") 専門職系 &lt各種コンサルタント・法律・会計・労務&gt
+          option(value="その他 <教育・農業・公務員・インストラクター・技能工>") その他 &lt教育・農業・公務員・インストラクター・技能工&gt
+
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 転職希望の勤務地
+      .w-full
+        select.form__select(name="jobPlace")
+              option 未選択 
+              option(value="北海道") 北海道
+              option(value="青森県") 青森県
+              option(value="岩手県") 岩手県
+              option(value="宮城県") 宮城県
+              option(value="秋田県") 秋田県
+              option(value="山形県") 山形県
+              option(value="福島県") 福島県
+              option(value="茨城県") 茨城県
+              option(value="栃木県") 栃木県
+              option(value="群馬県") 群馬県
+              option(value="埼玉県") 埼玉県
+              option(value="千葉県") 千葉県
+              option(value="東京都") 東京都
+              option(value="神奈川県") 神奈川県
+              option(value="新潟県") 新潟県
+              option(value="富山県") 富山県
+              option(value="石川県") 石川県
+              option(value="福井県") 福井県
+              option(value="山梨県") 山梨県
+              option(value="長野県") 長野県
+              option(value="岐阜県") 岐阜県
+              option(value="静岡県") 静岡県
+              option(value="愛知県") 愛知県
+              option(value="三重県") 三重県
+              option(value="滋賀県") 滋賀県
+              option(value="京都府") 京都府
+              option(value="大阪府") 大阪府
+              option(value="兵庫県") 兵庫県
+              option(value="和歌山県") 和歌山県
+              option(value="鳥取県") 鳥取県
+              option(value="島根県") 島根県
+              option(value="岡山県") 岡山県
+              option(value="広島県") 広島県
+              option(value="山口県") 山口県
+              option(value="徳島県") 徳島県
+              option(value="香川県") 香川県
+              option(value="愛媛県") 愛媛県
+              option(value="高知県") 高知県
+              option(value="福岡県") 福岡県
+              option(value="佐賀県") 佐賀県
+              option(value="長崎県") 長崎県
+              option(value="熊本県") 熊本県
+              option(value="大分県") 大分県
+              option(value="宮崎県") 宮崎県
+              option(value="鹿児島県") 鹿児島県
+              option(value="沖縄県") 沖縄県
+
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 希望の年収
+      .w-full
+        select.form__select(name="annualSalary")
+              option 未選択 
+              option(value="200万円未満") 200万円未満
+              option(value="250万円") 250万円
+              option(value="300万円") 300万円
+              option(value="350万円") 350万円
+              option(value="400万円") 400万円
+              option(value="450万円") 450万円
+              option(value="500万円") 500万円
+              option(value="550万円") 550万円
+              option(value="600万円") 600万円
+              option(value="650万円") 650万円
+              option(value="700万円") 700万円
+              option(value="750万円") 750万円
+              option(value="800万円") 800万円
+              option(value="850万円") 850万円
+              option(value="900万円") 900万円
+              option(value="950万円") 950万円
+              option(value="1,000万円以上") 1,000万円以上
+    .form__wrapper
+      .flex.items-center(class="min-w-[25%]")
+        label.form__label 転職で重視すること
+          br(class="sp:hidden")
+          |（属性）
+      .w-full
+        .form__input-wrapper.items-start
+          .mr-4(class="")
+            .form__check-wrapper(class="mb-[16px]")
+              input.form__check.form__check--secondary#check1(type="checkbox" name="check1")
+              label.form__text-label.cursor-pointer(for="check1") 完全土日休み
+            .form__check-wrapper(class="mb-[16px]")
+              input.form__check.form__check--secondary#check2(type="checkbox" name="check1")
+              label.form__text-label.cursor-pointer(for="check2") 残業なし
+            .form__check-wrapper(class="mb-[16px]")
+              input.form__check.form__check--secondary#check3(type="checkbox" name="check1")
+              label.form__text-label.cursor-pointer(for="check3") 転勤なし
+            .form__check-wrapper(class="mb-[16px]")
+              input.form__check.form__check--secondary#check4(type="checkbox" name="check1")
+              label.form__text-label.cursor-pointer(for="check4") 稼ぎたい 
+          div 
+            .form__check-wrapper
+              input.form__check.form__check--secondary#check5(type="checkbox" name="check1")
+              label.form__text-label.cursor-pointer(for="check5") 海外で働きたい
+
+    .flex.justify-center(class="sp:flex-col")
+      button.button(class="mr-20 sp:mr-0 sp:mb-3") 前へ
+      button.button 登録する

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">新規登録</a><a class="header__link" href="#">ログイン</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper content-wrapper--with-sidebar">
+        <div class="banner">
+          <div class="banner__wrapper">
+            <p class="banner__text">働く人の鉄板ネタがある。もう滑らない。</p>
+            <div class="banner__search-wrapper">
+              <p class="banner__search-text">口コミ登録者数<span class="yellow"> 000,000 </span>社 / 求人数<span class="yellow"> 000,000</span> 件</p>
+              <div class="banner__search">
+                <input class="form__input" type="text" name="banner_search" placeholder="企業名やブランド名で検索">
+                <button class="banner__search-button"><img src="/public/img/icon/search.svg" alt="search"></button>
+              </div>
+              <div class="text-right sp:text-center"><a class="link" href="#">口コミ付き求人を探す</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="main-wrapper" id="notifs">
+          <section class="section">
+            <!-- Job List-->
+            <h2 class="heading mb-5">新着通知</h2>
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">新着求人情報</h2>
+              </div>
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">中長期戦略[インドネシア・マレーシア事業］【名古屋】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">トヨタ自動車株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">愛知県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">自動車・運輸・輸送機</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【ECCカンパニーについて】 ECC：Emerging Country Compact Car Company トヨタ-ダイハツが一体となり新興国（主にアセアン）小型車車両の企画/設計、事業、販</p>
+                    </div>
+                  </li>
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】</a>
+                      <div class="card__corporation-details">
+                        <p class="card__corporation-text">旭化成株式会社</p>
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">東京都</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">化学・素材</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <p class="card__text">【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、【仕事内容】 リーダー候補 / 水処理用中空糸ろ過膜及びろ過装置の営業職【東京都千代田区】 ■募集背景：膜ろ過ビジネスは幅広い業界（半導体・製薬・食品・水処理など）で、生産性向上や環境汚染防止、</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="card__show-more"><a class="link link" href="#">もっと見る</a><img class="card__icon card__icon--sm" src="/public/img/icon/arrow-blue.svg" alt="arrow"></div>
+              </div>
+            </div>
+            <!-- Company Reviews-->
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">新着口コミ情報</h2>
+              </div>
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details">
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">神奈川県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <div class="flex items-start">
+                        <div class="mr-4">
+                          <div class="card__review"><img src="/public/img/icon/bakusyou.svg" alt="review emoji"><span>爆笑</span></div>
+                          <div class="card__reviewer"><img src="/public/img/icon/man.svg" alt="man"><span>20代<br>男性</span></div>
+                        </div>
+                        <div>
+                          <div class="card__evaluation"><span>口コミID</span><span>あるあるネタ</span></div>
+                          <div class="mb-3"><span class="card__text mb-1">【良かった点】</span>
+                            <p class="card__text card__text--3">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                          </div>
+                          <div><span class="card__text mb-1">【良かった点】</span>
+                            <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details">
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">神奈川県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <div class="flex items-start">
+                        <div class="mr-4">
+                          <div class="card__review"><img src="/public/img/icon/samui.svg" alt="review emoji"><span>サムい</span></div>
+                          <div class="card__reviewer"><img src="/public/img/icon/woman.svg" alt="woman"><span>20代<br>女性</span></div>
+                        </div>
+                        <div>
+                          <div class="card__evaluation"><span>口コミID</span><span>あるあるネタ</span></div>
+                          <div class="mb-3"><span class="card__text mb-1">【良かった点】</span>
+                            <p class="card__text card__text--3">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                          </div>
+                          <div><span class="card__text mb-1">【良かった点】</span>
+                            <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="card__show-more"><a class="link link" href="#">もっと見る</a><img class="card__icon card__icon--sm" src="/public/img/icon/arrow-blue.svg" alt="arrow"></div>
+              </div>
+            </div>
+            <!-- Company List-->
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">話題の企業一覧</h2>
+              </div>
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container">
+                      <div class="flex items-start justify-between"><a class="card__title" href="#">日本生命保険相互会社</a>
+                        <div class="flex-center-layout whitespace-nowrap sp:hidden">
+                          <div class="flex-center-layout mr-4"><img class="card__icon card__icon--sm" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="text-xs text-[#646464]">求人数<span class="text-primary-orange text-sm font-bold"> 0件</span></p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon card__icon--sm" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="text-xs text-[#646464]">口コミ<span class="text-primary-orange text-sm font-bold"> 000件</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card__corporation-details">
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">大阪府</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">生命保険・損害保険</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <div class="flex items-start mb-3"><span class="card__text card__text--orange">所在地</span>
+                        <p class="card__text">大阪府大阪市今橋３丁目５番１２号</p>
+                      </div>
+                      <div class="flex items-start mb-3"><span class="card__text card__text--orange">事業内容</span>
+                        <p class="card__text">生命保険や損害保険、確定拠出年金、住宅ローンなどの提供・販売のほか、保険料等収入をもとにした資産運用などを主な事業としています。</p>
+                      </div>
+                      <div class="flex items-start"><span class="card__text card__text--orange">従業員</span>
+                        <p class="card__text">76,792人</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card__item">
+                    <div class="card__title-container">
+                      <div class="flex items-start justify-between"><a class="card__title" href="#">日本生命保険相互会社</a>
+                        <div class="flex-center-layout whitespace-nowrap sp:hidden">
+                          <div class="flex-center-layout mr-4"><img class="card__icon card__icon--sm" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="text-xs text-[#646464]">求人数<span class="text-primary-orange text-sm font-bold"> 0件</span></p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon card__icon--sm" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="text-xs text-[#646464]">口コミ<span class="text-primary-orange text-sm font-bold"> 000件</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card__corporation-details">
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">大阪府</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">生命保険・損害保険</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <div class="flex items-start mb-3"><span class="card__text card__text--orange">所在地</span>
+                        <p class="card__text">大阪府大阪市今橋３丁目５番１２号</p>
+                      </div>
+                      <div class="flex items-start mb-3"><span class="card__text card__text--orange">事業内容</span>
+                        <p class="card__text">生命保険や損害保険、確定拠出年金、住宅ローンなどの提供・販売のほか、保険料等収入をもとにした資産運用などを主な事業としています。</p>
+                      </div>
+                      <div class="flex items-start"><span class="card__text card__text--orange">従業員</span>
+                        <p class="card__text">76,792人</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card__item">
+                    <div class="card__title-container">
+                      <div class="flex items-start justify-between"><a class="card__title" href="#">日本生命保険相互会社</a>
+                        <div class="flex-center-layout whitespace-nowrap sp:hidden">
+                          <div class="flex-center-layout mr-4"><img class="card__icon card__icon--sm" src="/public/img/icon/recruit.svg" alt="recruit">
+                            <p class="text-xs text-[#646464]">求人数<span class="text-primary-orange text-sm font-bold"> 0件</span></p>
+                          </div>
+                          <div class="flex-center-layout"><img class="card__icon card__icon--sm" src="/public/img/icon/kutikomi.svg" alt="kutikomi">
+                            <p class="text-xs text-[#646464]">口コミ<span class="text-primary-orange text-sm font-bold"> 000件</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card__corporation-details">
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">大阪府</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">生命保険・損害保険</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <div class="flex items-start mb-3"><span class="card__text card__text--orange">所在地</span>
+                        <p class="card__text">大阪府大阪市今橋３丁目５番１２号</p>
+                      </div>
+                      <div class="flex items-start mb-3"><span class="card__text card__text--orange">事業内容</span>
+                        <p class="card__text">生命保険や損害保険、確定拠出年金、住宅ローンなどの提供・販売のほか、保険料等収入をもとにした資産運用などを主な事業としています。</p>
+                      </div>
+                      <div class="flex items-start"><span class="card__text card__text--orange">従業員</span>
+                        <p class="card__text">76,792人</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="card__show-more"><a class="link link" href="#">もっと見る</a><img class="card__icon card__icon--sm" src="/public/img/icon/arrow-blue.svg" alt="arrow"></div>
+              </div>
+            </div>
+            <!-- Company Reviews (HOT)-->
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">新着口コミ情報</h2>
+              </div>
+              <div class="card__body">
+                <ul class="card_list">
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details">
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">神奈川県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <div class="flex items-start">
+                        <div class="mr-4">
+                          <div class="card__review"><img src="/public/img/icon/bakusyou.svg" alt="review emoji"><span>爆笑</span></div>
+                          <div class="card__reviewer"><img src="/public/img/icon/man.svg" alt="man"><span>20代<br>男性</span></div>
+                        </div>
+                        <div>
+                          <div class="card__evaluation"><span>口コミID</span><span>あるあるネタ</span></div>
+                          <div class="mb-3"><span class="card__text mb-1">【良かった点】</span>
+                            <p class="card__text card__text--3">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                          </div>
+                          <div><span class="card__text mb-1">【良かった点】</span>
+                            <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card__item">
+                    <div class="card__title-container"><a class="card__title" href="#">富士通株式会社</a>
+                      <div class="card__corporation-details">
+                        <div class="flex-center-layout mr-4"><img class="card__icon" src="/public/img/icon/map.svg" alt="map">
+                          <p class="card__corporation-text">神奈川県</p>
+                        </div>
+                        <div class="flex-center-layout"><img class="card__icon" src="/public/img/icon/building.svg" alt="map">
+                          <p class="card__corporation-text">ソフトウェア／ハード開発</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__details">
+                      <div class="flex items-start">
+                        <div class="mr-4">
+                          <div class="card__review"><img src="/public/img/icon/samui.svg" alt="review emoji"><span>サムい</span></div>
+                          <div class="card__reviewer"><img src="/public/img/icon/woman.svg" alt="woman"><span>20代<br>女性</span></div>
+                        </div>
+                        <div>
+                          <div class="card__evaluation"><span>口コミID</span><span>あるあるネタ</span></div>
+                          <div class="mb-3"><span class="card__text mb-1">【良かった点】</span>
+                            <p class="card__text card__text--3">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                          </div>
+                          <div><span class="card__text mb-1">【良かった点】</span>
+                            <p class="card__text">ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="card__show-more"><a class="link link" href="#">もっと見る</a><img class="card__icon card__icon--sm" src="/public/img/icon/arrow-blue.svg" alt="arrow"></div>
+              </div>
+            </div>
+            <!-- Company industries-->
+            <h2 class="heading mb-5 pt-4" id="reviews">口コミを探す</h2>
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">業界から探す</h2>
+              </div>
+              <div class="card__body domain">
+                <ul class="domain__list">
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">金融</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">電機・機械</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">IT・メディア</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">サービス</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">小売・卸</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">飲食</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">食品</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">教育</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">物流</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">建設・不動産</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">エンターテイメント</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">エネルギー・資源</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">生活関連</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">自動車関連</span><span class="domain__count">x件</span></a></li>
+                  <li class="domain__item"><a class="domain__link" href="#"><span class="domain__name">その他</span><span class="domain__count">x件</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- Prefecture List-->
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">企業の所在地から探す</h2>
+              </div>
+              <div class="card__body">
+                <div class="prefecture">
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture1" type="checkbox" checked>
+                    <label class="prefecture__label" for="prefecture1">北海道・東北地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">北海道<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">青森県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">岩手県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">宮城県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">秋田県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">山形県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">福島県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture2" type="checkbox">
+                    <label class="prefecture__label" for="prefecture2">関東地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">東京都<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">神奈川県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">埼玉県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">千葉県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">茨城県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">栃木県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">群馬県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture3" type="checkbox">
+                    <label class="prefecture__label" for="prefecture3">甲信越・北陸地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">新潟県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">長野県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">富山県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">石川県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">福井県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">山梨県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture4" type="checkbox">
+                    <label class="prefecture__label" for="prefecture4">東海地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">愛知県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">岐阜県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">静岡県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">三重県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture5" type="checkbox">
+                    <label class="prefecture__label" for="prefecture5">近畿地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">大阪府<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">兵庫県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">京都府<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">滋賀県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">奈良県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">和歌山県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture6" type="checkbox">
+                    <label class="prefecture__label" for="prefecture6">中国地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">広島県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">岡山県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">鳥取県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">島根県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">山口県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture7" type="checkbox">
+                    <label class="prefecture__label" for="prefecture7">四国地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">徳島県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">香川県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">愛媛県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">高知県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture8" type="checkbox">
+                    <label class="prefecture__label" for="prefecture8">九州・沖縄地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">福岡県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">佐賀県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">長崎県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">大分県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">熊本県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">宮崎県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">鹿児島県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">沖縄県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Job types-->
+            <h2 class="heading mb-5 pt-4" id="jobs">求人を探す</h2>
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">職種から探す</h2>
+              </div>
+              <div class="card__body">
+                <div class="job-types">
+                  <ul class="job-types__list">
+                    <li class="job-types__item"><a class="link" href="#"><span>営業<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">営業、人材関連職</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>事務・経営管理系<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">事務・受付・秘書、経営管理</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>経営企画・マーケティング・企画系<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">経営企画・事業開発、マーケティング・企画</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>販売・サービス系<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">飲食・フード系、小売・ファッション</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>技術系（IT・通信）<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">システム開発（オープン・WEB系）</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>クリエイティブ系<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">WEBデザイン・WEB企画、広告・グラフィック、映像・音</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>建築・土木系<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">建築・土木関連</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>技術系（電気・電子・機械・半導体）<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">機械関連、電気・電子関連、半導体関連、製造関連</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>技術系(医薬・食品・素材)<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">医薬・医療機器、食品・化粧品、素材・化成品</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>医療・福祉・保育系<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">医療、福祉、保育</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>専門職(コンサルタント・法律・金融・不動産)<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">ビジネスコンサルタント・シンクタンク、法律・会計</p></a></li>
+                    <li class="job-types__item"><a class="link" href="#"><span>その他（教育、公務員、技能工、農林水産など）<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></span>
+                        <p class="job-types__description">教育・インストラクター・通訳、公務員・団体職員</p></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Prefecture List-->
+            <div class="card mb-4">
+              <div class="card__header">
+                <h2 class="card__heading">求人の勤務地から探す</h2>
+              </div>
+              <div class="card__body">
+                <div class="prefecture">
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture1" type="checkbox" checked>
+                    <label class="prefecture__label" for="prefecture1">北海道・東北地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">北海道<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">青森県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">岩手県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">宮城県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">秋田県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">山形県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">福島県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture2" type="checkbox">
+                    <label class="prefecture__label" for="prefecture2">関東地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">東京都<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">神奈川県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">埼玉県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">千葉県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">茨城県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">栃木県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">群馬県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture3" type="checkbox">
+                    <label class="prefecture__label" for="prefecture3">甲信越・北陸地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">新潟県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">長野県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">富山県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">石川県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">福井県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">山梨県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture4" type="checkbox">
+                    <label class="prefecture__label" for="prefecture4">東海地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">愛知県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">岐阜県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">静岡県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">三重県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture5" type="checkbox">
+                    <label class="prefecture__label" for="prefecture5">近畿地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">大阪府<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">兵庫県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">京都府<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">滋賀県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">奈良県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">和歌山県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture6" type="checkbox">
+                    <label class="prefecture__label" for="prefecture6">中国地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">広島県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">岡山県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">鳥取県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">島根県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">山口県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture7" type="checkbox">
+                    <label class="prefecture__label" for="prefecture7">四国地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">徳島県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">香川県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">愛媛県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">高知県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <div class="prefecture__wrapper">
+                    <input class="prefecture__check" id="prefecture8" type="checkbox">
+                    <label class="prefecture__label" for="prefecture8">九州・沖縄地方<img src="/public/img/icon/arrow.svg" alt="arrow"></label>
+                    <ul class="prefecture__list">
+                      <li class="prefecture__item"><a class="link" href="#">福岡県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">佐賀県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">長崎県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">大分県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">熊本県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">宮崎県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">鹿児島県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="prefecture__item"><a class="link" href="#">沖縄県<img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <aside class="sidebar">
+            <div class="mb-7"><a class="button button--orange w-full mb-3" href="#">会員登録（無料）</a><a class="button button--orange-reversed w-full" href="#">ログイン</a></div>
+            <h3 class="heading heading--xxs mb-2.5">ガイド</h3>
+            <ul class="sidebar__list sidebar__list--rounded">
+              <li class="sidebar__item"><a class="sidebar__link" href="#notifs"><span>新着通知</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#reviews"><span>口コミを探す</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#jobs"><span>求人を探す</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+            </ul>
+            <div class="mt-8"><a class="block mb-4" href="#"><img class="sidebar__img-link" src="/public/img/icon/banner-1.jpg" alt="banner 1"></a><a class="block mb-7" href="#"><img class="sidebar__img-link" src="/public/img/icon/banner-2.jpg" alt="banner 2"></a></div>
+          </aside>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <ul class="footer__links">
+            <li class="footer__item"><a class="footer__link" href="#">運営会社</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">利用規約</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">個人情報の取り扱い</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">転ジョーク会議のコンセプト</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">クチコミ投稿への取り組み</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">投稿のガイドライン</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">お問い合わせ </a></li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+.suggestion {
+  @apply w-full bg-white border-[#E0E0E0] border-2 absolute z-10;
+
+  &__item {
+    @apply font-helvetica text-[1.10rem] font-bold p-2 hover:bg-[#CFCFCF] cursor-pointer;
+
+    &:not(:last-child) {
+      @apply mb-1;
+    }
+  }
+}

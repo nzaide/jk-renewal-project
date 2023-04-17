@@ -1,0 +1,15 @@
+.tabs {
+  @apply text-xl h-[66px] font-helvetica text-black max-w-[241px] w-full border-b-2;
+
+  &--active {
+    @apply text-[#007bff] border-[#007bff];
+  }
+
+  &--white {
+    @apply w-[241px] h-[66px] bg-[#fff] border border-[#707070] rounded-[5px];
+
+    &.tabs--active {
+      @apply text-[#fff] bg-[#007bff];
+    }
+  }
+}

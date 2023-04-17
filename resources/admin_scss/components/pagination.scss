@@ -1,0 +1,39 @@
+.pagination {
+  @apply w-full flex items-center justify-center font-helvetica text-base;
+
+  &__item {
+    @apply bg-white text-[#007bff] border-solid border-[1px] border-[#dee2e6] w-[49px] h-[49px];
+
+    &:not(:last-child) {
+      @apply mr-[10px];
+    }
+
+    &:first-child {
+      @apply rounded-l-[4px];
+    }
+
+    &:last-child {
+      @apply rounded-r-[4px];
+    }
+
+    &--active {
+      @apply bg-[#007bff] text-white; 
+
+      .pagination__link {
+        @apply cursor-default pointer-events-none;
+      }
+    }
+
+    &--disabled {
+      @apply pointer-events-none cursor-default text-[#6c757d];
+    }
+  }
+
+  &__link {
+    @apply w-full h-full flex items-center justify-center font-medium text-base cursor-pointer;
+  }
+
+  &__text {
+    @apply text-center text-sm mt-[10px];
+  }
+}

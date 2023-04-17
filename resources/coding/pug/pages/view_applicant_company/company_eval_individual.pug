@@ -1,0 +1,161 @@
+extends ../../layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .main-wrapper
+    section.section
+      .card.mb-4.mt-5
+        .card__body
+          ul.card_list
+            li.card__item
+              .card__title-container.card__title-container--no-border
+                a.card__title(href="#") 株式会社○○○○○
+                .card__corporation-details.items-start(class="sp:flex-col")
+                  div(class="w-3/12 sp:w-full")
+                    img(src="/public/img/icon/company-default-img.jpg", alt="company")
+
+                  div.ml-3
+                    .flex-center-layout.mr-4(class="sp:mt-4")
+                      img.card__emoticon(src="/public/img/icon/omoshiroi.svg", alt="emoticon")
+                      p.card__corporation-text オモシロい
+
+                      img.card__icon(src="/public/img/icon/recruit.svg", alt="recruit")
+                      p.card__corporation-text 求人数
+                        span.card__corporation-text.text-primary-orange.font-bold.ml-2 0件
+
+                      img.card__icon(src="/public/img/icon/kutikomi.svg", alt="kutikomi")
+                      p.card__corporation-text 口コミ
+                        span.card__corporation-text.text-primary-orange.font-bold.ml-2  000件
+                    
+                    .flex-center-layou.mt-4
+                      .card__company-details.flex
+                        p.card__corporation-text.text-primary-orange.font-bold 業界 
+                        p.card__corporation-text 飲食
+
+                      .card__company-details.flex
+                        p.card__corporation-text.text-primary-orange.font-bold 所在地
+                        p.card__corporation-text 東京都〇〇区〇〇〇〇
+                      
+                      .card__company-details.flex
+                        p.card__corporation-text.text-primary-orange.font-bold URL
+                        p.card__corporation-text https://www.url.com/
+
+                  
+                  .flex.justify-center.flex-col.w-32.ml-auto(class="sp:mt-4 sp:w-full")
+                    a.button.button--orange.button--small.mb-2
+                      img.mr-2(src="/public/img/icon/white-pencil.svg", alt="edit")
+                      | 口コミを書く
+                    
+                    //- Follow 
+                    a.button.button--orange-reversed.button--small 
+                      img.mr-2(src="/public/img/icon/plus-red.svg", alt="add")
+                      | フォロー 
+
+                    //- Unfollow 
+                    //- a.button.button--orange-reversed.button--small フォローを解除    
+
+      .tab-arrow.mt-10
+        ul.tab-arrow__list 
+          li.tab-arrow__item.tab-arrow__item--active
+            a(href="#") 評価・クチコミ
+      .card.mb-4.mt-4
+        .card__body
+          ul.card_list
+            li.card__item.border-t-4.border-orange-700
+              .card__details.flex-center-layout.items-start
+                div(class="w-[65px]")
+                  .flex-center-layout.mr-4.flex-col(class="sp:mt-4")
+                    img.card__emoticon.card__emoticon--big(src="/public/img/icon/bakusyou.svg", alt="emoticon")
+                    p.card__text.mt-1 評価
+                  
+                  .flex-center-layout.mr-4.flex-col.mt-4(class="sp:mt-4")
+                    img.card__emoticon.card__emoticon--big(src="/public/img/icon/man.svg", alt="emoticon")
+                    p.card__text.mt-1 20代 
+                      br
+                      | 男性
+                .w-full
+                  .flex(class="sp:flex-col")
+                    p.card__text.font-bold.mr-2(class="sp:mr-0 sp:mb-2") 口コミ ID 
+                      span.card__text-divider.mx-2
+                      | あるあるネタ
+                    .flex-center-layout.ml-auto(class="sp:ml-0")
+                      p.card__corporation-text 更新日：2022年△月△日 
+                      p.card__corporation-text 掲載日：2022年〇月〇日
+                  p.card__corporation-text.m-0.mt-4 ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+              
+              .card__button-container.flex.justify-end(class="sp:mt-3")
+                button.button.button--yellow-count.mr-3
+                  | ウケる
+                  span.button__count 1
+                
+                button.button.button--blue-count
+                  | ウケる
+                  span.button__count 1
+              .card.card--blue.mt-5.border-0(class="h-auto w-full sp:mt-6")
+                .flex
+                  p.card__title.text-primary-blue.pb-0 社長からの返信
+                  .flex-center-layout.ml-auto
+                    p.card__corporation-text 投稿日:2022年〇月〇日 
+                .card__details
+                  p.card__text.card__text--3 ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
+    aside.sidebar
+      ul.sidebar__list.sidebar__list--rounded
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span トップページ
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span 求人詳細検索
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+
+block footer
+  include ../../footer.pug

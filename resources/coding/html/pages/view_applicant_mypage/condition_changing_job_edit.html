@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">マイページ</a><a class="header__link" href="#">ログアウト</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper content-wrapper--with-sidebar">
+        <div class="main-wrapper">
+          <section class="section sp:mb-8">
+            <div class="flex justify-between">
+              <h2 class="heading heading--underlined">転職条件</h2>
+            </div>
+            <div class="section__wrapper mt-10">
+              <form class="form">
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">転職希望度</label>
+                  </div>
+                  <div class="w-full">
+                    <select class="form__select" name="changeJobs">
+                      <option>未選択 </option>
+                      <option value="転職は当面考えていない">転職は当面考えていない</option>
+                      <option value="転職を迷っている">転職を迷っている</option>
+                      <option value="現在より好条件であれば転職したい" selected>現在より好条件であれば転職したい</option>
+                      <option value="現在と同条件でも転職したい">現在と同条件でも転職したい</option>
+                      <option value="条件問わす転職したい">条件問わす転職したい</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">転職希望の業界</label>
+                  </div>
+                  <div class="w-full">
+                    <select class="form__select" name="businessDomain">
+                      <option>未選択 </option>
+                      <option value="金融">金融</option>
+                      <option value="電機・機械">電機・機械</option>
+                      <option value="IT・メディア" selected>IT・メディア</option>
+                      <option value="サービス">サービス</option>
+                      <option value="小売・卸">小売・卸</option>
+                      <option value="飲食">飲食</option>
+                      <option value="食品">食品</option>
+                      <option value="教育">教育</option>
+                      <option value="物流">物流</option>
+                      <option value="建設・不動産">建設・不動産</option>
+                      <option value="エンターテイメント">エンターテイメント</option>
+                      <option value="エネルギー・資源">エネルギー・資源</option>
+                      <option value="生活関連">生活関連</option>
+                      <option value="自動車関連">自動車関連</option>
+                      <option value="その他">その他</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__text-label">転職希望の職種</label>
+                  </div>
+                  <div class="w-full">
+                    <select class="form__select" name="occupation">
+                      <option>未選択 </option>
+                      <option value="営業系 &lt;営業・人材関連職&gt;">営業系 &lt営業・人材関連職&gt</option>
+                      <option value="事務・経営管理系 &lt;事務・受付・秘書・アシスタント&gt;">事務・経営管理系 &lt事務・受付・秘書・アシスタント&gt</option>
+                      <option value="経営企画・マーケティング・企画系 &lt;経営企画・事業開発・マーケティング・企画&gt;">経営企画・マーケティング・企画系 (経営企画・事業開発・マーケティング・企画)</option>
+                      <option value="販売・サービス系 &lt;契約・小売&gt;">販売・サービス系 &lt契約・小売&gt</option>
+                      <option value="クリエイティブ系（WEBデザイン・広告・グラフィック・イラスト）">クリエイティブ系（WEBデザイン・広告・グラフィック・イラスト）</option>
+                      <option value="技術系(IT系)  &lt;システム開発・サーバー・ネットワーク・通信インフラ設計&gt;">技術系(IT系)  &ltシステム開発・サーバー・ネットワーク・通信インフラ設計&gt</option>
+                      <option value="技術系（電気系）&lt;機械関連・電気・電子関連・半導体関連&gt;">技術系（電気系）&lt機械関連・電気・電子関連・半導体関連&gt</option>
+                      <option value="技術系(医薬・食品・化学) &lt;医薬・医療機器・食品・化粧品・素材&gt;">技術系(医薬・食品・化学) &lt医薬・医療機器・食品・化粧品・素材&gt</option>
+                      <option value="建築・土木系&lt;建築・土木関連&gt;">建築・土木系&lt建築・土木関連&gt</option>
+                      <option value="医療・福祉・保育系">医療・福祉・保育系</option>
+                      <option value="専門職系 &lt;各種コンサルタント・法律・会計・労務&gt;">専門職系 &lt各種コンサルタント・法律・会計・労務&gt</option>
+                      <option value="その他 &lt;教育・農業・公務員・インストラクター・技能工&gt;">その他 &lt教育・農業・公務員・インストラクター・技能工&gt</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">転職希望の勤務地</label>
+                  </div>
+                  <div class="w-full">
+                    <select class="form__select" name="jobPlace">
+                      <option>未選択 </option>
+                      <option value="北海道">北海道</option>
+                      <option value="青森県">青森県</option>
+                      <option value="岩手県">岩手県</option>
+                      <option value="宮城県">宮城県</option>
+                      <option value="秋田県">秋田県</option>
+                      <option value="山形県">山形県</option>
+                      <option value="福島県">福島県</option>
+                      <option value="茨城県">茨城県</option>
+                      <option value="栃木県">栃木県</option>
+                      <option value="群馬県">群馬県</option>
+                      <option value="埼玉県">埼玉県</option>
+                      <option value="千葉県">千葉県</option>
+                      <option value="東京都">東京都</option>
+                      <option value="神奈川県">神奈川県</option>
+                      <option value="新潟県">新潟県</option>
+                      <option value="富山県">富山県</option>
+                      <option value="石川県">石川県</option>
+                      <option value="福井県">福井県</option>
+                      <option value="山梨県">山梨県</option>
+                      <option value="長野県">長野県</option>
+                      <option value="岐阜県">岐阜県</option>
+                      <option value="静岡県">静岡県</option>
+                      <option value="愛知県">愛知県</option>
+                      <option value="三重県">三重県</option>
+                      <option value="滋賀県">滋賀県</option>
+                      <option value="京都府">京都府</option>
+                      <option value="大阪府">大阪府</option>
+                      <option value="兵庫県">兵庫県</option>
+                      <option value="和歌山県">和歌山県</option>
+                      <option value="鳥取県">鳥取県</option>
+                      <option value="島根県">島根県</option>
+                      <option value="岡山県">岡山県</option>
+                      <option value="広島県">広島県</option>
+                      <option value="山口県">山口県</option>
+                      <option value="徳島県">徳島県</option>
+                      <option value="香川県">香川県</option>
+                      <option value="愛媛県">愛媛県</option>
+                      <option value="高知県">高知県</option>
+                      <option value="福岡県">福岡県</option>
+                      <option value="佐賀県">佐賀県</option>
+                      <option value="長崎県">長崎県</option>
+                      <option value="熊本県">熊本県</option>
+                      <option value="大分県">大分県</option>
+                      <option value="宮崎県">宮崎県</option>
+                      <option value="鹿児島県">鹿児島県</option>
+                      <option value="沖縄県">沖縄県</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">希望の年収</label>
+                  </div>
+                  <div class="w-full">
+                    <select class="form__select" name="annualSalary">
+                      <option>未選択 </option>
+                      <option value="200万円未満">200万円未満</option>
+                      <option value="250万円">250万円</option>
+                      <option value="300万円">300万円</option>
+                      <option value="350万円">350万円</option>
+                      <option value="400万円">400万円</option>
+                      <option value="450万円">450万円</option>
+                      <option value="500万円">500万円</option>
+                      <option value="550万円">550万円</option>
+                      <option value="600万円">600万円</option>
+                      <option value="650万円">650万円</option>
+                      <option value="700万円">700万円</option>
+                      <option value="750万円">750万円</option>
+                      <option value="800万円">800万円</option>
+                      <option value="850万円">850万円</option>
+                      <option value="900万円">900万円</option>
+                      <option value="950万円">950万円</option>
+                      <option value="1,000万円以上">1,000万円以上</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">転職で重視すること<br class="sp:hidden">（属性）</label>
+                  </div>
+                  <div class="w-full">
+                    <div class="form__input-wrapper items-start">
+                      <div class="mr-4">
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check1" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check1">完全土日休み</label>
+                        </div>
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check2" type="checkbox" name="check1" checked>
+                          <label class="form__text-label cursor-pointer" for="check2">稼ぎたい </label>
+                        </div>
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check3" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check3">XXXXXX</label>
+                        </div>
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check4" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check4">XXXXXX</label>
+                        </div>
+                      </div>
+                      <div class="mr-4"> 
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check1" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check1">残業なし</label>
+                        </div>
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check2" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check2">XXXXXX </label>
+                        </div>
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check3" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check3">XXXXXX</label>
+                        </div>
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check4" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check4">XXXXXX</label>
+                        </div>
+                      </div>
+                      <div> 
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check1" type="checkbox" name="check1" checked>
+                          <label class="form__text-label cursor-pointer" for="check1">転勤なし</label>
+                        </div>
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check2" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check2">XXXXXX </label>
+                        </div>
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check3" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check3">XXXXXX</label>
+                        </div>
+                        <div class="form__check-wrapper mb-[16px]">
+                          <input class="form__check form__check--secondary" id="check4" type="checkbox" name="check1">
+                          <label class="form__text-label cursor-pointer" for="check4">XXXXXX</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex justify-center sp:flex-col">
+                  <button class="button button--gray mr-14 sp:mb-2 sp:mr-0">キャンセル</button>
+                  <button class="button sp:mb-2"> 変更する</button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <aside class="sidebar">
+            <div class="sidebar__card mb-5">
+              <p class="sidebar__card-header">個人設定</p>
+              <ul class="sidebar__list">
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>会員プロフィール</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>詳細情報</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>転職条件</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>サイト通知設定</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+              </ul>
+            </div>
+            <ul class="sidebar__list sidebar__list--rounded">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>トップページ</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー企業</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー求人</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>クチコミ管理</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>退会</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <ul class="footer__links">
+            <li class="footer__item"><a class="footer__link" href="#">運営会社</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">利用規約</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">個人情報の取り扱い</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">転ジョーク会議のコンセプト</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">クチコミ投稿への取り組み</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">投稿のガイドライン</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">お問い合わせ </a></li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>

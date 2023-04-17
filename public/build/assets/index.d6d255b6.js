@@ -1,0 +1,1 @@
+let t=document.getElementById("topScrollbar"),e=document.getElementById("table");t.onscroll=function(){e.scrollLeft=t.scrollLeft};e.onscroll=function(){t.scrollLeft=e.scrollLeft};let o=document.getElementsByClassName("status-selector");for(let l of o)l.addEventListener("change",function(){this.form.submit()});

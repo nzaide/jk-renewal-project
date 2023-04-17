@@ -1,0 +1,73 @@
+.modal#addWorkLocation
+  .modal__overlay(@click="closeAllModals()")
+  .modal__content.modal__content--lg
+    .flex.justify-end
+      i.modal__close.block(class="fa-solid fa-xmark" @click="closeAllModals()")
+    .modal__header.modal__header--gray
+      h4.m-0  所在地を追加
+    form.form(action="#")
+      .flex(class="sp:flex-col")
+        .prefecture(class="sp:block hidden overflow-hidden mb-2")
+          .prefecture__wrapper
+            input.prefecture__check#prefecture1(type="checkbox")
+            label.prefecture__label(for="prefecture1" class="bg-white") 関東
+              img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            ul.prefecture__list
+              li.prefecture__item
+                a.link(href="#") 北海道・東北
+              li.prefecture__item
+                a.link(href="#") 甲信越・北陸
+              li.prefecture__item
+                a.link(href="#") 東海
+              li.prefecture__item
+                a.link(href="#") 関西
+              li.prefecture__item
+                a.link(href="#") 中国・四国
+              li.prefecture__item
+                a.link(href="#") 九州・沖縄
+              li.prefecture__item
+                a.link(href="#") その他・海外
+        ul.modal__scrollbar(class="h-[321px] mr-4 w-[48%] sp:hidden overflow-auto")
+          li.modal__item 北海道・東北
+          li.modal__item.modal__item--active 関東
+          li.modal__item 甲信越・北陸
+          li.modal__item 東海
+          li.modal__item 関西
+          li.modal__item 中国・四国
+          li.modal__item 九州・沖縄
+          li.modal__item その他・海外
+        .modal__blue
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check9(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check9") 全て選択
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check10(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check10") 茨城県
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check11(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check11") 栃木県
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check12(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check12") 群馬県
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check13(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check13") 埼玉県
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check14(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check14") 千葉県
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check15(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check15") 東京都
+          .w-full
+            .form__input-wrapper
+              .form__check-wrapper(class="w-[27%] sp:w-full")
+                input.form__check.form__check--secondary#check16(type="checkbox" name="checkOptions")
+                label.form__text-label.cursor-pointer(for="check16") 神奈川県
+    .modal__button-wrapper.modal__button-wrapper--confirmation
+      button.button.w-full(type="button" class="min-w-[237px] min-h-[57px] sp:min-w-full sp:min-h-[40px]") 所在地を設定

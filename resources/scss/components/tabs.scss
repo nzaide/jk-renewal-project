@@ -1,0 +1,7 @@
+.tabs {
+  @apply text-xl h-[66px] font-helvetica text-black max-w-[241px] w-full border-b-2;
+
+  &--active {
+    @apply text-[#007bff] border-[#007bff];
+  }
+}

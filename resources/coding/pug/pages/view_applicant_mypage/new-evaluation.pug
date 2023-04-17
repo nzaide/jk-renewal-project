@@ -1,0 +1,155 @@
+extends ../../full_layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+block content
+  .main-wrapper
+    section.section
+      .section__wrapper.font-helvetica
+        .mb-10
+          h2.heading.heading--underlined.text-center 新規クチコミ投稿
+        div(class="sp:mt-3")
+          form.form(action="")
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label 対象企業
+              .w-full
+                .form__input-wrapper
+                  .form__radio-wrapper
+                    input.form__radio#radio1(type="radio", name="radioOptions" checked @click="dropdown")
+                    label.form__text-label.cursor-pointer(for="radio1") 在職歴のある企業
+                  .form__radio-wrapper
+                    input.form__radio#radio2(type="radio", name="radioOptions" @click="input")
+                    label.form__text-label.cursor-pointer(for="radio2") 面接歴のある企業
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label 企業名
+              .w-full.relative(class="max-w-[536px]")
+                select.form__select(v-show="value1")
+                  option 在職歴の企業から選択してください
+                  option(value="option1") 在職歴のある企業
+                  option(value="option2") 面接歴のある企業
+                input.form__input(type="text" v-show="value2" autocomplete="off" v-model="sample" @input="filterSamples" @focus="modal = true" placeholder="企業名")
+                div(v-if="filteredSamples && modal")
+                  ul.suggestion
+                    li.suggestion__item(v-for="filteredSample in filteredSamples" @click="setSample(filteredSample)") {{ filteredSample }}
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label ネタのジャンル
+              .w-full(class="max-w-[536px]")
+                select.form__select
+                  option あるあるネタ
+                  option(value="option1") あるあるネタ
+                  option(value="option2") いい話ネタ
+                  option(value="option3") 長話ネタ
+                  option(value="option4") 五七五ネタ
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label 自身のネタ評価
+              .w-full
+                .form__input-wrapper(class="sp:flex-row xm-screen:flex-col-reverse")
+                  .flex(class="xm-screen:w-full xm-screen:justify-between xm-screen:mb-3")
+                    .form__radio-wrapper.flex-col.mr-5(class="xm-screen:m-0 xm-screen:w-6/12")
+                      img.m-0(src="/public/img/icon/samui.svg" class="w-[40px] h-[40px]")
+                      input.form__radio.m-0.my-3#radio3(type="radio", name="rating")
+                      label.form__text-label.cursor-pointer.text-grey(for="radio3") 
+                        span.font-bold(class="inline-flex") ( 1 ) 
+                        | サムい
+                    .form__radio-wrapper.flex-col.mr-5(class="xm-screen:m-0 xm-screen:w-6/12 xm-screen:order-[-1]")
+                      img.m-0(src="/public/img/icon/shirakeru.svg" class="w-[40px] h-[40px]")
+                      input.form__radio.m-0.my-3#radio4(type="radio", name="rating")
+                      label.form__text-label.cursor-pointer.text-grey(for="radio4") 
+                        span.font-bold(class="inline-flex") ( 2 ) 
+                        | シラける
+                  .flex(class="xm-screen:w-full xm-screen:justify-between xm-screen:mb-3")
+                    .form__radio-wrapper.flex-col.mr-5(class="xm-screen:m-0 xm-screen:w-6/12")
+                      img.m-0(src="/public/img/icon/kusu.svg" class="w-[40px] h-[40px]")
+                      input.form__radio.m-0.my-3#radio5(type="radio", name="rating")
+                      label.form__text-label.cursor-pointer.text-grey(for="radio5") 
+                        span.font-bold(class="inline-flex") ( 3 ) 
+                        | クスッ
+                    .form__radio-wrapper.flex-col.mr-5(class="xm-screen:m-0 xm-screen:w-6/12 xm-screen:order-[-1]")
+                      img.m-0(src="/public/img/icon/omoshiroi.svg" class="w-[40px] h-[40px]")
+                      input.form__radio.m-0.my-3#radio6(type="radio", name="rating" checked)
+                      label.form__text-label.cursor-pointer.text-grey(for="radio6")
+                        span.font-bold(class="inline-flex") ( 4 ) 
+                        | オモシロい
+                  .flex(class="xm-screen:w-full xm-screen:justify-center")
+                    .form__radio-wrapper.flex-col(class="xm-screen:w-6/12 xm-screen:m-0")
+                      img.m-0(src="/public/img/icon/bakusyou.svg" class="w-[40px] h-[40px]")
+                      input.form__radio.m-0.my-3#radio7(type="radio", name="rating")
+                      label.form__text-label.cursor-pointer.text-grey(for="radio7")
+                        span.font-bold(class="inline-flex") ( 5 ) 
+                        | 爆笑
+            .form__wrapper
+              .flex.items-center(class="min-w-[20%]")
+                label.form__label 投稿内容
+              .w-full
+                textarea.form__textarea(placeholder="選択したネタジャンルに対して、個人のエピソードを記載してください 川柳形式の五七五の文体など記載の形式は自由です 個人が特定できる情報や過度な誹謗・中傷については、 削除対象となりますので、注意してください")
+            .flex.justify-center(class="sp:flex-col")
+              button.button.button--gray.mr-5(class="sp:mb-2") キャンセル
+              button.button 投稿する
+block footer
+  include ../../footer.pug
+
+block script
+  script.
+    new Vue({
+      el: '#app',
+      data () {
+        return {
+          value1: true,
+          value2: false,
+          modal: false,
+          sample: '',
+          samples: [
+            'sample1', 'snake', 'apple', 'phone'
+          ],
+          filteredSamples: [],
+        };
+      },
+      methods: {
+        filterSamples() {
+          if (this.sample.lenght == 0) {
+            this.filteredSamples = this.samples;
+          }
+
+          this.filteredSamples = this.samples.filter(sample => {
+            return sample.toLowerCase().startsWith(this.sample.toLowerCase());
+          });
+        },
+        setSample(sample) {
+          this.sample = sample;
+          this.modal = false;
+        },
+        dropdown() {
+          this.value1 = true;
+          this.value2 = false;
+        },
+        input() {
+          this.value2 = true;
+          this.value1 = false;
+        }
+      },
+      created() {
+      },
+      mounted() {
+        this.filterSamples();
+      }
+    })

@@ -1,0 +1,211 @@
+extends ../../layout.pug
+
+block nav
+  a.header__login-link(href="#") ログイン
+  nav.nav(class="sp:hidden")
+    ul.nav__list
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+          span.nav__text 求人を探す
+      li.nav__item
+        a.nav__link(href="#")
+          img.nav__icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+          span.nav__text 口コミを探す
+
+block headerLinks
+  .header__link-wrapper(class="sp:hidden")
+    a.header__link(href="#") マイページ
+    a.header__link(href="#") ログアウト
+
+
+block spMenu
+  .menu
+    label.menu__icon-wrapper(for="menu")
+      img.menu__icon(src="/public/img/icon/menu-icon.svg" alt="menu icon")
+    input.menu__check#menu(type="checkbox", name="menuToggle")
+    .menu__side
+      label.menu__overlay(for="menu")
+      .menu__side-wrapper
+        .menu__header
+          label.menu__icon-wrapper(for="menu")
+            img.menu__icon(src="/public/img/icon/menu-icon-close.svg" alt="menu icon close")
+        .menu__button-wrapper
+          a.button.button--orange-reversed(href="#") ログイン
+          a.button.button--orange(href="#") 無料登録
+        .menu__wrapper
+          ul.menu__list
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/recruit-orange.svg" alt="recruit")
+                  span.menu__text 求人を探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+            li.menu__item
+              a.menu__link(href="#")
+                .flex-center-layout
+                  img.menu__link-icon(src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi")
+                  span.menu__text 口コミを探す
+                img(src="/public/img/icon/arrow-gray.svg" alt="arrow")
+        p.menu__copyright Copyright © Fulfill inc. All rights reserved.
+
+block content
+  .main-wrapper
+    section.section
+      .card.mb-4.mt-5
+        .card__body
+          ul.card_list
+            li.card__item
+              .card__title-container.card__title-container--no-border
+                a.card__title(href="#") 株式会社○○○○○
+                .card__corporation-details.items-start(class="sp:flex-col")
+                  div(class="w-3/12 sp:w-full")
+                    img(src="/public/img/icon/company-default-img.jpg", alt="company")
+
+                  div.ml-3
+                    .flex-center-layout.mr-4(class="sp:mt-4")
+                      img.card__emoticon(src="/public/img/icon/bakusyou.svg", alt="emoticon")
+                      p.card__corporation-text 評価
+
+                      img.card__icon(src="/public/img/icon/recruit.svg", alt="recruit")
+                      p.card__corporation-text 求人数
+                        span.card__corporation-text.text-primary-orange.font-bold.ml-2 0件
+
+                      img.card__icon(src="/public/img/icon/kutikomi.svg", alt="kutikomi")
+                      p.card__corporation-text クチコミ
+                        span.card__corporation-text.text-primary-orange.font-bold.ml-2  000件
+                    
+                    .flex-center-layou.mt-4
+                      .card__company-details.flex
+                        p.card__corporation-text.text-primary-orange.font-bold 業界 
+                        p.card__corporation-text 飲食
+
+                      .card__company-details.flex
+                        p.card__corporation-text.text-primary-orange.font-bold 所在地
+                        p.card__corporation-text 東京都〇〇区〇〇〇〇
+                      
+                      .card__company-details.flex
+                        p.card__corporation-text.text-primary-orange.font-bold URL
+                        p.card__corporation-text https://www.url.com/
+
+                  
+                  .flex.justify-center.flex-col.w-32.ml-auto(class="sp:mt-4 sp:w-full")
+                    a.button.button--orange.button--small.mb-2
+                      img.mr-2(src="/public/img/icon/white-pencil.svg", alt="edit")
+                      | 口コミを書く
+                    
+                    //- Follow 
+                    a.button.button--orange-reversed.button--small 
+                      img.mr-2(src="/public/img/icon/plus-red.svg", alt="add")
+                      | フォロー 
+
+                    //- Unfollow 
+                    //- a.button.button--orange-reversed.button--small フォローを解除    
+
+      .tab-arrow.mt-10
+        ul.tab-arrow__list 
+          li.tab-arrow__item.tab-arrow__item--active
+            a(href="#") 企業情報詳細
+          li.tab-arrow__item
+            a(href="#") 評価・クチコミ
+          li.tab-arrow__item
+            a(href="#") 求人情報
+      
+      //overview
+      .company-information.mt-10 
+        p.heading 企業概要
+        .card.mt-5
+          .card__body
+            ul.card_list
+              li.card__item.card__item-border-none
+                .card__corporation-details
+                  p.card__corporation-text 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+          .card__show-more
+            a.link(href="#") もっと見る
+            img.card__icon.card__icon--sm(src="/public/img/icon/arrow-blue.svg", alt="arrow")
+        
+      //Business/Service
+      .company-information.mt-10 
+        p.heading 事業・サービス
+        .card.mt-5
+          .card__body
+            ul.card_list
+              li.card__item.card__item-border-none
+                .card__corporation-details
+                  p.card__corporation-text 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+          .card__show-more
+            a.link(href="#") もっと見る
+            img.card__icon.card__icon--sm(src="/public/img/icon/arrow-blue.svg", alt="arrow")
+      
+      //Vision - Mission
+      .company-information.mt-10 
+        p.heading ビジョン・ミッション
+        .card.mt-5
+          .card__body
+            ul.card_list
+              li.card__item.card__item-border-none
+                .card__corporation-details
+                  p.card__corporation-text 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+          .card__show-more
+            a.link(href="#") もっと見る
+            img.card__icon.card__icon--sm(src="/public/img/icon/arrow-blue.svg", alt="arrow")
+
+      //Welfare
+      .company-information.mt-10 
+        p.heading 福利厚生
+        .card.mt-5
+          .card__body
+            ul.card_list
+              li.card__item.card__item-border-none
+                .card__corporation-details
+                  p.card__corporation-text 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+          .card__show-more
+            a.link(href="#") もっと見る
+            img.card__icon.card__icon--sm(src="/public/img/icon/arrow-blue.svg", alt="arrow")
+        
+      //Corporate information
+      .company-information.mt-10 
+        p.heading 企業情報
+        .section__wrapper.mt-5
+          form.form
+            .form__wrapper
+              .flex.items-center(class="min-w-[25%]")
+                label.form__label.text-primary-gray 代表者名
+              .w-full.dash
+                p.form__label.font-normal 〇〇〇
+            .form__wrapper
+              .flex.items-center(class="min-w-[25%]")
+                label.form__label.text-primary-gray 資本金
+              .w-full.dash
+                p.form__label.font-normal 10,000,000円
+            .form__wrapper
+              .flex.items-center(class="min-w-[25%]")
+                label.form__label.text-primary-gray 設立年
+              .w-full.dash
+                p.form__label.font-normal 2000年
+            .form__wrapper
+              .flex.items-center(class="min-w-[25%]")
+                label.form__label.text-primary-gray 従業員
+              .w-full.dash
+                p.form__label.font-normal 30名（契約社員・アルバイト含む）
+            .form__wrapper
+              .flex.items-center(class="min-w-[25%]")
+                label.form__label.text-primary-gray 上場区分
+              .w-full.dash
+                p.form__label.font-normal 未上場
+            .form__wrapper
+              .flex.items-center(class="min-w-[25%]")
+                label.form__label.text-primary-gray 事業内容
+              .w-full.dash
+                p.form__label.font-normal 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+
+    aside.sidebar
+      ul.sidebar__list.sidebar__list--rounded
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span トップページ
+            img(src="/public/img/icon/arrow.svg" alt="arrow")
+        li.sidebar__item
+          a.sidebar__link(href="#")
+            span 求人詳細検索
+            img(src="/public/img/icon/arrow.svg" alt="arrow")

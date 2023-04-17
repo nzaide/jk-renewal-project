@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1><a class="header__login-link" href="#">ログイン</a>
+            <nav class="nav sp:hidden">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="nav__text">求人を探す</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#"><img class="nav__icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="nav__text">口コミを探す</span></a></li>
+              </ul>
+            </nav>
+            <div class="menu">
+              <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon.svg" alt="menu icon"></label>
+              <input class="menu__check" id="menu" type="checkbox" name="menuToggle">
+              <div class="menu__side">
+                <label class="menu__overlay" for="menu"></label>
+                <div class="menu__side-wrapper">
+                  <div class="menu__header">
+                    <label class="menu__icon-wrapper" for="menu"><img class="menu__icon" src="/public/img/icon/menu-icon-close.svg" alt="menu icon close"></label>
+                  </div>
+                  <div class="menu__button-wrapper"><a class="button button--orange-reversed" href="#">ログイン</a><a class="button button--orange" href="#">無料登録</a></div>
+                  <div class="menu__wrapper">
+                    <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/recruit-orange.svg" alt="recruit"><span class="menu__text">求人を探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                      <li class="menu__item"><a class="menu__link" href="#">
+                          <div class="flex-center-layout"><img class="menu__link-icon" src="/public/img/icon/kutikomi-orange.svg" alt="kutikomi"><span class="menu__text">口コミを探す</span></div><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                    </ul>
+                  </div>
+                  <p class="menu__copyright">Copyright © Fulfill inc. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__link-wrapper sp:hidden"><a class="header__link" href="#">マイページ</a><a class="header__link" href="#">ログアウト</a></div>
+        </div>
+      </header>
+      <div class="content-wrapper content-wrapper--with-sidebar">
+        <div class="main-wrapper">
+          <section class="section">
+            <h2 class="heading heading--underlined">学歴情報</h2>
+            <div class="section__wrapper mt-3">
+              <h3 class="heading heading--underlined heading--sm mb-5">登録済学歴</h3>
+              <form class="form" action="">
+                <div class="form__wrapper items-center">
+                  <div class="flex items-center min-w-[20%] sp:w-full">
+                    <label class="form__label">2018年3月</label>
+                  </div>
+                  <div class="w-full flex">
+                    <p class="mr-3">学部卒</p>
+                    <p class="mr-3">〇〇〇〇大学</p>
+                    <p class="mr-3">〇〇〇学部</p>
+                  </div>
+                  <div class="flex sp:flex-col sp:w-full sp:mt-5">
+                    <button class="button mr-2 sp:mb-2 w-[88px] px-0 sp:w-full">変更</button>
+                    <button class="button button--red w-[88px] px-0 sp:w-full" type="button" @click="openModal('sampleModal')">削除</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="section__wrapper mt-5">
+              <h3 class="heading heading--underlined heading--sm mb-5">変更・追加フォーム</h3>
+              <form class="form" action="">
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label">学歴</label>
+                  </div>
+                  <div class="w-full">
+                    <select class="form__select min-w-[160px]" name="graduatedSchoolType">
+                      <option>未選択 </option>
+                      <option value="中学卒">中学卒</option>
+                      <option value="高校卒">高校卒</option>
+                      <option value="専門学校卒">専門学校卒</option>
+                      <option value="短大卒">短大卒</option>
+                      <option value="高専卒">高専卒</option>
+                      <option value="大学卒">大学卒</option>
+                      <option value="大学院卒">大学院卒</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label">学校名</label>
+                  </div>
+                  <div class="w-full">
+                    <input class="form__input" type="text" placeholder="資格名等を入力してください">
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label">学部・専攻</label>
+                  </div>
+                  <div class="w-full">
+                    <input class="form__input" type="text" placeholder="資格名等を入力してください">
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[20%]">
+                    <label class="form__label">卒業年月</label>
+                  </div>
+                  <div class="w-full">
+                    <div class="form__input-wrapper">
+                      <div class="flex items-center mr-[25px] mb-3 sp:mr-0 sp:w-full">
+                        <select class="form__select mr-3" name="year">
+                          <option>未選択 </option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                        </select>
+                        <label class="form__label" for="年">年 </label>
+                      </div>
+                      <div class="flex items-center mr-[25px] mb-3 sp:mr-0 sp:w-full">
+                        <select class="form__select mr-3" name="month">
+                          <option>未選択 </option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <label class="form__label" for="月">月 </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="flex justify-center sp:flex-col">
+                <button class="button button--gray mr-14 sp:mb-2">クリア</button>
+                <button class="button mr-2 sp:mb-2"> 更新する</button>
+              </div>
+            </div>
+            <div class="flex justify-center mt-5"><a class="button button--gray mr-2 sp:mb-2" href="#">マイページに戻る</a></div>
+          </section>
+          <aside class="sidebar">
+            <div class="sidebar__card mb-5">
+              <p class="sidebar__card-header">個人設定</p>
+              <ul class="sidebar__list">
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>会員プロフィール</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>詳細情報</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>転職条件</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#"><span>サイト通知設定</span><img src="/public/img/icon/arrow-gray.svg" alt="arrow"></a></li>
+              </ul>
+            </div>
+            <ul class="sidebar__list sidebar__list--rounded">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>トップページ</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー企業</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>フォロー求人</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>クチコミ管理</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><span>退会</span><img src="/public/img/icon/arrow.svg" alt="arrow"></a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="modal" id="sampleModal">
+          <div class="modal__overlay" @click="closeAllModals()"></div>
+          <div class="modal__content modal__content--xs"><i class="modal__close block fa-solid fa-xmark" @click="closeAllModals()"></i>
+            <div class="modal__header text-center"><i class="mb-8 fa-regular fa-circle-xmark modal__xmark"></i>
+              <p class="modal__title">Are you sure?</p>
+            </div>
+            <p class="modal__confirmation-message text-center text-grey">Do you really want to delete these records? This process cannot be undone.</p>
+            <div class="modal__button-wrapper modal__button-wrapper--confirmation">
+              <button class="button button--gray mr-3 w-full" type="button" @click="closeAllModals()">Cancel</button>
+              <button class="button button--red w-full" type="button">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <ul class="footer__links">
+            <li class="footer__item"><a class="footer__link" href="#">運営会社</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">利用規約</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">個人情報の取り扱い</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">転ジョーク会議のコンセプト</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">クチコミ投稿への取り組み</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">投稿のガイドライン</a></li>
+            <li class="footer__item"><a class="footer__link" href="#">お問い合わせ </a></li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Copyright © Fulfill inc. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data () {
+          return {
+          };
+        },
+        methods: {
+        },
+        created() {
+        },
+        mounted() {
+        }
+      })
+    </script>
+  </body>
+</html>

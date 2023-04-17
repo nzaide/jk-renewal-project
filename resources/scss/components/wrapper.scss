@@ -1,0 +1,11 @@
+.wrapper {
+  @apply w-full max-w-[1516px] mx-auto my-0 xlg-screen:px-[50px] sp:px-4;
+
+  &--admin {
+    @apply max-w-[1300px] w-full mx-auto xlg-screen:p-0 sp:p-0;
+  }
+
+  &--account {
+    @apply pt-[133px] pb-[203px] sp:py-14;
+  }
+}

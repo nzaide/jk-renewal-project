@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/scss/app.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71a9bdfa63.js" crossorigin="anonymous"></script>
+    <title>Fullfill</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="header">
+        <div class="header__wrapper">
+          <div class="header__menu-wrapper">
+            <h1 class="header__logo"><a href="/"><img src="/public/img/tenjork-logo.svg" alt="logo"></a></h1>
+          </div>
+        </div>
+      </header>
+      <div class="content-wrapper">
+        <div class="main-wrapper">
+          <section class="section">
+            <div class="card card--account">
+              <h2 class="heading heading--underlined mb-14 text-center">会員プロフィール登録</h2>
+              <div class="progress">
+                <p class="progress__text">プロフィール登録  2 / 4 完了</p>
+                <div class="flex justify-end mb-[25px]">
+                  <div class="progress__bar-wrapper">
+                    <div class="progress__bar progress__bar--50"></div>
+                  </div>
+                </div>
+              </div>
+              <form class="form mx-auto max-w-[800px]" action="#">
+                <p class="form__text mb-[50px] sp:mb-[25px]">2. ご自身の現在の年収と最終学歴について、以下を入力してください。</p>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">現在の年収</label>
+                  </div>
+                  <div class="w-full">
+                    <select class="form__select min-w-[160px]" name="annualSalary">
+                      <option>未選択 </option>
+                      <option value="200万円未満">200万円未満</option>
+                      <option value="250万円">250万円</option>
+                      <option value="300万円">300万円</option>
+                      <option value="350万円">350万円</option>
+                      <option value="400万円">400万円</option>
+                      <option value="450万円">450万円</option>
+                      <option value="500万円">500万円</option>
+                      <option value="550万円">550万円</option>
+                      <option value="600万円">600万円</option>
+                      <option value="650万円">650万円</option>
+                      <option value="700万円">700万円</option>
+                      <option value="750万円">750万円</option>
+                      <option value="800万円">800万円</option>
+                      <option value="850万円">850万円</option>
+                      <option value="900万円">900万円</option>
+                      <option value="950万円">950万円</option>
+                      <option value="1,000万円以上">1,000万円以上</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">最終学歴</label>
+                  </div>
+                  <div class="w-full">
+                    <select class="form__select min-w-[160px]" name="graduatedSchoolType">
+                      <option>未選択 </option>
+                      <option value="中学卒">中学卒</option>
+                      <option value="高校卒">高校卒</option>
+                      <option value="専門学校卒">専門学校卒</option>
+                      <option value="短大卒">短大卒</option>
+                      <option value="高専卒">高専卒</option>
+                      <option value="大学卒">大学卒</option>
+                      <option value="大学院卒">大学院卒</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">最終学歴の学校名</label>
+                  </div>
+                  <div class="w-full">
+                    <input class="form__input" type="text" placeholder="学校名を入力してください">
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">学部・専攻</label>
+                  </div>
+                  <div class="w-full">
+                    <input class="form__input" type="text" placeholder="学部・専攻を入力してください">
+                  </div>
+                </div>
+                <div class="form__wrapper">
+                  <div class="flex items-center min-w-[25%]">
+                    <label class="form__label">卒業年月</label>
+                  </div>
+                  <div class="w-full">
+                    <div class="form__input-wrapper">
+                      <div class="flex items-center mr-[25px] mb-3 sp:mr-0 sp:w-full">
+                        <select class="form__select mr-3" name="year">
+                          <option>未選択 </option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                        </select>
+                        <label class="form__label" for="年">年 </label>
+                      </div>
+                      <div class="flex items-center mr-[25px] mb-3 sp:mr-0 sp:w-full">
+                        <select class="form__select mr-3" name="month">
+                          <option>未選択 </option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <label class="form__label" for="月">月 </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex justify-center sp:flex-col">
+                  <button class="button mr-20 sp:mr-0 sp:mb-3">前へ</button>
+                  <button class="button">次へ</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- Use @vite() for blade files-->
+      <!-- This is for static html files only-->
+    </main>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/resources/js/commonMethods.js"></script>
+  </body>
+</html>
